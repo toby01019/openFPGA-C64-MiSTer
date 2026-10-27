@@ -34,6 +34,7 @@ entity cpu_6510 is
 		do      : out unsigned(7 downto 0);
 		addr    : out unsigned(15 downto 0);
 		we      : out std_logic;
+        opcode_sync : out std_logic;
 
 		diIO    : in  unsigned(7 downto 0);
 		doIO    : out unsigned(7 downto 0)
@@ -67,6 +68,7 @@ begin
 		NMI_n   => nmi_n,
 		SO_n    => '1',
 		R_W_n   => localWe,
+        Sync    => opcode_sync,
 		A       => localA,
 		DI      => localDi,
 		DO      => localDo,

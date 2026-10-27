@@ -3,14 +3,14 @@
     "magic": "APF_VER_1",
     "metadata": {
       "platform_ids": [
-        "c64mister"
+        "c64"
       ],
-      "shortname": "C64MiSTer",
-      "description": "C64 Alpha: EasyFlash, TobyPink samples and Dock USB keyboard",
-      "author": "Experimental",
+      "shortname": "C64",
+      "description": "C64: disk autostart, activity, EasyFlash and Dock keyboard",
+      "author": "toby01019",
       "url": "https://github.com/toby01019/openFPGA-C64-MiSTer",
-      "version": "0.5.1-alpha",
-      "date_release": "2026-10-26"
+      "version": "0.5.2-alpha",
+      "date_release": "2026-10-27"
     },
     "framework": {
       "target_product": "Analogue Pocket",

@@ -1,7 +1,7 @@
 ----------------
 ; Command Info ;
 ----------------
-Report Timing: Found 3 hold paths (0 violated).  Worst case slack is 0.020 
+Report Timing: Found 3 hold paths (0 violated).  Worst case slack is 0.025 
 
 Tcl Command:
     report_timing -hold -file remaining-hold.rpt -npaths 3 -detail full_path
@@ -15,31 +15,31 @@ Options:
 Delay Model:
     Fast 1100mV 0C Model
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Summary of Paths                                                                                                                                                                                                                                                                                                                                                                 ;
-+-------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
-; Slack ; From Node                                                                      ; To Node                                                                        ; Launch Clock                                                                  ; Latch Clock                                                                   ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
-; 0.020 ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]           ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]           ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.032      ; 0.152      ;
-; 0.026 ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14] ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.031      ; 0.157      ;
-; 0.027 ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]     ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]     ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.031      ; 0.158      ;
-+-------+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Summary of Paths                                                                                                                                                                                                                                                                                                                                                                           ;
++-------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                                      ; To Node                                                                                  ; Launch Clock                                                                  ; Latch Clock                                                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
+; 0.025 ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14] ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]~DUPLICATE ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.033      ; 0.158      ;
+; 0.026 ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]                     ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.032      ; 0.158      ;
+; 0.027 ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE           ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000        ; 0.032      ; 0.159      ;
++-------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
 
-Path #1: Hold slack is 0.020 
+Path #1: Hold slack is 0.025 
 ===============================================================================
-+----------------------------------------------------------------------------------------------------+
-; Path Summary                                                                                       ;
-+--------------------+-------------------------------------------------------------------------------+
-; Property           ; Value                                                                         ;
-+--------------------+-------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]          ;
-; To Node            ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]          ;
-; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 0.377                                                                         ;
-; Data Required Time ; 0.357                                                                         ;
-; Slack              ; 0.020                                                                         ;
-+--------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                                  ;
++--------------------+------------------------------------------------------------------------------------------+
+; Property           ; Value                                                                                    ;
++--------------------+------------------------------------------------------------------------------------------+
+; From Node          ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]           ;
+; To Node            ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]~DUPLICATE ;
+; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk            ;
+; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk            ;
+; Data Arrival Time  ; 0.389                                                                                    ;
+; Data Required Time ; 0.364                                                                                    ;
+; Slack              ; 0.025                                                                                    ;
++--------------------+------------------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------+
 ; Statistics                                                                          ;
@@ -47,82 +47,82 @@ Path #1: Hold slack is 0.020
 ; Property               ; Value ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 ; Hold Relationship      ; 0.000 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; 0.032 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 0.152 ;       ;             ;            ;        ;        ;
+; Clock Skew             ; 0.033 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 0.158 ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;       ; 1     ;             ;            ;        ;        ;
 ; Physical Delays        ;       ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.655       ; 55         ; 0.000  ; 1.020  ;
-;    Cell                ;       ; 5     ; 1.345       ; 45         ; 0.143  ; 0.668  ;
-;    PLL Compensation    ;       ; 1     ; -2.775      ; 0          ; -2.775 ; -2.775 ;
+;    IC                  ;       ; 6     ; 1.649       ; 55         ; 0.000  ; 1.014  ;
+;    Cell                ;       ; 5     ; 1.352       ; 45         ; 0.143  ; 0.668  ;
+;    PLL Compensation    ;       ; 1     ; -2.770      ; 0          ; -2.770 ; -2.770 ;
 ;   Data                 ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 2     ; 0.095       ; 63         ; 0.000  ; 0.095  ;
-;    Cell                ;       ; 3     ; 0.057       ; 38         ; 0.000  ; 0.033  ;
+;    IC                  ;       ; 2     ; 0.098       ; 62         ; 0.000  ; 0.098  ;
+;    Cell                ;       ; 3     ; 0.060       ; 38         ; 0.000  ; 0.033  ;
 ;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.833       ; 55         ; 0.000  ; 1.051  ;
-;    Cell                ;       ; 5     ; 1.504       ; 45         ; 0.153  ; 0.789  ;
-;    PLL Compensation    ;       ; 1     ; -2.454      ; 0          ; -2.454 ; -2.454 ;
+;    IC                  ;       ; 6     ; 1.827       ; 55         ; 0.000  ; 1.045  ;
+;    Cell                ;       ; 5     ; 1.513       ; 45         ; 0.153  ; 0.789  ;
+;    PLL Compensation    ;       ; 1     ; -2.450      ; 0          ; -2.450 ; -2.450 ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data Arrival Path                                                                                                                                        ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
-; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
-; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 0.225    ; 0.225    ;    ;      ;        ;                            ; clock path                                                                       ;
-;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
-;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
-;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
-;   0.213  ;   0.213  ; RR ; CELL ; 2      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|o                                                                  ;
-;   0.529  ;   0.316  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
-;   0.672  ;   0.143  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
-;   0.672  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -2.103 ;   -2.775 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -2.103 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -1.435 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -1.116 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.969 ;   0.147  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   0.051  ;   1.020  ; RR ; IC   ; 1      ; FF_X2_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]|clk                                                 ;
-;   0.225  ;   0.174  ; RR ; CELL ; 1      ; FF_X2_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
-; 0.377    ; 0.152    ;    ;      ;        ;                            ; data path                                                                        ;
-;   0.225  ;   0.000  ;    ; uTco ; 1      ; FF_X2_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
-;   0.225  ;   0.000  ; FF ; CELL ; 2      ; FF_X2_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]|q                                                   ;
-;   0.320  ;   0.095  ; FF ; IC   ; 2      ; LABCELL_X2_Y14_N12         ; ic|c64|Keyboard|Add0~21|dataf                                                    ;
-;   0.353  ;   0.033  ; FR ; CELL ; 1      ; LABCELL_X2_Y14_N12         ; ic|c64|Keyboard|Add0~21|sumout                                                   ;
-;   0.353  ;   0.000  ; RR ; IC   ; 1      ; FF_X2_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]|d                                                   ;
-;   0.377  ;   0.024  ; RR ; CELL ; 1      ; FF_X2_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                                                ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
+; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                                  ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
+; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                         ;
+; 0.231    ; 0.231    ;    ;      ;        ;                            ; clock path                                                                               ;
+;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                           ;
+;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                                  ;
+;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                          ;
+;   0.213  ;   0.213  ; RR ; CELL ; 2      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|o                                                                          ;
+;   0.529  ;   0.316  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]           ;
+;   0.672  ;   0.143  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout             ;
+;   0.672  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin              ;
+;   -2.098 ;   -2.770 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]              ;
+;   -2.098 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]         ;
+;   -1.430 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk            ;
+;   -1.111 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                         ;
+;   -0.964 ;   0.147  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                        ;
+;   0.050  ;   1.014  ; RR ; IC   ; 1      ; FF_X12_Y20_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|clk                                                 ;
+;   0.231  ;   0.181  ; RR ; CELL ; 1      ; FF_X12_Y20_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]           ;
+; 0.389    ; 0.158    ;    ;      ;        ;                            ; data path                                                                                ;
+;   0.231  ;   0.000  ;    ; uTco ; 1      ; FF_X12_Y20_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]           ;
+;   0.231  ;   0.000  ; FF ; CELL ; 1      ; FF_X12_Y20_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|q                                                   ;
+;   0.329  ;   0.098  ; FF ; IC   ; 2      ; LABCELL_X12_Y20_N12        ; ic|c64|sid|chip[0].v2|Add0~21|dataf                                                      ;
+;   0.362  ;   0.033  ; FR ; CELL ; 2      ; LABCELL_X12_Y20_N12        ; ic|c64|sid|chip[0].v2|Add0~21|sumout                                                     ;
+;   0.362  ;   0.000  ; RR ; IC   ; 1      ; FF_X12_Y20_N13             ; ic|c64|sid|chip[0].v2|oscillator[14]~DUPLICATE|d                                         ;
+;   0.389  ;   0.027  ; RR ; CELL ; 1      ; FF_X12_Y20_N13             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]~DUPLICATE ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data Required Path                                                                                                                                       ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
-; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
-; 0.000    ; 0.000    ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 0.257    ; 0.257    ;    ;      ;        ;                            ; clock path                                                                       ;
-;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
-;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
-;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
-;   0.213  ;   0.213  ; RR ; CELL ; 2      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|o                                                                  ;
-;   0.538  ;   0.325  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
-;   0.691  ;   0.153  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
-;   0.691  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -1.763 ;   -2.454 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -1.763 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -0.974 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -0.517 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.363 ;   0.154  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   0.688  ;   1.051  ; RR ; IC   ; 1      ; FF_X2_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]|clk                                                 ;
-;   0.883  ;   0.195  ; RR ; CELL ; 1      ; FF_X2_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
-;   0.257  ;   -0.626 ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 0.357    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 0.357    ; 0.000    ;    ; uTh  ; 1      ; FF_X2_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
-+----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                                               ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
+; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                                  ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
+; 0.000    ; 0.000    ;    ;      ;        ;                            ; latch edge time                                                                          ;
+; 0.264    ; 0.264    ;    ;      ;        ;                            ; clock path                                                                               ;
+;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                           ;
+;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                                  ;
+;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                          ;
+;   0.213  ;   0.213  ; RR ; CELL ; 2      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|o                                                                          ;
+;   0.538  ;   0.325  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]           ;
+;   0.691  ;   0.153  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout             ;
+;   0.691  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin              ;
+;   -1.759 ;   -2.450 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]              ;
+;   -1.759 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]         ;
+;   -0.970 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk            ;
+;   -0.513 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                         ;
+;   -0.359 ;   0.154  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                        ;
+;   0.686  ;   1.045  ; RR ; IC   ; 1      ; FF_X12_Y20_N13             ; ic|c64|sid|chip[0].v2|oscillator[14]~DUPLICATE|clk                                       ;
+;   0.890  ;   0.204  ; RR ; CELL ; 1      ; FF_X12_Y20_N13             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]~DUPLICATE ;
+;   0.264  ;   -0.626 ;    ;      ;        ;                            ; clock pessimism removed                                                                  ;
+; 0.364    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                        ;
+; 0.364    ; 0.000    ;    ; uTh  ; 1      ; FF_X12_Y20_N13             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]~DUPLICATE ;
++----------+----------+----+------+--------+----------------------------+------------------------------------------------------------------------------------------+
 
 ----------------------------
 ; Extra Fitter Information ;
@@ -137,12 +137,12 @@ Path #2: Hold slack is 0.026
 +--------------------+--------------------------------------------------------------------------------+
 ; Property           ; Value                                                                          ;
 +--------------------+--------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14] ;
-; To Node            ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14] ;
+; From Node          ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE ;
+; To Node            ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]           ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk  ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk  ;
-; Data Arrival Time  ; 0.163                                                                          ;
-; Data Required Time ; 0.137                                                                          ;
+; Data Arrival Time  ; 0.386                                                                          ;
+; Data Required Time ; 0.360                                                                          ;
 ; Slack              ; 0.026                                                                          ;
 +--------------------+--------------------------------------------------------------------------------+
 
@@ -152,24 +152,24 @@ Path #2: Hold slack is 0.026
 ; Property               ; Value ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 ; Hold Relationship      ; 0.000 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; 0.031 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 0.157 ;       ;             ;            ;        ;        ;
+; Clock Skew             ; 0.032 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 0.158 ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;       ; 1     ;             ;            ;        ;        ;
 ; Physical Delays        ;       ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.434       ; 52         ; 0.000  ; 0.799  ;
-;    Cell                ;       ; 5     ; 1.347       ; 48         ; 0.143  ; 0.668  ;
-;    PLL Compensation    ;       ; 1     ; -2.775      ; 0          ; -2.775 ; -2.775 ;
+;    IC                  ;       ; 6     ; 1.653       ; 55         ; 0.000  ; 1.018  ;
+;    Cell                ;       ; 5     ; 1.345       ; 45         ; 0.143  ; 0.668  ;
+;    PLL Compensation    ;       ; 1     ; -2.770      ; 0          ; -2.770 ; -2.770 ;
 ;   Data                 ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 2     ; 0.100       ; 64         ; 0.000  ; 0.100  ;
-;    Cell                ;       ; 3     ; 0.057       ; 36         ; 0.000  ; 0.033  ;
+;    IC                  ;       ; 2     ; 0.098       ; 62         ; 0.000  ; 0.098  ;
+;    Cell                ;       ; 3     ; 0.060       ; 38         ; 0.000  ; 0.033  ;
 ;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.606       ; 52         ; 0.000  ; 0.824  ;
-;    Cell                ;       ; 5     ; 1.506       ; 48         ; 0.153  ; 0.789  ;
-;    PLL Compensation    ;       ; 1     ; -2.454      ; 0          ; -2.454 ; -2.454 ;
+;    IC                  ;       ; 6     ; 1.831       ; 55         ; 0.000  ; 1.049  ;
+;    Cell                ;       ; 5     ; 1.504       ; 45         ; 0.153  ; 0.789  ;
+;    PLL Compensation    ;       ; 1     ; -2.450      ; 0          ; -2.450 ; -2.450 ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
 
@@ -179,7 +179,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 0.006    ; 0.006    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 0.228    ; 0.228    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -187,20 +187,20 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   0.529  ;   0.316  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
 ;   0.672  ;   0.143  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
 ;   0.672  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -2.103 ;   -2.775 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -2.103 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -1.435 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -1.116 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.969 ;   0.147  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   -0.170 ;   0.799  ; RR ; IC   ; 1      ; FF_X18_Y33_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|clk                                         ;
-;   0.006  ;   0.176  ; RR ; CELL ; 1      ; FF_X18_Y33_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]   ;
-; 0.163    ; 0.157    ;    ;      ;        ;                            ; data path                                                                        ;
-;   0.006  ;   0.000  ;    ; uTco ; 1      ; FF_X18_Y33_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]   ;
-;   0.006  ;   0.000  ; FF ; CELL ; 3      ; FF_X18_Y33_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|q                                           ;
-;   0.106  ;   0.100  ; FF ; IC   ; 2      ; MLABCELL_X18_Y33_N12       ; ic|c64|sid|chip[0].v2|Add0~37|dataf                                              ;
-;   0.139  ;   0.033  ; FR ; CELL ; 1      ; MLABCELL_X18_Y33_N12       ; ic|c64|sid|chip[0].v2|Add0~37|sumout                                             ;
-;   0.139  ;   0.000  ; RR ; IC   ; 1      ; FF_X18_Y33_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|d                                           ;
-;   0.163  ;   0.024  ; RR ; CELL ; 1      ; FF_X18_Y33_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]   ;
+;   -2.098 ;   -2.770 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
+;   -2.098 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
+;   -1.430 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
+;   -1.111 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
+;   -0.964 ;   0.147  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   0.054  ;   1.018  ; RR ; IC   ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|clk                                       ;
+;   0.228  ;   0.174  ; RR ; CELL ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
+; 0.386    ; 0.158    ;    ;      ;        ;                            ; data path                                                                        ;
+;   0.228  ;   0.000  ;    ; uTco ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
+;   0.228  ;   0.000  ; FF ; CELL ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|q                                         ;
+;   0.326  ;   0.098  ; FF ; IC   ; 2      ; LABCELL_X6_Y14_N12         ; ic|c64|Keyboard|Add0~21|dataf                                                    ;
+;   0.359  ;   0.033  ; FR ; CELL ; 2      ; LABCELL_X6_Y14_N12         ; ic|c64|Keyboard|Add0~21|sumout                                                   ;
+;   0.359  ;   0.000  ; RR ; IC   ; 1      ; FF_X6_Y14_N13              ; ic|c64|Keyboard|delay_cnt[4]|d                                                   ;
+;   0.386  ;   0.027  ; RR ; CELL ; 1      ; FF_X6_Y14_N13              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,7 +209,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 0.037    ; 0.037    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 0.260    ; 0.260    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -217,16 +217,16 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   0.538  ;   0.325  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
 ;   0.691  ;   0.153  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
 ;   0.691  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -1.763 ;   -2.454 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -1.763 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -0.974 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -0.517 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.363 ;   0.154  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   0.461  ;   0.824  ; RR ; IC   ; 1      ; FF_X18_Y33_N14             ; ic|c64|sid|chip[0].v2|oscillator[14]|clk                                         ;
-;   0.658  ;   0.197  ; RR ; CELL ; 1      ; FF_X18_Y33_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]   ;
-;   0.037  ;   -0.621 ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 0.137    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 0.137    ; 0.000    ;    ; uTh  ; 1      ; FF_X18_Y33_N14             ; core_top:ic|fpga64_sid_iec:c64|sid_top:sid|sid_voice:chip[0].v2|oscillator[14]   ;
+;   -1.759 ;   -2.450 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
+;   -1.759 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
+;   -0.970 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
+;   -0.513 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
+;   -0.359 ;   0.154  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   0.690  ;   1.049  ; RR ; IC   ; 1      ; FF_X6_Y14_N13              ; ic|c64|Keyboard|delay_cnt[4]|clk                                                 ;
+;   0.885  ;   0.195  ; RR ; CELL ; 1      ; FF_X6_Y14_N13              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
+;   0.260  ;   -0.625 ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 0.360    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 0.360    ; 0.000    ;    ; uTh  ; 1      ; FF_X6_Y14_N13              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------
@@ -237,19 +237,19 @@ HTML report is unavailable in plain text report export.
 
 Path #3: Hold slack is 0.027 
 ===============================================================================
-+----------------------------------------------------------------------------------------------------+
-; Path Summary                                                                                       ;
-+--------------------+-------------------------------------------------------------------------------+
-; Property           ; Value                                                                         ;
-+--------------------+-------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]    ;
-; To Node            ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]    ;
-; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 0.170                                                                         ;
-; Data Required Time ; 0.143                                                                         ;
-; Slack              ; 0.027                                                                         ;
-+--------------------+-------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                        ;
++--------------------+--------------------------------------------------------------------------------+
+; Property           ; Value                                                                          ;
++--------------------+--------------------------------------------------------------------------------+
+; From Node          ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE ;
+; To Node            ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE ;
+; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk  ;
+; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk  ;
+; Data Arrival Time  ; 0.387                                                                          ;
+; Data Required Time ; 0.360                                                                          ;
+; Slack              ; 0.027                                                                          ;
++--------------------+--------------------------------------------------------------------------------+
 
 +-------------------------------------------------------------------------------------+
 ; Statistics                                                                          ;
@@ -257,24 +257,24 @@ Path #3: Hold slack is 0.027
 ; Property               ; Value ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 ; Hold Relationship      ; 0.000 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; 0.031 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 0.158 ;       ;             ;            ;        ;        ;
+; Clock Skew             ; 0.032 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 0.159 ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;       ; 1     ;             ;            ;        ;        ;
 ; Physical Delays        ;       ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.442       ; 52         ; 0.000  ; 0.807  ;
-;    Cell                ;       ; 5     ; 1.345       ; 48         ; 0.143  ; 0.668  ;
-;    PLL Compensation    ;       ; 1     ; -2.775      ; 0          ; -2.775 ; -2.775 ;
+;    IC                  ;       ; 6     ; 1.653       ; 55         ; 0.000  ; 1.018  ;
+;    Cell                ;       ; 5     ; 1.345       ; 45         ; 0.143  ; 0.668  ;
+;    PLL Compensation    ;       ; 1     ; -2.770      ; 0          ; -2.770 ; -2.770 ;
 ;   Data                 ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 2     ; 0.099       ; 63         ; 0.000  ; 0.099  ;
-;    Cell                ;       ; 3     ; 0.059       ; 37         ; 0.000  ; 0.034  ;
+;    IC                  ;       ; 2     ; 0.098       ; 62         ; 0.000  ; 0.098  ;
+;    Cell                ;       ; 3     ; 0.061       ; 38         ; 0.000  ; 0.033  ;
 ;    uTco                ;       ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;       ;       ;             ;            ;        ;        ;
 ;   Clock                ;       ;       ;             ;            ;        ;        ;
-;    IC                  ;       ; 6     ; 1.614       ; 52         ; 0.000  ; 0.832  ;
-;    Cell                ;       ; 5     ; 1.504       ; 48         ; 0.153  ; 0.789  ;
-;    PLL Compensation    ;       ; 1     ; -2.454      ; 0          ; -2.454 ; -2.454 ;
+;    IC                  ;       ; 6     ; 1.831       ; 55         ; 0.000  ; 1.049  ;
+;    Cell                ;       ; 5     ; 1.504       ; 45         ; 0.153  ; 0.789  ;
+;    PLL Compensation    ;       ; 1     ; -2.450      ; 0          ; -2.450 ; -2.450 ;
 +------------------------+-------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
 
@@ -284,7 +284,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 0.012    ; 0.012    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 0.228    ; 0.228    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -292,20 +292,20 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   0.529  ;   0.316  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
 ;   0.672  ;   0.143  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
 ;   0.672  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -2.103 ;   -2.775 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -2.103 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -1.435 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -1.116 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.969 ;   0.147  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   -0.162 ;   0.807  ; RR ; IC   ; 1      ; FF_X24_Y37_N14             ; ic|reu_memory|pcm|position[0][14]|clk                                            ;
-;   0.012  ;   0.174  ; RR ; CELL ; 1      ; FF_X24_Y37_N14             ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]       ;
-; 0.170    ; 0.158    ;    ;      ;        ;                            ; data path                                                                        ;
-;   0.012  ;   0.000  ;    ; uTco ; 1      ; FF_X24_Y37_N14             ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]       ;
-;   0.012  ;   0.000  ; FF ; CELL ; 2      ; FF_X24_Y37_N14             ; ic|reu_memory|pcm|position[0][14]|q                                              ;
-;   0.111  ;   0.099  ; FF ; IC   ; 2      ; LABCELL_X24_Y37_N12        ; ic|reu_memory|pcm|Add2~57|dataf                                                  ;
-;   0.145  ;   0.034  ; FR ; CELL ; 2      ; LABCELL_X24_Y37_N12        ; ic|reu_memory|pcm|Add2~57|sumout                                                 ;
-;   0.145  ;   0.000  ; RR ; IC   ; 1      ; FF_X24_Y37_N14             ; ic|reu_memory|pcm|position[0][14]|d                                              ;
-;   0.170  ;   0.025  ; RR ; CELL ; 1      ; FF_X24_Y37_N14             ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]       ;
+;   -2.098 ;   -2.770 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
+;   -2.098 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
+;   -1.430 ;   0.668  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
+;   -1.111 ;   0.319  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
+;   -0.964 ;   0.147  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   0.054  ;   1.018  ; RR ; IC   ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|clk                                       ;
+;   0.228  ;   0.174  ; RR ; CELL ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
+; 0.387    ; 0.159    ;    ;      ;        ;                            ; data path                                                                        ;
+;   0.228  ;   0.000  ;    ; uTco ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
+;   0.228  ;   0.000  ; FF ; CELL ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|q                                         ;
+;   0.326  ;   0.098  ; FF ; IC   ; 2      ; LABCELL_X6_Y14_N12         ; ic|c64|Keyboard|Add0~21|dataf                                                    ;
+;   0.359  ;   0.033  ; FR ; CELL ; 2      ; LABCELL_X6_Y14_N12         ; ic|c64|Keyboard|Add0~21|sumout                                                   ;
+;   0.359  ;   0.000  ; RR ; IC   ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|d                                         ;
+;   0.387  ;   0.028  ; RR ; CELL ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -314,7 +314,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 0.043    ; 0.043    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 0.260    ; 0.260    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -322,16 +322,16 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   0.538  ;   0.325  ; RR ; IC   ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkin[0]   ;
 ;   0.691  ;   0.153  ; RR ; CELL ; 1      ; PLLREFCLKSELECT_X54_Y7_N0  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT|clkout     ;
 ;   0.691  ;   0.000  ; RR ; IC   ; 10     ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ;
-;   -1.763 ;   -2.454 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
-;   -1.763 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
-;   -0.974 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
-;   -0.517 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   -0.363 ;   0.154  ; RR ; CELL ; 9606   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   0.469  ;   0.832  ; RR ; IC   ; 1      ; FF_X24_Y37_N14             ; ic|reu_memory|pcm|position[0][14]|clk                                            ;
-;   0.664  ;   0.195  ; RR ; CELL ; 1      ; FF_X24_Y37_N14             ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]       ;
-;   0.043  ;   -0.621 ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 0.143    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 0.143    ; 0.000    ;    ; uTh  ; 1      ; FF_X24_Y37_N14             ; core_top:ic|pocket_sample_memory:reu_memory|pocket_pcm:pcm|position[0][14]       ;
+;   -1.759 ;   -2.450 ; RR ; COMP ; 3      ; FRACTIONALPLL_X54_Y1_N0    ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]      ;
+;   -1.759 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
+;   -0.970 ;   0.789  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
+;   -0.513 ;   0.457  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
+;   -0.359 ;   0.154  ; RR ; CELL ; 9736   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   0.690  ;   1.049  ; RR ; IC   ; 1      ; FF_X6_Y14_N14              ; ic|c64|Keyboard|delay_cnt[4]~DUPLICATE|clk                                       ;
+;   0.885  ;   0.195  ; RR ; CELL ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
+;   0.260  ;   -0.625 ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 0.360    ; 0.100    ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 0.360    ; 0.000    ;    ; uTh  ; 1      ; FF_X6_Y14_N14              ; core_top:ic|fpga64_sid_iec:c64|fpga64_keyboard:Keyboard|delay_cnt[4]~DUPLICATE   ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------

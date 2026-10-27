@@ -230,6 +230,34 @@
             "name": "On - QWERTZ (Y/Z)"
           }
         ]
+      },
+      {
+        "name": "Disk assist",
+        "id": 10,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000028",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 3,
+        "options": [
+          {
+            "value": 3,
+            "name": "Auto start + activity"
+          },
+          {
+            "value": 2,
+            "name": "Activity only"
+          },
+          {
+            "value": 1,
+            "name": "Auto start only"
+          },
+          {
+            "value": 0,
+            "name": "Off"
+          }
+        ]
       }
     ]
   }

@@ -1,0 +1,26 @@
+C64 auf dem Analogue Pocket: neue Kennung toby01019.C64
+
+Die Plattform heisst jetzt c64 (Commodore 64). Die MiSTer-Grundlage bleibt
+unveraendert. Diese Umbenennung aendert weder den FPGA-Bitstream noch Spiele.
+
+Bei einer vorhandenen Installation:
+1. Pocket ausschalten und zuerst die komplette SD-Karte sichern.
+2. Neues SD-ZIP ins Hauptverzeichnis entpacken und Ordner zusammenfuehren.
+3. Eigene ROMs, Spiele und V027-AUDIO.REU aus Assets/c64mister/common/
+   nach Assets/c64/common/ KOPIEREN. Bei vorhandenen gleichnamigen Dateien
+   nicht blind ueberschreiben: Andere C64-Cores verwenden diesen Ordner mit.
+4. Den neuen Core toby01019.C64 starten. Eigene Einstellungen im Core-Menue
+   erneut setzen und Disketten/Module neu auswaehlen. Eine automatische
+   Uebernahme alter Einstellungen oder gespeicherter Dateipfade ist nicht
+   zugesichert. Bestehende Einstellungen bleiben in der Sicherung erhalten.
+5. Nach erfolgreichem Test kann Cores/Experimental.C64MiSTer/ von der SD
+   ins Backup verschoben werden, damit kein doppelter Core angezeigt wird.
+   Die alten Assets und Settings vorerst als Rueckfall behalten.
+
+Neue Installation: eigene basic.bin, characters.bin, kernal.bin und 1541.bin
+unter Assets/c64/common/ ablegen. System-ROMs werden nicht mitgeliefert.
+Nichts an anderen C64-Core-Ordnern aendern. Die gemeinsame Plattform c64
+ist keine neue Hardware und ersetzt keine anderen installierten C64-Cores.
+
+Dieses Paket ist eine oeffentliche Alpha-Version. Der neue 0.5.2-Bitstream ist noch im
+Hardwaretest; die Umbenennung der Paketstruktur wurde nur lokal geprueft.

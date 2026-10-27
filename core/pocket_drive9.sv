@@ -6,7 +6,7 @@ module pocket_drive9 #(parameter ENABLE_D81=1)(
  input wire [31:0] bridge_addr,bridge_data,input wire bridge_wr,input wire [7:0] events,
  output wire [31:0] buffer1541_q,buffer1581_q,
  input wire iec_atn,iec_data,iec_clock,output wire data_o,clock_o,
- output wire pause_request,output wire reset_safe,output wire [1:0] active_mode,output wire [7:0] error_code,
+ output wire activity_led,output wire pause_request,output wire reset_safe,output wire [1:0] active_mode,output wire [7:0] error_code,
  output wire [1:0] io_start,input wire [1:0] io_ready,io_done,io_error,
  output wire [5:0] io_operation,output wire [31:0] io_slot,
  output wire [63:0] io_offset,output wire [21:0] io_length
@@ -64,7 +64,7 @@ module pocket_drive9 #(parameter ENABLE_D81=1)(
  wire data1541,clock1541;
  pocket_1541 drive1541(.clk_core(clk_core),.reset(reset_core || mode_sync!=1 || !rom_sync),.pause(pause_core),
   .iec_atn_i(iec_atn),.iec_data_i(iec_data),.iec_clk_i(iec_clock),.iec_data_o(data1541),.iec_clk_o(clock1541),
-  .mounted(mount_sync),.write_protect(protect_sync),.drive_num(2'd1),.track(head),.writing(writing),.modified(dirty),.clear_modified(clear_sync),
+  .mounted(mount_sync),.write_protect(protect_sync),.drive_num(2'd1),.track(head),.led(activity_led),.writing(writing),.modified(dirty),.clear_modified(clear_sync),
   .clk74(clk74),.rom_we(romwe),.rom_addr(roma),.rom_data(romd),.track_we(track_we),
   .track_addr(savepause ? readaddr:wa),.track_data(wd),.track_q(rq));
  wire [31:0] lba;wire rd,wr,ack,sdwe;wire [8:0] sda;wire [7:0] sdo,sdi;

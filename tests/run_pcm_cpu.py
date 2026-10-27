@@ -53,7 +53,7 @@ endmodule
 '''.replace('SIZE',str(len(code)))
 (T/'tb_pcm_cpu.sv').write_text(tb);(O/'core_top_sim.sv').write_text((P/'core/core_top.sv').read_text())
 sources=[T/'tb_pcm_cpu.sv',T/'psram_model.sv',O/'core_top_sim.sv',O/'c64.v',O/'video_sync.v',P/'rtl/mos6526.v',P/'apf/common.v',P/'core/core_bridge_cmd.v']
-sources +=[P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv','pocket_gcr_d64.sv','pocket_track_save.sv','pocket_reu.v','psram.sv','pocket_psram.sv']]
+sources +=[P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_autostart.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv','pocket_gcr_d64.sv','pocket_track_save.sv','pocket_reu.v','psram.sv','pocket_psram.sv']]
 sources+=list(O.glob('sid_*.sv'))+drive_sources()+cartridge_sources()
 r=subprocess.run([str(B/'iverilog.exe'),'-g2012','-I',str(P/'core'),'-D__VERILATOR__','-s','tb','-o',str(T/'pcm-cpu.vvp'),*map(str,sources)],capture_output=True,text=True)
 (T/'pcm-cpu-compile.log').write_text(r.stdout+r.stderr);assert r.returncode==0,r.stderr[-3000:]

@@ -1,28 +1,27 @@
-C64 Pocket 0.5.1-alpha - Dock USB keyboard
+C64 Pocket 0.5.2-alpha - Disk autostart and activity indicator
+Development/test build. These additions have NOT been tested on real hardware.
 
-27 October 2026: positive real Pocket/Dock USB keyboard feedback. Basic operation confirmed for that setup; keyboard model,
-firmware and exhaustive special-key/reconnect tests not documented.
-The FPGA bitstream is unchanged. See HARDWARE-TEST-STATUS-EN.txt.
+Core Settings -> Disk assist:
+Auto start + activity (default), Activity only, Auto start only, or Off.
+At an empty BASIC READY prompt, select a D64/G64 in Disk 8, then close the
+Pocket menu and release its navigation buttons. LOAD"*",8,1 is typed, followed by RUN only after a successful
+load returns to BASIC. Self-starting software receives no extra RUN.
+In-game disk changes remain insert-only. Disk 9 never starts automatically. An attached CRT cartridge disables disk
+autostart; manual loading remains available.
 
-Back up your SD card, switch off Pocket, extract the SD ZIP to its root.
-Merge Cores, Platforms and Assets; replace core files, keep your own ROMs:
-Assets/c64mister/common/basic.bin, characters.bin, kernal.bin, 1541.bin.
-Check version 0.5.1-alpha. Use copies of disks, write protection On initially.
+Manual input or opening the virtual keyboard cancels autostart. Opening
+the Pocket menu during typing aborts rather than duplicating a character.
+A partially typed line is not erased. Existing LOAD*/RUN controls remain.
+Detection targets standard C64 BASIC V2/KERNAL entry points; replacement
+ROMs may require manual loading (choose Activity only).
 
-Dock: wired USB HID keyboard -> Analogue Dock. Core Settings -> Dock USB
-keyboard -> QWERTY, QWERTZ (Y/Z only), or Off. Release all keys after
-startup/menu/reset/reconnect/mode change. C64 symbols: Shift+4=$,
-Escape=RUN/STOP, F12=RESTORE. Full key table: DOCK-KEYBOARD-EN.txt.
+A small disk icon at the top right indicates file/drive activity and
+automatic typing. It is not a progress percentage or remaining-time meter.
+It disappears after activity; a drive error LED can keep it visible.
+The C64 picture also stops while the machine is paused for host IO.
 
-Y opens virtual keyboard, D-pad selects, A presses, X holds, Y clears,
-B closes. LOAD* then RUN if needed; TR changes keyboard transparency.
-TobyPink: REU 512 KiB, Ultimate Audio (TobyPink) On (2 voices), Load Disk 8
--> TobyPink-Pocket-V027.d64; first program TOBY TITLE. Included
-V027-AUDIO.REU is sample data, not a boot program. Restart after audio changes.
-Retained: D64/G64, EasyFlash, REU, PAL, SID, Reset Core, palettes.
-No D81/1581, NTSC, TAP, mouse, Sleep or savestates. EasyFlash writes volatile.
-No system ROMs, Sherwood or Caren included. Own TobyPink included by permission.
+Quick hardware check: start a known D64 from READY; try a G64 and a game
+that requests another disk; select Off and check manual LOAD*/RUN and both
+keyboards. Check picture and sound remain unchanged. Keep 0.5.1 as fallback.
 
-Source/releases: https://github.com/toby01019/openFPGA-C64-MiSTer
-itch.io: https://toby01019.itch.io/c64-mister-analogue-pocket
-Updater catalog listing requires maintainer acceptance; see UPDATERS.md.
+TobyPink: enable REU 512 KiB and Ultimate Audio (2 voices) before starting. Select TobyPink-Pocket-V027.d64 in Disk 8. First program: TOBY TITLE. V027-AUDIO.REU is sample data, not a start program.

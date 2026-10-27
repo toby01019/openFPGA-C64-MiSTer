@@ -1,0 +1,1 @@
+PASS autostart: exact LOAD/RUN contacts, guarded READY, game swaps, self-starting load, error, timeout, manual/menu cancel, off, eject, pause, reset

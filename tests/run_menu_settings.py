@@ -4,8 +4,8 @@ import json,re,subprocess
 P=Path(__file__).resolve().parents[1];T=P/'tests';O=T/'converted'
 B=Path('C:/Users/toby0/Documents/Codex/Projekte/IMSAI8080/08_Werkzeuge/Icarus/bin')
 names=['Colodore','Ultimate','Pepto-PAL','Vice','Vice6569R1','Vice6569R5','Vice8565R2','Lemon64']
-menu=json.loads((P/'dist/Cores/Experimental.C64MiSTer/interact.json').read_text())['interact']['variables']
-assert len({v['id'] for v in menu})==len(menu)==10
+menu=json.loads((P/'dist/Cores/toby01019.C64/interact.json').read_text())['interact']['variables']
+assert len({v['id'] for v in menu})==len(menu)==11
 assert [v['name'] for v in next(x for x in menu if x['id']==6)['options']]==names
 assert next(x for x in menu if x['id']==6)['defaultval']==0 and next(x for x in menu if x['id']==7)['defaultval']==1
 assert next(x for x in menu if x['id']==7)['options']==[{'value':0,'name':'6581'},{'value':1,'name':'8580'}]
@@ -59,6 +59,10 @@ initial begin
   wr(32'ha0000020,m);
   if(br!==m || dut.pcm_sync!==m[0])$fatal(1,"PCM menu register/CDC");
  end
+ for(m=0;m<4;m=m+1)begin
+  wr(32'ha0000028,m);
+  if(br!==m || dut.assist_sync!==m[1:0])$fatal(1,"disk assist register/CDC");
+ end
  wr(32'ha0000010,2);
  if(br!==0 || dut.drive9_mode!==0)$fatal(1,"old persisted D81 mode not rejected");
  wr(32'ha0000010,1);
@@ -76,7 +80,7 @@ endmodule
 (T/'tb_menu_settings.sv').write_text(tb)
 (O/'core_top_sim.sv').write_text((P/'core/core_top.sv').read_text())
 sources=[T/'tb_menu_settings.sv',O/'core_top_sim.sv',O/'c64.v',O/'video_sync.v',P/'rtl/mos6526.v',P/'apf/common.v',P/'core/core_bridge_cmd.v']
-sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv','pocket_gcr_d64.sv','pocket_track_save.sv','pocket_reu.v','psram.sv','pocket_psram.sv']]
+sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_autostart.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv','pocket_gcr_d64.sv','pocket_track_save.sv','pocket_reu.v','psram.sv','pocket_psram.sv']]
 sources += list(O.glob('sid_*.sv'))
 from drive_sim import drive_sources
 from cartridge_sim import cartridge_sources

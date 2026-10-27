@@ -806,3 +806,5 @@ set_global_assignment -name VERILOG_FILE rtl/cartridge.v
 
 
 set_global_assignment -name SYSTEMVERILOG_FILE core/pocket_dock_keyboard.sv
+
+set_global_assignment -name SYSTEMVERILOG_FILE core/pocket_autostart.sv

@@ -1,28 +1,31 @@
-C64 Pocket 0.5.1-alpha - Dock USB keyboard
+C64 Pocket 0.5.2-alpha - Disk autostart and activity indicator
 
-27 October 2026: positive real Pocket/Dock USB keyboard feedback. Basic operation confirmed for that setup; keyboard model,
-firmware and exhaustive special-key/reconnect tests not documented.
-The FPGA bitstream is unchanged. See HARDWARE-TEST-STATUS-EN.txt.
+PUBLIC ALPHA. The new 0.5.2 FPGA build and renamed installation have NOT
+yet been tested on real Pocket hardware. Earlier positive hardware tests
+apply to 0.5.1 and earlier, not to these new changes. Keep 0.5.1 as fallback.
 
-Back up your SD card, switch off Pocket, extract the SD ZIP to its root.
-Merge Cores, Platforms and Assets; replace core files, keep your own ROMs:
-Assets/c64mister/common/basic.bin, characters.bin, kernal.bin, 1541.bin.
-Check version 0.5.1-alpha. Use copies of disks, write protection On initially.
+NEW CORE ID: toby01019.C64. PLATFORM: c64.
+Existing users MUST read MIGRATION-EN.txt before installing. Back up your SD,
+power off Pocket, extract the SD ZIP to its root and merge folders.
+Copy your ROMs/games from Assets/c64mister/common/ to Assets/c64/common/.
+Do not blindly overwrite files used by other C64 cores. Reapply settings
+and reselect disks. Once tested, move the old Cores/Experimental.C64MiSTer/
+folder to your backup to avoid a duplicate menu entry. Keep old assets safe.
+System ROMs are not included; provide basic.bin, characters.bin, kernal.bin
+and 1541.bin yourself. Firmware requirement: 2.3.
 
-Dock: wired USB HID keyboard -> Analogue Dock. Core Settings -> Dock USB
-keyboard -> QWERTY, QWERTZ (Y/Z only), or Off. Release all keys after
-startup/menu/reset/reconnect/mode change. C64 symbols: Shift+4=$,
-Escape=RUN/STOP, F12=RESTORE. Full key table: DOCK-KEYBOARD-EN.txt.
+Core Settings > Disk assist: Auto start + activity, Activity only,
+Auto start only, or Off. At an empty standard BASIC READY prompt, select
+a D64/G64 in Disk 8, close the Pocket menu and release all buttons.
+LOAD"*",8,1 is typed; RUN follows only after a successful return to BASIC.
+In-game disk changes remain insert-only. Disk 9 never starts automatically.
+Attached cartridges disable disk autostart. Manual input cancels it.
+The small top-right icon shows activity, not percentage progress.
+Existing LOAD*/RUN and virtual/Dock keyboard controls remain available.
+For replacement ROMs or problems, select Activity only or Off.
 
-Y opens virtual keyboard, D-pad selects, A presses, X holds, Y clears,
-B closes. LOAD* then RUN if needed; TR changes keyboard transparency.
-TobyPink: REU 512 KiB, Ultimate Audio (TobyPink) On (2 voices), Load Disk 8
--> TobyPink-Pocket-V027.d64; first program TOBY TITLE. Included
-V027-AUDIO.REU is sample data, not a boot program. Restart after audio changes.
-Retained: D64/G64, EasyFlash, REU, PAL, SID, Reset Core, palettes.
+Quick test: D64/G64 from READY, disk change during gameplay, manual loading
+with Disk assist Off, picture/sound and both keyboards. See AUTOSTART-EN.txt.
+TobyPink: REU 512 KiB and Ultimate Audio (2 voices); select its D64 and start
+TOBY TITLE. V027-AUDIO.REU is sample data, not a start program.
 No D81/1581, NTSC, TAP, mouse, Sleep or savestates. EasyFlash writes volatile.
-No system ROMs, Sherwood or Caren included. Own TobyPink included by permission.
-
-Source/releases: https://github.com/toby01019/openFPGA-C64-MiSTer
-itch.io: https://toby01019.itch.io/c64-mister-analogue-pocket
-Updater catalog listing requires maintainer acceptance; see UPDATERS.md.

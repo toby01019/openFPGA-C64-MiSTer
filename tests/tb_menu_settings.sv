@@ -32,6 +32,10 @@ initial begin
   wr(32'ha0000020,m);
   if(br!==m || dut.pcm_sync!==m[0])$fatal(1,"PCM menu register/CDC");
  end
+ for(m=0;m<4;m=m+1)begin
+  wr(32'ha0000028,m);
+  if(br!==m || dut.assist_sync!==m[1:0])$fatal(1,"disk assist register/CDC");
+ end
  wr(32'ha0000010,2);
  if(br!==0 || dut.drive9_mode!==0)$fatal(1,"old persisted D81 mode not rejected");
  wr(32'ha0000010,1);

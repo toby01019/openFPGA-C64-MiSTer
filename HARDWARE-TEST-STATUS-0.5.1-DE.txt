@@ -1,0 +1,10 @@
+HARDWARE-TESTSTAND - 27. Oktober 2026
+
+Positive Rueckmeldung vom echten Pocket/Dock: Die Tests bestaetigen die
+USB-Tastatur erfolgreich getestet. Damit ist die Grundfunktion in diesem
+Aufbau bestaetigt, nicht jedes Tastaturmodell oder jeder Sonderfall.
+Tastaturmodell und Pocket-/Dock-Firmware wurden dabei nicht mitgeteilt.
+Fruehere 0.5.0-Pocket-Tests bestaetigen EasyFlash/Caren, TobyPink-Samples,
+Disketten, Bild/Ton und Bildschirmtastatur; siehe historischen Teststand.
+FPGA-Bau, Timing und gezielte/Gesamtsimulationen sind ebenfalls bestanden.
+Der 0.5.1-FPGA-Bitstream bleibt fuer dieses Dokumentationsupdate unveraendert.

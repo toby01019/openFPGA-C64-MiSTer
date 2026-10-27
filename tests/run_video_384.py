@@ -16,7 +16,7 @@ def run(pad):
 run(0) # Negative control: detects old 382-pixel transport. Not a scaler model.
 run(2)
 assert '.RIGHT_PAD(2)' in (P/'core/core_top.sv').read_text()
-mode=json.loads((P/'dist/Cores/Experimental.C64MiSTer/video.json').read_text())['video']['scaler_modes'][0]
+mode=json.loads((P/'dist/Cores/toby01019.C64/video.json').read_text())['video']['scaler_modes'][0]
 assert (mode['width'],mode['height'])==(384,270)
 print('PASS top-level padding and video.json agree')
 # Also exercise the real converted MiSTer blanker, including its last

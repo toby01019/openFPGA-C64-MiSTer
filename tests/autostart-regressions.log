@@ -1,0 +1,384 @@
+run_keyboard.py
+PASS virtual keyboard: direct transparency, navigation/repeat, C64 contacts, sticky modifiers, RUN/LIST/LOAD*, exact LOAD quote chords and Return without RUN, clean releases, held-button guard, cancel/menu/reset release
+
+
+run_dock_keyboard.py
+PASS Dock keyboard: 44 async-report checks, 6 keys/order/duplicates, APF modifier byte order, C64 chords, Shift Lock, QWERTZ, rollover, device type, menu/reset/disconnect/timeout and no partial-report leakage
+
+
+run_shift_labels.py
+PASS Shift labels: actual left/right/Lock/temporary L, release/menu/reset, unchanged dollar contacts, C64 punctuation/F/CLR, macro quote suppression, LOAD* retained
+
+
+run_mount_d64.py
+PASS D64 mount and all 35 D64 track refills, no stuck pause, commits=35
+PASS independent decode: all 683 D64 sectors, BAM IDs, checksums; supplied ROM upload exact
+
+run_mount_g64.py
+PASS G64 mount and both G64 track refills, no stuck pause, commits=2
+PASS G64 raw track bytes exact, runtime mount, no stuck pause
+
+run_easyflash.py
+Local test image SHA256 e51c34005213464ff7d2ca641f9a67b9765a6f05fd69a7a89c5a5acac6ea48ef, 70 CHIP packets; excluded from release
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:215: Instantiated PSRAM with the following settings:
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:217:   Writes:
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:222: 
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:223:   Total write time:           3 cycles
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:224:   Reads:
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:225:     STATE_READ_ADV_END:          20
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:229: 
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-autostart\core\psram.sv:230:   Total read time:           3 cycles
+      Time: 0 Scope: tb.dut.easyflash_port.ef.memory
+EasyFlash loading 574624 bytes
+EF progress time=          1000000000 byte=         80 init=  5231 state= 5 ready=0
+EF progress time=          2000000000 byte=         80 init= 10486 state= 5 ready=0
+EF progress time=          3000000000 byte=         80 init= 15741 state= 5 ready=0
+EF progress time=          4000000000 byte=         80 init= 20995 state= 5 ready=0
+EF progress time=          5000000000 byte=         80 init= 26250 state= 5 ready=0
+EF progress time=          6000000000 byte=         80 init= 31504 state= 5 ready=0
+EF progress time=          7000000000 byte=         80 init= 36759 state= 5 ready=0
+EF progress time=          8000000000 byte=         80 init= 42014 state= 5 ready=0
+EF progress time=          9000000000 byte=         80 init= 47268 state= 5 ready=0
+EF progress time=         10000000000 byte=         80 init= 52523 state= 5 ready=0
+EF progress time=         11000000000 byte=         80 init= 57778 state= 5 ready=0
+EF progress time=         12000000000 byte=         80 init= 63032 state= 5 ready=0
+EF progress time=         13000000000 byte=         80 init= 68287 state= 5 ready=0
+EF progress time=         14000000000 byte=         80 init= 73542 state= 5 ready=0
+EF progress time=         15000000000 byte=         80 init= 78796 state= 5 ready=0
+EF progress time=         16000000000 byte=         80 init= 84051 state= 5 ready=0
+EF progress time=         17000000000 byte=         80 init= 89305 state= 5 ready=0
+EF progress time=         18000000000 byte=         80 init= 94560 state= 5 ready=0
+EF progress time=         19000000000 byte=         80 init= 99815 state= 5 ready=0
+EF progress time=         20000000000 byte=         80 init=105069 state= 5 ready=0
+EF progress time=         21000000000 byte=         80 init=110324 state= 5 ready=0
+EF progress time=         22000000000 byte=         80 init=115579 state= 5 ready=0
+EF progress time=         23000000000 byte=         80 init=120833 state= 5 ready=0
+EF progress time=         24000000000 byte=         80 init=126088 state= 5 ready=0
+EF progress time=         25000000000 byte=         80 init=131343 state= 5 ready=0
+EF progress time=         26000000000 byte=         80 init=136597 state= 5 ready=0
+EF progress time=         27000000000 byte=         80 init=141852 state= 5 ready=0
+EF progress time=         28000000000 byte=         80 init=147106 state= 5 ready=0
+EF progress time=         29000000000 byte=         80 init=152361 state= 5 ready=0
+EF progress time=         30000000000 byte=         80 init=157616 state= 5 ready=0
+EF progress time=         31000000000 byte=         80 init=162870 state= 5 ready=0
+EF progress time=         32000000000 byte=         80 init=168125 state= 5 ready=0
+EF progress time=         33000000000 byte=         80 init=173380 state= 5 ready=0
+EF progress time=         34000000000 byte=         80 init=178634 state= 5 ready=0
+EF progress time=         35000000000 byte=         80 init=183889 state= 5 ready=0
+EF progress time=         36000000000 byte=         80 init=189144 state= 5 ready=0
+EF progress time=         37000000000 byte=         80 init=194398 state= 5 ready=0
+EF progress time=         38000000000 byte=         80 init=199653 state= 5 ready=0
+EF progress time=         39000000000 byte=         80 init=204908 state= 5 ready=0
+EF progress time=         40000000000 byte=         80 init=210162 state= 5 ready=0
+EF progress time=         41000000000 byte=         80 init=215417 state= 5 ready=0
+EF progress time=         42000000000 byte=         80 init=220671 state= 5 ready=0
+EF progress time=         43000000000 byte=         80 init=225926 state= 5 ready=0
+EF progress time=         44000000000 byte=         80 init=231181 state= 5 ready=0
+EF progress time=         45000000000 byte=         80 init=236435 state= 5 ready=0
+EF progress time=         46000000000 byte=         80 init=241690 state= 5 ready=0
+EF progress time=         47000000000 byte=         80 init=246945 state= 5 ready=0
+EF progress time=         48000000000 byte=         80 init=252199 state= 5 ready=0
+EF progress time=         49000000000 byte=         80 init=257454 state= 5 ready=0
+EF progress time=         50000000000 byte=         80 init=262709 state= 5 ready=0
+EF progress time=         51000000000 byte=         80 init=267963 state= 5 ready=0
+EF progress time=         52000000000 byte=         80 init=273218 state= 5 ready=0
+EF progress time=         53000000000 byte=         80 init=278472 state= 5 ready=0
+EF progress time=         54000000000 byte=         80 init=283727 state= 5 ready=0
+EF progress time=         55000000000 byte=         80 init=288982 state= 5 ready=0
+EF progress time=         56000000000 byte=         80 init=294236 state= 5 ready=0
+EF progress time=         57000000000 byte=         80 init=299491 state= 5 ready=0
+EF progress time=         58000000000 byte=         80 init=304746 state= 5 ready=0
+EF progress time=         59000000000 byte=         80 init=310000 state= 5 ready=0
+EF progress time=         60000000000 byte=         80 init=315255 state= 5 ready=0
+EF progress time=         61000000000 byte=         80 init=320510 state= 5 ready=0
+EF progress time=         62000000000 byte=         80 init=325764 state= 5 ready=0
+EF progress time=         63000000000 byte=         80 init=331019 state= 5 ready=0
+EF progress time=         64000000000 byte=         80 init=336274 state= 5 ready=0
+EF progress time=         65000000000 byte=         80 init=341528 state= 5 ready=0
+EF progress time=         66000000000 byte=         80 init=346783 state= 5 ready=0
+EF progress time=         67000000000 byte=         80 init=352037 state= 5 ready=0
+EF progress time=         68000000000 byte=         80 init=357292 state= 5 ready=0
+EF progress time=         69000000000 byte=         80 init=362547 state= 5 ready=0
+EF progress time=         70000000000 byte=         80 init=367801 state= 5 ready=0
+EF progress time=         71000000000 byte=         80 init=373056 state= 5 ready=0
+EF progress time=         72000000000 byte=         80 init=378311 state= 5 ready=0
+EF progress time=         73000000000 byte=         80 init=383565 state= 5 ready=0
+EF progress time=         74000000000 byte=         80 init=388820 state= 5 ready=0
+EF progress time=         75000000000 byte=         80 init=394075 state= 5 ready=0
+EF progress time=         76000000000 byte=         80 init=399329 state= 5 ready=0
+EF progress time=         77000000000 byte=         80 init=404584 state= 5 ready=0
+EF progress time=         78000000000 byte=         80 init=409838 state= 5 ready=0
+EF progress time=         79000000000 byte=         80 init=415093 state= 5 ready=0
+EF progress time=         80000000000 byte=         80 init=420348 state= 5 ready=0
+EF progress time=         81000000000 byte=         80 init=425602 state= 5 ready=0
+EF progress time=         82000000000 byte=         80 init=430857 state= 5 ready=0
+EF progress time=         83000000000 byte=         80 init=436112 state= 5 ready=0
+EF progress time=         84000000000 byte=         80 init=441366 state= 5 ready=0
+EF progress time=         85000000000 byte=         80 init=446621 state= 5 ready=0
+EF progress time=         86000000000 byte=         80 init=451876 state= 5 ready=0
+EF progress time=         87000000000 byte=         80 init=457130 state= 5 ready=0
+EF progress time=         88000000000 byte=         80 init=462385 state= 5 ready=0
+EF progress time=         89000000000 byte=         80 init=467640 state= 5 ready=0
+EF progress time=         90000000000 byte=         80 init=472894 state= 5 ready=0
+EF progress time=         91000000000 byte=         80 init=478149 state= 5 ready=0
+EF progress time=         92000000000 byte=         80 init=483403 state= 5 ready=0
+EF progress time=         93000000000 byte=         80 init=488658 state= 5 ready=0
+EF progress time=         94000000000 byte=         80 init=493913 state= 5 ready=0
+EF progress time=         95000000000 byte=         80 init=499167 state= 5 ready=0
+EF progress time=         96000000000 byte=         80 init=504422 state= 5 ready=0
+EF progress time=         97000000000 byte=         80 init=509677 state= 5 ready=0
+EF progress time=         98000000000 byte=         80 init=514931 state= 5 ready=0
+EF progress time=         99000000000 byte=         80 init=520186 state= 5 ready=0
+EF progress time=        100000000000 byte=        849 init=524287 state= 6 ready=0
+EF progress time=        101000000000 byte=       4352 init=524287 state= 6 ready=0
+EF progress time=        102000000000 byte=       7855 init=524287 state= 9 ready=0
+EF progress time=        103000000000 byte=      11371 init=524287 state= 6 ready=0
+EF progress time=        104000000000 byte=      14874 init=524287 state= 6 ready=0
+EF progress time=        105000000000 byte=      18389 init=524287 state= 5 ready=1
+EF progress time=        106000000000 byte=      21892 init=524287 state= 6 ready=0
+EF progress time=        107000000000 byte=      25408 init=524287 state= 6 ready=0
+EF progress time=        108000000000 byte=      28911 init=524287 state= 6 ready=0
+EF progress time=        109000000000 byte=      32414 init=524287 state= 6 ready=0
+EF progress time=        110000000000 byte=      35930 init=524287 state= 6 ready=0
+EF progress time=        111000000000 byte=      39433 init=524287 state= 6 ready=0
+EF progress time=        112000000000 byte=      42948 init=524287 state= 5 ready=1
+EF progress time=        113000000000 byte=      46451 init=524287 state= 6 ready=0
+EF progress time=        114000000000 byte=      49967 init=524287 state= 6 ready=0
+EF progress time=        115000000000 byte=      53470 init=524287 state= 6 ready=0
+EF progress time=        116000000000 byte=      56973 init=524287 state= 6 ready=0
+EF progress time=        117000000000 byte=      60489 init=524287 state= 6 ready=0
+EF progress time=        118000000000 byte=      63992 init=524287 state= 6 ready=0
+EF progress time=        119000000000 byte=      67507 init=524287 state= 5 ready=1
+EF progress time=        120000000000 byte=      71010 init=524287 state= 6 ready=0
+EF progress time=        121000000000 byte=      74526 init=524287 state= 6 ready=0
+EF progress time=        122000000000 byte=      78029 init=524287 state= 6 ready=0
+EF progress time=        123000000000 byte=      81532 init=524287 state= 6 ready=0
+EF progress time=        124000000000 byte=      85048 init=524287 state= 6 ready=0
+EF progress time=        125000000000 byte=      88551 init=524287 state= 6 ready=0
+EF progress time=        126000000000 byte=      92066 init=524287 state= 5 ready=1
+EF progress time=        127000000000 byte=      95569 init=524287 state= 6 ready=0
+EF progress time=        128000000000 byte=      99085 init=524287 state= 6 ready=0
+EF progress time=        129000000000 byte=     102588 init=524287 state= 6 ready=0
+EF progress time=        130000000000 byte=     106091 init=524287 state= 6 ready=0
+EF progress time=        131000000000 byte=     109607 init=524287 state= 6 ready=0
+EF progress time=        132000000000 byte=     113110 init=524287 state= 6 ready=0
+EF progress time=        133000000000 byte=     116625 init=524287 state= 5 ready=1
+EF progress time=        134000000000 byte=     120128 init=524287 state= 5 ready=1
+EF progress time=        135000000000 byte=     123644 init=524287 state= 6 ready=0
+EF progress time=        136000000000 byte=     127147 init=524287 state= 6 ready=0
+EF progress time=        137000000000 byte=     130650 init=524287 state= 6 ready=0
+EF progress time=        138000000000 byte=     134166 init=524287 state= 6 ready=0
+EF progress time=        139000000000 byte=     137669 init=524287 state= 6 ready=0
+EF progress time=        140000000000 byte=     141184 init=524287 state= 9 ready=0
+EF progress time=        141000000000 byte=     144687 init=524287 state= 5 ready=1
+EF progress time=        142000000000 byte=     148203 init=524287 state= 6 ready=0
+EF progress time=        143000000000 byte=     151706 init=524287 state= 6 ready=0
+EF progress time=        144000000000 byte=     155209 init=524287 state= 6 ready=0
+EF progress time=        145000000000 byte=     158725 init=524287 state= 6 ready=0
+EF progress time=        146000000000 byte=     162228 init=524287 state= 6 ready=0
+EF progress time=        147000000000 byte=     165743 init=524287 state= 9 ready=0
+EF progress time=        148000000000 byte=     169246 init=524287 state= 5 ready=1
+EF progress time=        149000000000 byte=     172762 init=524287 state= 6 ready=0
+EF progress time=        150000000000 byte=     176265 init=524287 state= 6 ready=0
+EF progress time=        151000000000 byte=     179768 init=524287 state= 6 ready=0
+EF progress time=        152000000000 byte=     183284 init=524287 state= 6 ready=0
+EF progress time=        153000000000 byte=     186787 init=524287 state= 6 ready=0
+EF progress time=        154000000000 byte=     190302 init=524287 state= 9 ready=0
+EF progress time=        155000000000 byte=     193805 init=524287 state= 5 ready=1
+EF progress time=        156000000000 byte=     197321 init=524287 state= 6 ready=0
+EF progress time=        157000000000 byte=     200824 init=524287 state= 6 ready=0
+EF progress time=        158000000000 byte=     204327 init=524287 state= 6 ready=0
+EF progress time=        159000000000 byte=     207843 init=524287 state= 6 ready=0
+EF progress time=        160000000000 byte=     211346 init=524287 state= 6 ready=0
+EF progress time=        161000000000 byte=     214861 init=524287 state= 9 ready=0
+EF progress time=        162000000000 byte=     218364 init=524287 state= 5 ready=1
+EF progress time=        163000000000 byte=     221880 init=524287 state= 6 ready=0
+EF progress time=        164000000000 byte=     225383 init=524287 state= 6 ready=0
+EF progress time=        165000000000 byte=     228886 init=524287 state= 6 ready=0
+EF progress time=        166000000000 byte=     232402 init=524287 state= 6 ready=0
+EF progress time=        167000000000 byte=     235905 init=524287 state= 6 ready=0
+EF progress time=        168000000000 byte=     239420 init=524287 state= 9 ready=0
+EF progress time=        169000000000 byte=     242923 init=524287 state= 5 ready=1
+EF progress time=        170000000000 byte=     246439 init=524287 state= 6 ready=0
+EF progress time=        171000000000 byte=     249942 init=524287 state= 6 ready=0
+EF progress time=        172000000000 byte=     253445 init=524287 state= 6 ready=0
+EF progress time=        173000000000 byte=     256961 init=524287 state= 6 ready=0
+EF progress time=        174000000000 byte=     260464 init=524287 state= 6 ready=0
+EF progress time=        175000000000 byte=     263979 init=524287 state= 9 ready=0
+EF progress time=        176000000000 byte=     267482 init=524287 state= 5 ready=1
+EF progress time=        177000000000 byte=     270998 init=524287 state= 6 ready=0
+EF progress time=        178000000000 byte=     274501 init=524287 state= 6 ready=0
+EF progress time=        179000000000 byte=     278004 init=524287 state= 6 ready=0
+EF progress time=        180000000000 byte=     281520 init=524287 state= 6 ready=0
+EF progress time=        181000000000 byte=     285023 init=524287 state= 6 ready=0
+EF progress time=        182000000000 byte=     288538 init=524287 state= 9 ready=0
+EF progress time=        183000000000 byte=     292041 init=524287 state= 5 ready=1
+EF progress time=        184000000000 byte=     295544 init=524287 state= 5 ready=1
+EF progress time=        185000000000 byte=     299060 init=524287 state= 6 ready=0
+EF progress time=        186000000000 byte=     302563 init=524287 state= 6 ready=0
+EF progress time=        187000000000 byte=     306078 init=524287 state= 6 ready=0
+EF progress time=        188000000000 byte=     309582 init=524287 state= 6 ready=0
+EF progress time=        189000000000 byte=     313097 init=524287 state= 9 ready=0
+EF progress time=        190000000000 byte=     316600 init=524287 state= 9 ready=0
+EF progress time=        191000000000 byte=     320103 init=524287 state= 5 ready=1
+EF progress time=        192000000000 byte=     323619 init=524287 state= 6 ready=0
+EF progress time=        193000000000 byte=     327122 init=524287 state= 6 ready=0
+EF progress time=        194000000000 byte=     330637 init=524287 state= 6 ready=0
+EF progress time=        195000000000 byte=     334141 init=524287 state= 6 ready=0
+EF progress time=        196000000000 byte=     337656 init=524287 state= 6 ready=0
+EF progress time=        197000000000 byte=     341159 init=524287 state= 9 ready=0
+EF progress time=        198000000000 byte=     344662 init=524287 state= 5 ready=1
+EF progress time=        199000000000 byte=     348178 init=524287 state= 6 ready=0
+EF progress time=        200000000000 byte=     351681 init=524287 state= 6 ready=0
+EF progress time=        201000000000 byte=     355196 init=524287 state= 6 ready=0
+EF progress time=        202000000000 byte=     358700 init=524287 state= 6 ready=0
+EF progress time=        203000000000 byte=     362215 init=524287 state= 6 ready=0
+EF progress time=        204000000000 byte=     365718 init=524287 state= 9 ready=0
+EF progress time=        205000000000 byte=     369221 init=524287 state= 5 ready=1
+EF progress time=        206000000000 byte=     372737 init=524287 state= 6 ready=0
+EF progress time=        207000000000 byte=     376240 init=524287 state= 6 ready=0
+EF progress time=        208000000000 byte=     379755 init=524287 state= 6 ready=0
+EF progress time=        209000000000 byte=     383259 init=524287 state= 6 ready=0
+EF progress time=        210000000000 byte=     386774 init=524287 state= 6 ready=0
+EF progress time=        211000000000 byte=     390277 init=524287 state= 9 ready=0
+EF progress time=        212000000000 byte=     393780 init=524287 state= 5 ready=1
+EF progress time=        213000000000 byte=     397296 init=524287 state= 6 ready=0
+EF progress time=        214000000000 byte=     400799 init=524287 state= 6 ready=0
+EF progress time=        215000000000 byte=     404314 init=524287 state= 6 ready=0
+EF progress time=        216000000000 byte=     407818 init=524287 state= 6 ready=0
+EF progress time=        217000000000 byte=     411333 init=524287 state= 6 ready=0
+EF progress time=        218000000000 byte=     414836 init=524287 state= 9 ready=0
+EF progress time=        219000000000 byte=     418339 init=524287 state= 5 ready=1
+EF progress time=        220000000000 byte=     421855 init=524287 state= 6 ready=0
+EF progress time=        221000000000 byte=     425358 init=524287 state= 6 ready=0
+EF progress time=        222000000000 byte=     428873 init=524287 state= 6 ready=0
+EF progress time=        223000000000 byte=     432377 init=524287 state= 6 ready=0
+EF progress time=        224000000000 byte=     435892 init=524287 state= 6 ready=0
+EF progress time=        225000000000 byte=     439395 init=524287 state= 9 ready=0
+EF progress time=        226000000000 byte=     442898 init=524287 state= 5 ready=1
+EF progress time=        227000000000 byte=     446414 init=524287 state= 6 ready=0
+EF progress time=        228000000000 byte=     449917 init=524287 state= 6 ready=0
+EF progress time=        229000000000 byte=     453432 init=524287 state= 6 ready=0
+EF progress time=        230000000000 byte=     456935 init=524287 state= 6 ready=0
+EF progress time=        231000000000 byte=     460451 init=524287 state= 6 ready=0
+EF progress time=        232000000000 byte=     463954 init=524287 state= 9 ready=0
+EF progress time=        233000000000 byte=     467457 init=524287 state= 5 ready=1
+EF progress time=        234000000000 byte=     470973 init=524287 state= 6 ready=0
+EF progress time=        235000000000 byte=     474476 init=524287 state= 6 ready=0
+EF progress time=        236000000000 byte=     477991 init=524287 state= 6 ready=0
+EF progress time=        237000000000 byte=     481494 init=524287 state= 6 ready=0
+EF progress time=        238000000000 byte=     485010 init=524287 state= 6 ready=0
+EF progress time=        239000000000 byte=     488513 init=524287 state= 9 ready=0
+EF progress time=        240000000000 byte=     492016 init=524287 state= 9 ready=0
+EF progress time=        241000000000 byte=     495532 init=524287 state= 6 ready=0
+EF progress time=        242000000000 byte=     499035 init=524287 state= 6 ready=0
+EF progress time=        243000000000 byte=     502550 init=524287 state= 6 ready=0
+EF progress time=        244000000000 byte=     506053 init=524287 state= 6 ready=0
+EF progress time=        245000000000 byte=     509569 init=524287 state= 6 ready=0
+EF progress time=        246000000000 byte=     513072 init=524287 state= 6 ready=0
+EF progress time=        247000000000 byte=     516575 init=524287 state= 9 ready=0
+EF progress time=        248000000000 byte=     520091 init=524287 state= 6 ready=0
+EF progress time=        249000000000 byte=     523594 init=524287 state= 6 ready=0
+EF progress time=        250000000000 byte=     527109 init=524287 state= 6 ready=0
+EF progress time=        251000000000 byte=     530612 init=524287 state= 6 ready=0
+EF progress time=        252000000000 byte=     534128 init=524287 state= 6 ready=0
+EF progress time=        253000000000 byte=     537631 init=524287 state= 6 ready=0
+EF progress time=        254000000000 byte=     541134 init=524287 state= 9 ready=0
+EF progress time=        255000000000 byte=     544650 init=524287 state= 6 ready=0
+EF progress time=        256000000000 byte=     548153 init=524287 state= 6 ready=0
+EF progress time=        257000000000 byte=     551668 init=524287 state= 6 ready=0
+EF progress time=        258000000000 byte=     555171 init=524287 state= 6 ready=0
+EF progress time=        259000000000 byte=     558687 init=524287 state= 6 ready=0
+EF progress time=        260000000000 byte=     562190 init=524287 state= 6 ready=0
+EF progress time=        261000000000 byte=     565693 init=524287 state= 9 ready=0
+EF progress time=        262000000000 byte=     569209 init=524287 state= 6 ready=0
+EF progress time=        263000000000 byte=     572712 init=524287 state= 6 ready=0
+PASS complete CRT payload and all erased gaps: 1 MiB physical PSRAM identical
+EF progress time=        264000000000 byte=        145 init=524287 state= 0 ready=0
+EF progress time=        265000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        266000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        267000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        268000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        269000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        270000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        271000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        272000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        273000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        274000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        275000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        276000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        277000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        278000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        279000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        280000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        281000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        282000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        283000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        284000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        285000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        286000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        287000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        288000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        289000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        290000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        291000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        292000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        293000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        294000000000 byte=        256 init=524287 state= 0 ready=0
+EF progress time=        295000000000 byte=        256 init=524287 state= 0 ready=0
+PASS EasyFlash: CRT, all64banks/byte lanes/CPU+VIC reads, modes,256-byteIO2RAM, both AM29F040 IDs, NOR programming, sector erase isolation, reset/eject, 777 read checks
+
+
+run_pcm.py
+PASS PCM: real V027 bank, LE16 two voices, rate, signed stereo mix/saturation, invalid bank/bounds, reset drain, unchanged SID bypass; 104450 cycles checked
+
+
+run_loader_pcm.py
+PASS optional PCM loader mode 0: 2050 bytes, 1 starts, 1 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 1: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 2: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 3: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 4: 1024 bytes, 1 starts, 0 finish, 1 abort; BASIC boot permitted
+PASS optional PCM loader mode 5: 2050 bytes, 1 starts, 1 finish, 0 abort; BASIC boot permitted
+
+
+run_video384.py
+C:\Users\toby0\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe: can't open file 'C:\\Users\\toby0\\Documents\\Codex\\2026-10-24\\playstation-core-f-r-analogue-pocket\\work\\c64-pocket-autostart\\tests\\run_video384.py': [Errno 2] No such file or directory
+
+
+Corrected launcher typo: run_video384.py -> run_video_384.py. No RTL failure.
+run_video_384.py: PASS
+run_units.py: PASS
+PASS 300 asynchronous mailbox transfers with backpressure; decoded I2S stereo 1234/abcd (12/11 frames)
+
+PASS Pocket VIDEO: two complete PAL frames; 382x270 accepted pixels; 312 lines; one-cycle HS/VS; VS-to-HS gap; continuous DE; 3/4 SKIP only inside DE; RGB sample order
+
+PASS PAL adapter: two complete frames, 312 lines, 270 active lines, 1528 samples per line (382 VIC pixels x4)
+
+PASS non-CRT Reset Core: PRG removed, full RAM clear, ROMs retained, no automatic RUN
+PASS loader: full 65536-byte clear; ROM metadata and upload; multi-chunk/unaligned PRG; BASIC pointers; truncated/overflow rejection; recovery; wrong ROM size
+
+ALL REGRESSIONS PASS (video launcher filename corrected; expected negative video control passed)

@@ -361,7 +361,7 @@ module core_top (
  wire [6:0] disk_loaded_track,drive_track;
  wire [1:0] disk_format;
  wire [15:0] disk_track_len;
- wire drive_led,drive_motor,drive_modified,drive_writing;
+ wire drive_led,drive9_led,drive_motor,drive_modified,drive_writing;
  reg disk_write_protect=1;
  wire disk_write_ready,disk_save_pause,disk_clear_modified;
  wire [9:0] disk_track_read_addr;
@@ -435,6 +435,7 @@ module core_top (
  reg [1:0] reu_config=0;
  reg [2:0] palette_config=0;
  reg pcm_enabled=0;
+ reg [1:0] disk_assist=3;
  reg [1:0] dock_keyboard_mode=1;
  reg sid_model=1; // Preserve the existing 8580 sound as the default.
  always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha0000000) joystick_port1<=bridge_wr_data[0];
@@ -453,6 +454,7 @@ module core_top (
  always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha0000018)
   palette_config<=bridge_wr_data[2:0];
  always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha0000020)pcm_enabled<=bridge_wr_data[0];
+ always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha0000028)disk_assist<=bridge_wr_data[1:0];
  always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha0000024)
   dock_keyboard_mode<=bridge_wr_data[1:0]==3 ? 2'b0:bridge_wr_data[1:0];
  always @(posedge clk_74a) if(bridge_wr && bridge_addr==32'ha000001c)
@@ -472,6 +474,7 @@ module core_top (
   else if(bridge_addr==32'ha0000018) bridge_rd_data={29'b0,palette_config};
   else if(bridge_addr==32'ha000001c) bridge_rd_data={31'b0,sid_model};
   else if(bridge_addr==32'ha0000020) bridge_rd_data={31'b0,pcm_enabled};
+  else if(bridge_addr==32'ha0000028) bridge_rd_data={30'b0,disk_assist};
   else if(bridge_addr==32'ha0000024) bridge_rd_data={30'b0,dock_keyboard_mode};
   else if(bridge_addr==32'ha0000108) bridge_rd_data={22'b0,drive9_active,disk9_error};
   else bridge_rd_data=cmd_rdata;
@@ -490,6 +493,8 @@ module core_top (
  (* async_reg="true" *)reg [1:0] dock_mode_meta=1,dock_mode_sync=1;
  (* async_reg="true" *) reg disk_mounted_meta=0,disk_mounted_sync=0,rom_ready_meta=0,rom_ready_sync=0;
  (* async_reg="true" *) reg commit_meta=0,commit_sync=0;
+ (* async_reg="true" *) reg [1:0] assist_meta=3,assist_sync=3;
+ (* async_reg="true" *) reg activity_meta=0,activity_sync=0;
  reg commit_seen=0,cached_valid=0;
  reg [6:0] cached_track=34;
  always @(posedge clk_core) begin
@@ -503,6 +508,9 @@ module core_top (
   palette_meta<=palette_config;palette_sync<=palette_meta;
   sid_model_meta<=sid_model;sid_model_sync<=sid_model_meta;
   pcm_meta<=pcm_enabled;pcm_sync<=pcm_meta;
+  assist_meta<=disk_assist;assist_sync<=assist_meta;
+  activity_meta<=disk_busy || disk9_pause || (load_state!=12 && load_state!=23);
+  activity_sync<=activity_meta;
   dock_mode_meta<=dock_keyboard_mode;dock_mode_sync<=dock_mode_meta;
   disk_mounted_meta<=disk_mounted;disk_mounted_sync<=disk_mounted_meta;
   rom_ready_meta<=disk_rom_loaded;rom_ready_sync<=rom_ready_meta;
@@ -557,7 +565,33 @@ module core_top (
   .report_valid(cont_update),.report_key(cont3_key),.report_joy(cont3_joy),.report_trig(cont3_trig),
   .clk(clk_core),.reset(core_reset),.blocked(menu_sync || !keyboard_ready_sync),.mode(dock_mode_sync),
   .matrix(dock_keys),.restore(dock_restore),.connected(dock_keyboard_connected));
- wire [63:0] combined_keys=virtual_keys|dock_keys;
+ wire [63:0] autostart_keys;
+ wire autostart_typing,autostart_waiting,autostart_prompt;
+ wire monitor_valid;wire [15:0] monitor_addr;wire [7:0] monitor_data;
+ // Pocket menu navigation buttons may remain held when its overlay closes.
+ // Wait for neutral before typing; only subsequent input means cancellation.
+ reg assist_controls_ready=0;
+ always @(posedge clk_core)begin
+  if(core_reset || menu_sync)assist_controls_ready<=0;
+  else if(key_sync[15:0]==0)assist_controls_ready<=1;
+ end
+ pocket_autostart disk_autostart(.clk(clk_core),.reset(core_reset),
+  .enabled(assist_sync[0] && !cart_attached),.paused(c64_paused),.menu(menu_sync || !assist_controls_ready),
+  .available(keyboard_ready_sync),.mounted(disk_mounted_sync),
+  .cancel((|auto_sync) || (assist_controls_ready && !menu_sync &&
+          ((|virtual_keys) || (|dock_keys) || keyboard_capture || (|key_sync[15:0])))),
+  .cpu_valid(monitor_valid),.cpu_addr(monitor_addr),.cpu_data(monitor_data),
+  .matrix(autostart_keys),.typing(autostart_typing),.waiting(autostart_waiting),.prompt_ready(autostart_prompt));
+ wire [63:0] combined_keys=virtual_keys|dock_keys|autostart_keys;
+ // A small activity lamp, not an estimated percentage. Stretch short reads
+ // across several video frames, including the first frame after an IO pause.
+ reg [22:0] activity_hold=0;
+ always @(posedge clk_core)begin
+  if(core_reset)activity_hold<=0;
+  else if(activity_sync || drive_led || drive9_led || autostart_typing)activity_hold<=23'd6305591;
+  else if(activity_hold!=0)activity_hold<=activity_hold-1'b1;
+ end
+ wire loading_visible=assist_sync[1] && activity_hold!=0 && !menu_sync;
  wire combined_restore=keyboard_restore|dock_restore;
  wire restore_signal;
  reg cart_start_pulse=0,cart_finish_pulse=0,cart_eject_pulse=0;
@@ -630,7 +664,7 @@ module core_top (
  .requested_mode(drive9_mode),.write_protect(disk_write_protect),.host_enable(load_state==12),
  .bridge_addr(bridge_addr),.bridge_data(bridge_wr_data),.bridge_wr(bridge_wr),.events(slot_events),
  .buffer1541_q(buffer9_q),.buffer1581_q(buffer81_q),.iec_atn(iec_atn),.iec_data(iec_bus_data),.iec_clock(iec_bus_clock),
- .data_o(drive9_data_out),.clock_o(drive9_clock_out),.pause_request(disk9_pause),.active_mode(drive9_active),.error_code(disk9_error),
+ .activity_led(drive9_led),.data_o(drive9_data_out),.clock_o(drive9_clock_out),.pause_request(disk9_pause),.active_mode(drive9_active),.error_code(disk9_error),
  .io_start(file_start_all[2:1]),.io_ready(file_ready_all[2:1]),.io_done(file_done_all[2:1]),.io_error(file_error_all[2:1]),
  .io_operation(file_operation_all[8:3]),.io_slot(file_slot_all[47:16]),.io_offset(file_offset_all[95:32]),.io_length(file_length_all[32:11]));
  fpga64_sid_iec c64(
@@ -645,6 +679,7 @@ module core_top (
 .kbd_reset(core_reset),
 .shift_mod(2'b11),
 .ramAddr(c64_addr),
+.monitor_valid(monitor_valid),.monitor_addr(monitor_addr),.monitor_data(monitor_data),
 .ramDin(c64_data_in),
 .ramDout(c64_data_out),
 .ramCE(ram_ce),
@@ -744,7 +779,7 @@ module core_top (
  assign video_rgb_clock_90=clk_video90;
  wire [23:0] keyboard_rgb;
  pocket_keyboard_video #(.PIPELINED(1)) keyboard_overlay(.clk(clk_core),.pause(c64_paused),
- .vsync(blanker_vs),.active(!hb && !vb),.visible(keyboard_visible && !menu_sync),
+ .vsync(blanker_vs),.active(!hb && !vb),.visible(keyboard_visible && !menu_sync),.loading(loading_visible),
  .rgb({red,green,blue}),.selected_row(keyboard_row),.selected_col(keyboard_col),
  .sticky(keyboard_sticky),.held(combined_keys),.macro_busy(keyboard_macro),
  .transparency(transparency_sync),.mixed_rgb(keyboard_rgb));

@@ -1,0 +1,25 @@
+C64 Pocket 0.5.2-alpha - Disk autostart and activity indicator
+Development/test build. These additions have NOT been tested on real hardware.
+
+Core Settings -> Disk assist:
+Auto start + activity (default), Activity only, Auto start only, or Off.
+At an empty BASIC READY prompt, select a D64/G64 in Disk 8, then close the
+Pocket menu and release its navigation buttons. LOAD"*",8,1 is typed, followed by RUN only after a successful
+load returns to BASIC. Self-starting software receives no extra RUN.
+In-game disk changes remain insert-only. Disk 9 never starts automatically. An attached CRT cartridge disables disk
+autostart; manual loading remains available.
+
+Manual input or opening the virtual keyboard cancels autostart. Opening
+the Pocket menu during typing aborts rather than duplicating a character.
+A partially typed line is not erased. Existing LOAD*/RUN controls remain.
+Detection targets standard C64 BASIC V2/KERNAL entry points; replacement
+ROMs may require manual loading (choose Activity only).
+
+A small disk icon at the top right indicates file/drive activity and
+automatic typing. It is not a progress percentage or remaining-time meter.
+It disappears after activity; a drive error LED can keep it visible.
+The C64 picture also stops while the machine is paused for host IO.
+
+Quick hardware check: start a known D64 from READY; try a G64 and a game
+that requests another disk; select Off and check manual LOAD*/RUN and both
+keyboards. Check picture and sound remain unchanged. Keep 0.5.1 as fallback.

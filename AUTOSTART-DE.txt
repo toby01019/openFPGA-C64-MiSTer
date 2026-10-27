@@ -1,0 +1,34 @@
+C64 Pocket 0.5.2-alpha - Autostart und Aktivitaetsanzeige
+Entwicklungs-/Testfassung. Diese Erweiterung ist noch nicht auf echter Hardware getestet.
+
+Core Settings -> Disk assist:
+- Auto start + activity: beide Hilfen eingeschaltet (Vorgabe).
+- Activity only: nur die kleine Diskettenanzeige.
+- Auto start only: nur automatischer Start.
+- Off: beide Hilfen aus; Laden wie bisher mit LOAD* und RUN.
+
+Am leeren BASIC-READY-Prompt eine D64 oder G64 unter Disk 8 auswaehlen
+und das Pocket-Menue schliessen. Danach die Menue-Tasten loslassen. Der Core tippt LOAD"*",8,1 und startet
+nach erfolgreicher Rueckkehr zu BASIC mit RUN. Bei selbststartenden
+Programmen wird kein RUN nachgeschickt. Disk 9 startet niemals automatisch. Bei eingestecktem CRT-Modul bleibt
+der Disk-Autostart aus; manuelles Laden ist weiterhin moeglich.
+Diskettenwechsel im laufenden Spiel bleiben reine Diskettenwechsel.
+
+Eine manuelle Eingabe oder das Oeffnen der Bildschirmtastatur bricht den
+Autostart ab. Wird waehrend des Tippens das Pocket-Menue geoeffnet, wird
+abgebrochen, damit keine doppelten Zeichen entstehen. Eine bereits teilweise
+getippte Eingabe wird nicht automatisch geloescht. LOAD*/RUN bleiben nutzbar.
+Die automatische Erkennung richtet sich nach dem normalen C64 BASIC V2 /
+KERNAL. Bei abweichenden ROMs ggf. Activity only verwenden und manuell laden.
+
+Das kleine Diskettensymbol oben rechts zeigt Datei-/Laufwerksaktivitaet
+und automatisches Tippen. Es ist keine Prozent- oder Restzeitanzeige und
+verschwindet nach der Aktivitaet. Bei angehaltenem C64 bleibt auch dessen
+Bild stehen. Ein Fehlerblinken des 1541-Laufwerks kann sichtbar bleiben.
+Die bisherige Bildaufloesung, Pixelphase und Audioausgabe bleiben erhalten.
+
+Kurzer Hardwaretest:
+1. Ein bekanntes D64-Spiel am READY-Prompt auswaehlen: startet es ohne LOAD*?
+2. Ein G64 und ein Spiel mit Diskettenwechsel testen: Nachladen weiterhin okay?
+3. Disk assist -> Off: LOAD*, RUN und Tastaturen wie bisher bedienen.
+Bitte auf unveraendertes Bild und Ton achten. 0.5.1 als Rueckfall behalten.

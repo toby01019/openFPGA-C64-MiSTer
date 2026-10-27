@@ -1,5 +1,41 @@
-0.5.1-alpha - hardware feedback / GitHub distribution update
-27 October 2026: successful Dock USB keyboard operation confirmed on hardware. Setup details and exhaustive edge cases not yet recorded.
-No FPGA/game-data change. Packaging adds matching GitHub metadata, credits,
-updater documentation and current test status. Existing core ID
-Experimental.C64MiSTer retained to update existing installations in place.
+## C64 MiSTer for Analogue Pocket 0.5.2-alpha
+
+Disk autostart and a small activity indicator, with the new core ID
+`toby01019.C64` and standard platform `c64`.
+
+**Public alpha: this new FPGA build and the renamed installation have NOT
+yet been tested on real Pocket hardware.** Earlier successful tests cover
+0.5.1 and earlier. Keep 0.5.1 as a fallback.
+
+### New features
+- Guarded Disk 8 D64/G64 autostart at an empty standard BASIC READY prompt.
+- RUN only after a successful load returns to BASIC; no extra RUN for self-starting programs.
+- In-game disk changes remain insert-only; manual input cancels autostart.
+- Small activity icon, not a percentage progress bar.
+- Core Settings > Disk assist enables the helpers individually or switches them off.
+
+### Install and migrate
+Use **C64-Pocket-0.5.2-Test-SD-EN.zip**, not the Source ZIP. Back up the SD first.
+Read **MIGRATION-EN.txt** or **MIGRATION-DE.txt** inside the ZIP. Copy your own
+ROMs/games from `Assets/c64mister/common/` to `Assets/c64/common/`; avoid
+overwriting shared files from other C64 cores. Reapply core settings and
+reselect disks. After testing, move the old `Cores/Experimental.C64MiSTer/`
+folder to your backup to avoid duplicate entries. Do not delete your old assets.
+
+### Updaters
+0.5.1 is now listed in the public library under its old ID. The new identity
+must propagate through the next catalog update. Manual SD-ZIP installation
+is available immediately; automatic listing is verified separately.
+
+### Validation
+FPGA compile and timing passed: 16,359/18,480 ALMs, minimum slack +0.025 ns.
+Focused autostart/actual-6510/menu/activity tests and existing regressions passed.
+The long integration test preceded the isolated menu-button guard; that guard
+was tested separately with the real CPU model and included in the final build.
+Identity changes preserve FPGA/game/sample bytes and all 115 hardware-source hashes.
+Official openFPGA validator passes (optional platform image recommendation).
+
+No D81/1581, NTSC, TAP, mouse, Sleep or savestates. EasyFlash writes are volatile.
+No system ROMs, Sherwood or Caren included. Author-owned TobyPink is included
+with permission. MiSTer/myc64/APF credits and licensing remain intact.
+AI-assisted development is disclosed. English menus and EN/DE guides included.

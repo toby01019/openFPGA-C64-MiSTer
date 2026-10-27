@@ -3,6 +3,7 @@
 // VIC pixels, independently of whether the panel is currently visible.
 module pocket_keyboard_video #(parameter PIPELINED=0)(
  input wire clk,pause,vsync,active,visible,
+ input wire loading,
  input wire [23:0] rgb,input wire [3:0] selected_row,selected_col,
  input wire [63:0] sticky,held,input wire macro_busy,
  input wire [1:0] transparency,
@@ -179,6 +180,13 @@ module pocket_keyboard_video #(parameter PIPELINED=0)(
      paint_rgb=engraving_pixel==1 ? 24'h8a795f:24'heee2c3;opaque_ink=1;
     end
    end
+  end
+  // Small disk activity badge; retain the existing four-clock pipeline.
+  if(loading && active && x>=358 && x<370 && y>=8 && y<20)begin
+   paint_rgb=24'h40382f;surface_pixel=1;opaque_ink=1;font_valid=0;
+   if(x>=360 && x<368 && y>=10 && y<18)paint_rgb=24'hdfcda5;
+   if(x>=362 && x<366 && y>=10 && y<13)paint_rgb=24'h40382f;
+   if(x>=361 && x<367 && y>=15 && y<17)paint_rgb=24'h75d582;
   end
   if(!PIPELINED && surface_pixel && !opaque_ink) begin
    paint_rgb={blend_channel(paint_rgb[23:16],rgb[23:16],transparency),

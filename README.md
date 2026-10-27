@@ -1,37 +1,34 @@
 # C64 MiSTer for Analogue Pocket
 
-A community port using the MiSTer C64 core as its basis, with Pocket/APF
-integration and AI-assisted development. Not an official MiSTer or Analogue release.
+Community port based on MiSTer C64, with Pocket/APF integration and
+AI-assisted development. Not an official MiSTer or Analogue release.
 
 ## Download and install
 
-Download **C64-Pocket-0.5.1-Test-SD-EN.zip** from [Releases](../../releases/latest).
-Turn off Pocket, back up the SD, extract Cores/Platforms/Assets to the SD root.
-Keep your own system ROMs. Full [English](READ-FIRST.txt) and
-[German](ZUERST-LESEN-DE.txt) guides are included. Firmware requirement: 2.3.
+Download **C64-Pocket-0.5.2-Test-SD-EN.zip** from [Releases](../../releases/latest).
+**New core ID: toby01019.C64; platform: c64. Existing users must follow
+[migration instructions](MIGRATION-EN.txt) before installing.**
+[English guide](READ-FIRST.txt) · [German guide](ZUERST-LESEN-DE.txt).
+Firmware 2.3 or later. Supply your own ROMs in Assets/c64/common/.
 
-## Features and hardware status
+## Features and test status
 
-PAL C64, PRG, D64/G64 with 1541 drives 8/9, EasyFlash, REU, SID 6581/8580,
-palettes, reset and a C64-style virtual keyboard with shifted labels,
-transparency, LOAD* and RUN. Targeted two-voice TobyPink digital samples.
-Dock wired USB HID keyboard: QWERTY, QWERTZ (Y/Z only), or Off.
+PAL C64, PRG, two 1541 drives (D64/G64, 8/9), EasyFlash, REU, SID 6581/8580,
+TobyPink digital samples, reset, virtual keyboard with shifted labels,
+transparency and LOAD*/RUN, Dock USB keyboard. New in 0.5.2: guarded disk
+autostart and a small activity icon, individually switchable under Disk assist.
 
-**27 October 2026:** positive real Pocket/Dock USB keyboard test reported
-on real hardware. Basic operation works in that setup; this is not
-an exhaustive keyboard/firmware compatibility guarantee. Earlier 0.5.0
-hardware feedback covers EasyFlash/Caren, TobyPink effects and existing
-disk/video/audio/keyboard functions. [Test scope](HARDWARE-TEST-STATUS-EN.txt).
-The FPGA bitstream is unchanged from the original 0.5.1-alpha.
+**0.5.2 has NOT yet been tested on real Pocket hardware.** Earlier positive
+hardware tests include 0.5.1 Dock keyboard and preceding disk/video/audio,
+EasyFlash and virtual keyboard functions. They do not validate this new build.
+FPGA compilation, timing and simulations passed; see [validation](VALIDATION.txt).
 
 ## Updaters
 
-**27 October:** [catalog registration accepted and merged](https://github.com/openfpga-library/analogue-pocket/pull/1863). Public inventory generation is still pending. The actual pupdate installation from the GitHub ZIP passed with a local accepted-entry fixture; [validation details](UPDATER-VALIDATION.md).
-
-The release ZIP has Cores, Platforms and Assets at its root. The existing
-`Experimental.C64MiSTer` ID is intentionally retained for in-place upgrades.
-[Updater integration/status](UPDATERS.md). Catalog acceptance is separate
-from publishing this repository; do not assume automatic listing yet.
+0.5.1 is listed in both public openFPGA catalogs under Experimental.C64MiSTer.
+The renamed 0.5.2 entry must propagate after publication. Install manually
+until it appears; asset/settings migration is not automatic.
+See [updater status](UPDATERS.md).
 
 ## Limits
 

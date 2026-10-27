@@ -58,6 +58,9 @@ port(
 
 	-- external memory
 	ramAddr     : out unsigned(15 downto 0);
+    monitor_valid : out std_logic;
+    monitor_addr : out unsigned(15 downto 0);
+    monitor_data : out unsigned(7 downto 0);
 	ramDin      : in  unsigned(7 downto 0);
 	ramDout     : out unsigned(7 downto 0);
 	ramCE       : out std_logic;
@@ -222,6 +225,7 @@ signal cs_ram       : std_logic;
 signal cpuWe        : std_logic;
 signal cpuWe_pre    : std_logic;
 signal cpuAddr      : unsigned(15 downto 0);
+signal cpu_opcode_sync : std_logic;
 signal cpuAddr_pre  : unsigned(15 downto 0);
 signal cpuDi        : unsigned(7 downto 0);
 signal cpuDo        : unsigned(7 downto 0);
@@ -824,6 +828,7 @@ port map (
 	addr => cpuAddr_pre,
 	do => cpuDo_pre,
 	we => cpuWe_pre,
+    opcode_sync => cpu_opcode_sync,
 
 	diIO => cpuIO(7) & cpuIO(6) & cpuIO(5) & cass_sense & cpuIO(3) & "111",
 	doIO => cpuIO
@@ -832,6 +837,11 @@ port map (
 cass_motor <= cpuIO(5);
 cass_write <= cpuIO(3);
 
+-- Read-only opcode tap: exclude VIC/DMA accesses and RAM under the ROMs.
+monitor_valid <= enableCpu and cpu_opcode_sync and baLoc and not dma_active
+                 and cpuIO(0) and cpuIO(1) and not reset;
+monitor_addr <= cpuAddr_pre;
+monitor_data <= cpuDi;
 ramDout <= cpuDo;
 ramAddr <= systemAddr;
 ramWE   <= systemWe when sysCycle >= CYCLE_CPU0 else '0';

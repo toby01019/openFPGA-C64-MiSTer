@@ -1,0 +1,16 @@
+CRT loader test starting
+CRT progress t=           100000000 state= 0 clear=0313 parser= 0
+CRT progress t=          1100000000 state= 0 clear=21dd parser= 0
+CRT startup reached IDLE t=         12117715000
+PASS Reset Core: queued disk ownership/dirty guard, CRT eject over real CDC mailbox, all 65536 RAM bytes cleared, no ROM/CRT auto-reload, repeated action, explicit CRT reload
+PASS CRT loader initial=          0: actual mailbox+parser, payload, Storage8 mix, PRG eject, early malformed/unsupported abort, RAM clear, automatic BASIC recovery, reload, bounds, empty eject
+CRT loader test starting
+CRT progress t=           100000000 state= 0 clear=0313 parser= 0
+CRT progress t=          1100000000 state= 0 clear=21dd parser= 0
+CRT startup reached IDLE t=         12117065000
+PASS CRT startup initial=          1
+CRT loader test starting
+CRT progress t=           100000000 state= 0 clear=0313 parser= 0
+CRT progress t=          1100000000 state= 0 clear=21dd parser= 0
+CRT startup reached IDLE t=         15769685000
+PASS CRT startup initial=          2

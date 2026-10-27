@@ -1,0 +1,24 @@
+C64 for Analogue Pocket: new identity toby01019.C64
+
+Platform ID: c64 (Commodore 64). The MiSTer basis is unchanged. This rename
+does not change the FPGA bitstream or game data.
+
+Existing installation:
+1. Power off Pocket and back up the entire SD card first.
+2. Extract the new SD ZIP to the card root and merge folders.
+3. COPY your ROMs, games and V027-AUDIO.REU from Assets/c64mister/common/
+   to Assets/c64/common/. Do not blindly overwrite same-named files:
+   other C64 cores share this asset directory.
+4. Launch toby01019.C64. Reapply your preferred core settings and reselect
+   disks/cartridges. Automatic migration of old settings or saved file paths
+   is not guaranteed. Your backup retains the original settings.
+5. After a successful test, move Cores/Experimental.C64MiSTer/ to your backup
+   to avoid a duplicate core. Retain old Assets and Settings as fallback.
+
+Fresh installation: supply basic.bin, characters.bin, kernal.bin and
+1541.bin in Assets/c64/common/. System ROMs are not included.
+Do not modify other installed C64 core directories. The shared c64 platform
+does not represent new hardware and does not replace other C64 cores.
+
+Public alpha release. The new 0.5.2 FPGA build is awaiting hardware testing;
+the renamed package structure has only been validated locally.

@@ -1,28 +1,36 @@
-C64 Pocket 0.5.1-alpha - USB-Tastatur am Dock
+C64 Pocket 0.5.2-alpha - Autostart und Aktivitaetsanzeige
+Entwicklungs-/Testfassung. Diese Erweiterung ist noch nicht auf echter Hardware getestet.
 
-27.10.2026: Erfolgreich getestet: die USB-Tastatur auf echtem
-Pocket/Dock erfolgreich getestet. Grundfunktion in diesem Aufbau bestaetigt;
-Modell/Firmware und alle Sonderfaelle sind nicht dokumentiert.
-Bitstream unveraendert. Siehe HARDWARE-TEST-STATUS-DE.txt.
+Core Settings -> Disk assist:
+- Auto start + activity: beide Hilfen eingeschaltet (Vorgabe).
+- Activity only: nur die kleine Diskettenanzeige.
+- Auto start only: nur automatischer Start.
+- Off: beide Hilfen aus; Laden wie bisher mit LOAD* und RUN.
 
-SD sichern, Pocket ausschalten, SD-ZIP ins Hauptverzeichnis entpacken.
-Cores, Platforms und Assets zusammenfuehren, Core-Dateien ersetzen, eigene
-basic.bin, characters.bin, kernal.bin und 1541.bin in
-Assets/c64mister/common/ behalten. Version 0.5.1-alpha pruefen.
-Diskettenkopien verwenden, Schreibschutz zunaechst On.
+Am leeren BASIC-READY-Prompt eine D64 oder G64 unter Disk 8 auswaehlen
+und das Pocket-Menue schliessen. Danach die Menue-Tasten loslassen. Der Core tippt LOAD"*",8,1 und startet
+nach erfolgreicher Rueckkehr zu BASIC mit RUN. Bei selbststartenden
+Programmen wird kein RUN nachgeschickt. Disk 9 startet niemals automatisch. Bei eingestecktem CRT-Modul bleibt
+der Disk-Autostart aus; manuelles Laden ist weiterhin moeglich.
+Diskettenwechsel im laufenden Spiel bleiben reine Diskettenwechsel.
 
-USB-HID-Tastatur ans Analogue Dock. Core Settings -> Dock USB keyboard:
-QWERTY, QWERTZ (nur Y/Z) oder Off. Nach Start/Menue/Reset/Umstecken alle
-Tasten loslassen. Shift+4=$, Escape=RUN/STOP, F12=RESTORE.
-Tasten und kurzer Test: DOCK-KEYBOARD-DE.txt. Bildschirmtastatur bleibt.
-Y oeffnet sie, Steuerkreuz waehlt, A drueckt, X rastet ein, Y loest, B schliesst.
-LOAD* und bei Bedarf RUN; TR schaltet die Transparenz um.
+Eine manuelle Eingabe oder das Oeffnen der Bildschirmtastatur bricht den
+Autostart ab. Wird waehrend des Tippens das Pocket-Menue geoeffnet, wird
+abgebrochen, damit keine doppelten Zeichen entstehen. Eine bereits teilweise
+getippte Eingabe wird nicht automatisch geloescht. LOAD*/RUN bleiben nutzbar.
+Die automatische Erkennung richtet sich nach dem normalen C64 BASIC V2 /
+KERNAL. Bei abweichenden ROMs ggf. Activity only verwenden und manuell laden.
 
-TobyPink: REU 512 KiB, Ultimate Audio (TobyPink) On (2 voices), Load Disk 8
--> TobyPink-Pocket-V027.d64; erstes Programm TOBY TITLE. V027-AUDIO.REU
-liegt bei, ist Samplebank und kein Startprogramm. Nach Audioaenderung Neustart.
-D64/G64, EasyFlash, REU, PAL, SID, Reset und Paletten bleiben enthalten.
-Kein D81/1581, NTSC, TAP, Maus, Sleep oder Savestates. EasyFlash fluechtig.
-System-ROMs, Sherwood und Caren fehlen. Eigenes TobyPink liegt mit Erlaubnis bei.
-Quellen/Releases: https://github.com/toby01019/openFPGA-C64-MiSTer
-Updater-Katalogaufnahme erst nach Annahme durch Betreuer; siehe UPDATERS.md.
+Das kleine Diskettensymbol oben rechts zeigt Datei-/Laufwerksaktivitaet
+und automatisches Tippen. Es ist keine Prozent- oder Restzeitanzeige und
+verschwindet nach der Aktivitaet. Bei angehaltenem C64 bleibt auch dessen
+Bild stehen. Ein Fehlerblinken des 1541-Laufwerks kann sichtbar bleiben.
+Die bisherige Bildaufloesung, Pixelphase und Audioausgabe bleiben erhalten.
+
+Kurzer Hardwaretest:
+1. Ein bekanntes D64-Spiel am READY-Prompt auswaehlen: startet es ohne LOAD*?
+2. Ein G64 und ein Spiel mit Diskettenwechsel testen: Nachladen weiterhin okay?
+3. Disk assist -> Off: LOAD*, RUN und Tastaturen wie bisher bedienen.
+Bitte auf unveraendertes Bild und Ton achten. 0.5.1 als Rueckfall behalten.
+
+TobyPink: Vor dem Start REU 512 KiB und Ultimate Audio (2 voices) einschalten. TobyPink-Pocket-V027.d64 in Disk 8 auswaehlen. Erstes Programm: TOBY TITLE. V027-AUDIO.REU ist eine Samplebank, kein Startprogramm.

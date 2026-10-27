@@ -293,7 +293,7 @@ if '--dock' in sys.argv:
  tb=tb.replace(' $display("PASS integrated APF byte order',dock_check+' $display("PASS integrated APF byte order')
 (T/'tb_integration.sv').write_text(tb)
 sources=[T/'tb_integration.sv',O/'core_top_sim.sv',O/'c64.v',O/'video_sync.v',P/'rtl/mos6526.v',P/'apf/common.v',P/'core/core_bridge_cmd.v']
-sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv']]
+sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_pcm.sv','pocket_ram_arbiter.sv','pocket_sample_memory.sv','pocket_keyboard.sv','pocket_autostart.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv']]
 for source in (P/'rtl/sid').glob('*.sv'):
  text=source.read_text()
  text=re.sub(r'\b(\w+)\+\+',r'\1=\1+1',text)

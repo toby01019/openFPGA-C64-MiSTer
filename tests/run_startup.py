@@ -29,7 +29,7 @@ if '--ui-transparency' in sys.argv:
  mode='ui-transparency';tb=(T/'tb_ui_transparency.sv').read_text()
 (T/'tb_startup.sv').write_text(tb)
 sources=[T/'tb_startup.sv',O/'core_top_sim.sv',O/'c64.v',O/'video_sync.v',P/'rtl/mos6526.v',P/'apf/common.v',P/'core/core_bridge_cmd.v']
-sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_keyboard.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv']]
+sources += [P/'core'/n for n in ['audio.sv','keys.sv','pocket_dock_keyboard.sv','mailbox.sv','loader.sv','file_reader.sv','pocket_video.sv','pocket_keyboard.sv','pocket_autostart.sv','pocket_keyboard_video.sv','pocket_storage.sv','pocket_disk.sv','pocket_d64_gcr.sv']]
 sources += list(O.glob('sid_*.sv'))
 from drive_sim import drive_sources
 sources += drive_sources()
