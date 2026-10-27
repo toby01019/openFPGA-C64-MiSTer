@@ -1,1 +1,7 @@
-0.5.2-alpha: NOT hardware tested. Earlier 0.5.1 hardware feedback does not validate this changed FPGA build.
+0.5.3-alpha hardware test status (27 October 2026)
+Independent tester confirmed all three requested checks with D64 and G64:
+automatic LOAD/game start, manual LOAD*, and in-game disk swap without
+unwanted LOAD/RUN. Public release uses the same tested FPGA bitstream.
+Earlier reports cover Dock USB keyboard, picture/audio and other functions;
+they are not claimed as a fresh exhaustive regression test for this release.
+No installation through pupdate or Pocket Sync was performed for 0.5.3.

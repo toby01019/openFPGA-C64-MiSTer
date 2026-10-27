@@ -1,3 +1,5 @@
+Umzug NUR von 0.5.1 oder aelter. Von 0.5.2 kein Umzug notwendig.
+
 C64 auf dem Analogue Pocket: neue Kennung toby01019.C64
 
 Die Plattform heisst jetzt c64 (Commodore 64). Die MiSTer-Grundlage bleibt
@@ -22,5 +24,3 @@ unter Assets/c64/common/ ablegen. System-ROMs werden nicht mitgeliefert.
 Nichts an anderen C64-Core-Ordnern aendern. Die gemeinsame Plattform c64
 ist keine neue Hardware und ersetzt keine anderen installierten C64-Cores.
 
-Dieses Paket ist eine oeffentliche Alpha-Version. Der neue 0.5.2-Bitstream ist noch im
-Hardwaretest; die Umbenennung der Paketstruktur wurde nur lokal geprueft.

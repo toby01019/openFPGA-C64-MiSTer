@@ -1,3 +1,5 @@
+Migration applies ONLY to 0.5.1 or older. From 0.5.2 no migration.
+
 C64 for Analogue Pocket: new identity toby01019.C64
 
 Platform ID: c64 (Commodore 64). The MiSTer basis is unchanged. This rename
@@ -20,5 +22,3 @@ Fresh installation: supply basic.bin, characters.bin, kernal.bin and
 Do not modify other installed C64 core directories. The shared c64 platform
 does not represent new hardware and does not replace other C64 cores.
 
-Public alpha release. The new 0.5.2 FPGA build is awaiting hardware testing;
-the renamed package structure has only been validated locally.

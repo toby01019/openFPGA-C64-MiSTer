@@ -1,32 +1,29 @@
-C64 Pocket 0.5.2-alpha - Disketten-Autostart und Aktivitaetsanzeige
+C64 Pocket 0.5.3-alpha - Autostart-Korrektur auf Hardware getestet
 
-OEFFENTLICHE ALPHA. Der neue 0.5.2-FPGA-Bau und die umbenannte Installation
-sind noch NICHT auf echtem Pocket getestet. Bisherige positive Hardwaretests
-gelten fuer 0.5.1 und aelter. Bitte 0.5.1 als Rueckfall behalten.
+Bestaetigt wurden automatisches Laden/Starten mit D64 und G64, manuelles
+LOAD* und Diskettenwechsel im Spiel ohne unerwuenschtes LOAD/RUN. Dieses
+Paket enthaelt exakt das als 0.5.3-test getestete FPGA-Bitstream. Weiterhin
+Alpha: Die Rueckmeldung ist kein vollstaendiger Test aller Spiele/Funktionen.
 
-NEUE KENNUNG: toby01019.C64. PLATTFORM: c64.
-Bestehende Nutzer: ZUERST MIGRATION-DE.txt lesen! SD sichern, Pocket aus,
-SD-ZIP ins Hauptverzeichnis entpacken und Ordner zusammenfuehren.
-Eigene ROMs/Spiele aus Assets/c64mister/common/ nach Assets/c64/common/
-kopieren. Vorhandene Dateien anderer C64-Cores nicht blind ueberschreiben.
-Einstellungen neu setzen, Disketten neu auswaehlen. Nach erfolgreichem Test
-den alten Ordner Cores/Experimental.C64MiSTer/ ins Backup verschieben,
-damit kein doppelter Menueeintrag bleibt. Alte Assets als Rueckfall behalten.
-System-ROMs sind nicht enthalten: basic.bin, characters.bin, kernal.bin,
-1541.bin selbst bereitstellen. Firmware mindestens 2.3.
+INSTALLATION: SD sichern, Pocket ausschalten, SD-ZIP ins Hauptverzeichnis
+der SD entpacken, Ordner zusammenfuehren und Core-Dateien ersetzen.
+Von 0.5.2 aus nichts umbenennen oder umziehen. Eigene ROMs, Spiele und
+Einstellungen behalten. Nur von 0.5.1 oder aelter: MIGRATION-DE.txt lesen.
+Kennung toby01019.C64, Plattform c64. Firmware mindestens 2.3.
+Eigene basic.bin, characters.bin, kernal.bin und 1541.bin unter
+Assets/c64/common/ bereitstellen. System-ROMs sind nicht enthalten.
 
-Core Settings > Disk assist: Autostart und Anzeige zusammen, einzeln oder Off.
-Am leeren Standard-BASIC-READY-Prompt D64/G64 in Disk 8 auswaehlen,
-Pocket-Menue schliessen und alle Tasten loslassen. LOAD"*",8,1 wird eingegeben;
-RUN nur nach erfolgreicher Rueckkehr zu BASIC. Diskettenwechsel im Spiel
-bleiben ohne Tastatureingabe. Disk 9 startet nie automatisch. Mit eingelegtem
-Cartridge ist der Disk-Autostart aus. Manuelle Eingabe bricht ihn ab.
+Core Settings > Disk assist: Auto start + activity, Activity only,
+Auto start only oder Off. Am leeren Standard-BASIC-READY eine D64/G64 in
+Disk 8 waehlen, Pocket-Menue schliessen und alle Tasten loslassen.
+LOAD"*",8,1 wird eingegeben; RUN nur nach erfolgreicher Rueckkehr zu BASIC.
+Diskwechsel im Spiel bleiben ohne Eingabe. Disk 9 startet nicht automatisch;
+mit eingelegtem Cartridge ist Disk-Autostart aus. Manuelle Eingabe bricht ab.
+LOAD*/RUN bleiben verfuegbar. Bei Ersatz-ROMs/Problemen Activity only/Off.
 Das Symbol oben rechts zeigt Aktivitaet, keinen prozentualen Fortschritt.
-LOAD*/RUN, Bildschirm- und Dock-Tastatur bleiben verfuegbar.
-Bei Ersatz-ROMs oder Problemen Activity only oder Off verwenden.
 
-Kurztest: D64/G64 ab READY, Diskwechsel im Spiel, manuelles Laden mit Off,
-Bild/Ton und beide Tastaturen. Details in AUTOSTART-DE.txt.
-TobyPink: REU 512 KiB und Ultimate Audio (2 voices) aktivieren, D64 auswaehlen,
-TOBY TITLE starten. V027-AUDIO.REU ist Samplebank, kein Startprogramm.
-Kein D81/1581, NTSC, TAP, Maus, Sleep oder Savestates. EasyFlash-Schreiben fluechtig.
+TobyPink: REU 512 KiB und Ultimate Audio (2 voices) einschalten, D64 waehlen,
+TOBY TITLE starten. V027-AUDIO.REU ist eine Samplebank, kein Startprogramm.
+Kein D81/1581, NTSC, TAP, Maus, Sleep oder Savestates; EasyFlash-Schreiben
+fluechtig. Englische Menues, Anleitungen DE/EN. KI-unterstuetzter Community-Port.
+0.5.2 als Rueckfall behalten; alte Versionen bleiben im GitHub-Release-Archiv.

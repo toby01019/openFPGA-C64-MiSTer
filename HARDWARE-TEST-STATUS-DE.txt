@@ -1,1 +1,7 @@
-0.5.2-alpha: Noch nicht auf Hardware getestet. Die Rueckmeldungen zu 0.5.1 gelten nicht als Hardwaretest dieses geaenderten FPGA-Baus.
+C64 Pocket 0.5.3-alpha - Autostart-Korrektur auf Hardware getestet
+
+Bestaetigt wurden automatisches Laden/Starten mit D64 und G64, manuelles
+LOAD* und Diskettenwechsel im Spiel ohne unerwuenschtes LOAD/RUN. Dieses
+Paket enthaelt exakt das als 0.5.3-test getestete FPGA-Bitstream. Weiterhin
+Alpha: Die Rueckmeldung ist kein vollstaendiger Test aller Spiele/Funktionen.
+

@@ -1,65 +1,65 @@
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:215: Instantiated PSRAM with the following settings:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:215: Instantiated PSRAM with the following settings:
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:217:   Writes:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:217:   Writes:
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:222: 
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:222: 
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:223:   Total write time:           3 cycles
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:223:   Total write time:           3 cycles
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:224:   Reads:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:224:   Reads:
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:225:     STATE_READ_ADV_END:          20
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:225:     STATE_READ_ADV_END:          20
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:229: 
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:229: 
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:230:   Total read time:           3 cycles
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:230:   Total read time:           3 cycles
       Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:215: Instantiated PSRAM with the following settings:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:215: Instantiated PSRAM with the following settings:
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:217:   Writes:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:217:   Writes:
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:222: 
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:222: 
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:223:   Total write time:           3 cycles
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:223:   Total write time:           3 cycles
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:224:   Reads:
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:224:   Reads:
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:225:     STATE_READ_ADV_END:          20
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:225:     STATE_READ_ADV_END:          20
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:229: 
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:229: 
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
-INFO: C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\c64-pocket-port\core\psram.sv:230:   Total read time:           3 cycles
+INFO: WORKSPACE\work\c64-pocket-port\core\psram.sv:230:   Total read time:           3 cycles
       Time: 0 Scope: tb.dut.reu_memory.memory.physical
 PASS full-core PCM: real APF mailbox preload/physical byte lanes, actual 6510 IOF signature + channel programming alongside REU, all32 LE16 words exact, no underrun

@@ -16,7 +16,7 @@ module tb;
  reg [63:0] expect_keys[0:15];integer n;
  task read_command(input integer first,input integer last);begin
   for(n=first;n<=last;n=n+1)begin
-   wait(dut.state==2);cycles(21);
+   wait(dut.state==2 && dut.elapsed>=20);@(negedge clk);
    if(keys!==expect_keys[n])$fatal(1,"typed key %d got %h expected %h",n,keys,expect_keys[n]);
    wait(dut.state==3);cycles(1);
    if(keys!==0)$fatal(1,"missing key release");

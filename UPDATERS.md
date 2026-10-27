@@ -1,16 +1,15 @@
 # pupdate and Pocket Sync
 
-New core ID: `toby01019.C64`. Platform: `c64`.
+Core ID: `toby01019.C64`; platform: `c64`.
 Repository: `toby01019/openFPGA-C64-MiSTer`.
 Asset filter: `^C64-Pocket-.*-Test-SD-EN\.zip$`.
 
-The old 0.5.1 release is confirmed in both public catalogs as
-Experimental.C64MiSTer on 27 October 2026. The new 0.5.2 identity must
-still propagate after this release; do not confuse the two entries.
-Until then, install the SD ZIP manually. Read MIGRATION-EN.txt / MIGRATION-DE.txt:
-the rename does not automatically migrate assets or settings.
+The new identity and 0.5.2 were confirmed in both public catalogs on
+27 October 2026. This 0.5.3 release must propagate through their next update.
+The SD ZIP can be installed manually immediately. Catalog availability is
+not a completed installation test; no live updater installation test is claimed.
 
-Catalog visibility is not an actual installation test. The earlier pupdate
-test used a local fixture for 0.5.1. The 0.5.2 package passes the official
-openFPGA validator; a public-catalog installation test is still outstanding.
+From 0.5.2: same core ID, no folder migration needed. From 0.5.1 or older,
+read MIGRATION-EN.txt / MIGRATION-DE.txt. The old Experimental.C64MiSTer
+catalog entry may coexist; avoid installing both identities accidentally.
 System ROMs are not bundled or downloaded. Source ZIPs are not SD packages.

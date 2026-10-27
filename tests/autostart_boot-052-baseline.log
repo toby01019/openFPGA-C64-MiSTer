@@ -1,0 +1,67 @@
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:215: Instantiated PSRAM with the following settings:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:217:   Writes:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:222: 
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:223:   Total write time:           3 cycles
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:224:   Reads:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:225:     STATE_READ_ADV_END:          20
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:229: 
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:230:   Total read time:           3 cycles
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:215: Instantiated PSRAM with the following settings:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:217:   Writes:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:222: 
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:223:   Total write time:           3 cycles
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:224:   Reads:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:225:     STATE_READ_ADV_END:          20
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:229: 
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:230:   Total read time:           3 cycles
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+WARNING: WORKSPACE\work\c64-pocket-autostart\tests\tb_autostart_cpu.sv:22: $readmemh: Standard inconsistency, following 1364-2005.
+FATAL: WORKSPACE\work\c64-pocket-autostart\tests\tb_autostart_cpu.sv:27: boot keyboard guard incorrectly treated as user input
+       Time: 61120586 Scope: tb

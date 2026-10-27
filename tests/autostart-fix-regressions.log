@@ -1,0 +1,92 @@
+
+PASS virtual keyboard: direct transparency, navigation/repeat, C64 contacts, sticky modifiers, RUN/LIST/LOAD*, exact LOAD quote chords and Return without RUN, clean releases, held-button guard, cancel/menu/reset release
+
+PASS Dock keyboard: 44 async-report checks, 6 keys/order/duplicates, APF modifier byte order, C64 chords, Shift Lock, QWERTZ, rollover, device type, menu/reset/disconnect/timeout and no partial-report leakage
+
+PASS Shift labels: actual left/right/Lock/temporary L, release/menu/reset, unchanged dollar contacts, C64 punctuation/F/CLR, macro quote suppression, LOAD* retained
+
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:215: Instantiated PSRAM with the following settings:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:217:   Writes:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:222: 
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:223:   Total write time:           3 cycles
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:224:   Reads:
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:225:     STATE_READ_ADV_END:          20
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:229: 
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:230:   Total read time:           3 cycles
+      Time: 0 Scope: tb.dut.cartridge_port.easyflash_port.ef.memory
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:215: Instantiated PSRAM with the following settings:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:216:   Clock speed: 31.527954 MHz with period 31.717884 ns
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:217:   Writes:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:218:     STATE_WRITE_ADV_END:           1
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:219:     STATE_WRITE_ADDR_LATCH_END:            2
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:220:     STATE_WRITE_DATA_START:            3
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:221:     STATE_WRITE_DATA_END:           4
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:222: 
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:223:   Total write time:           3 cycles
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:224:   Reads:
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:225:     STATE_READ_ADV_END:          20
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:226:     STATE_READ_ADDR_LATCH_END:           21
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:227:     STATE_READ_DATA_ENABLE:           22
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:228:     STATE_READ_DATA_RECEIVED:          23
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:229: 
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+INFO: WORKSPACE\work\c64-pocket-autostart\core\psram.sv:230:   Total read time:           3 cycles
+      Time: 0 Scope: tb.dut.reu_memory.memory.physical
+PASS menu bridge: all 128 MiSTer palette colors exact, defaults Colodore/8580, both SID models through CDC, Reset Core action, PCM enable/disable CDC, D81 rejection/1541 retention, readback
+
+PASS D64 mount and all 35 D64 track refills, no stuck pause, commits=35
+PASS independent decode: all 683 D64 sectors, BAM IDs, checksums; supplied ROM upload exact
+PASS G64 mount and both G64 track refills, no stuck pause, commits=2
+PASS G64 raw track bytes exact, runtime mount, no stuck pause
+PASS real SID-to-I2S: 120 frames, 120 changing samples, identical stereo, every decoded value belongs to the SID waveform
+MODEL 0 SIGNATURE 8ded0a89
+
+PASS real SID-to-I2S: 120 frames, 120 changing samples, identical stereo, every decoded value belongs to the SID waveform
+MODEL 1 SIGNATURE 20e97827
+
+FATAL: WORKSPACE\work\c64-pocket-autostart\tests\tb_video_384.sv:60: line width 382, expected 384
+       Time: 1852743534 Scope: tb
+
+PASS 384x270 DDR receiver: two PAL frames, all 382 source pixels intact, two exact edge copies, zero blanking, sync spacing, both DDR halves
+
+PASS top-level padding and video.json agree
+PASS Pocket VIDEO: two complete PAL frames; 384x270 accepted pixels (382 source + 2 border); 312 lines; one-cycle HS/VS; VS-to-HS gap; continuous DE; native pixel clock, SKIP disabled; RGB sample order
+
+ALL AUTOSTART FIX REGRESSIONS PASS

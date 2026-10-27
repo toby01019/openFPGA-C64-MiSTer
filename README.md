@@ -5,30 +5,31 @@ AI-assisted development. Not an official MiSTer or Analogue release.
 
 ## Download and install
 
-Download **C64-Pocket-0.5.2-Test-SD-EN.zip** from [Releases](../../releases/latest).
-**New core ID: toby01019.C64; platform: c64. Existing users must follow
-[migration instructions](MIGRATION-EN.txt) before installing.**
+Download **C64-Pocket-0.5.3-Test-SD-EN.zip** from [Releases](../../releases/latest).
+Back up your SD, power off Pocket, extract to its root and merge folders.
+**From 0.5.2: no renaming/migration.** From 0.5.1 or older, read
+[migration instructions](MIGRATION-EN.txt). Core ID `toby01019.C64`, platform `c64`.
 [English guide](READ-FIRST.txt) · [German guide](ZUERST-LESEN-DE.txt).
-Firmware 2.3 or later. Supply your own ROMs in Assets/c64/common/.
+Firmware 2.3+. Supply your own ROMs in Assets/c64/common/.
 
 ## Features and test status
 
 PAL C64, PRG, two 1541 drives (D64/G64, 8/9), EasyFlash, REU, SID 6581/8580,
 TobyPink digital samples, reset, virtual keyboard with shifted labels,
-transparency and LOAD*/RUN, Dock USB keyboard. New in 0.5.2: guarded disk
-autostart and a small activity icon, individually switchable under Disk assist.
+transparency and LOAD*/RUN, Dock USB keyboard, guarded disk autostart and
+an activity icon. Helpers can be switched off under Disk assist.
 
-**0.5.2 has NOT yet been tested on real Pocket hardware.** Earlier positive
-hardware tests include 0.5.1 Dock keyboard and preceding disk/video/audio,
-EasyFlash and virtual keyboard functions. They do not validate this new build.
-FPGA compilation, timing and simulations passed; see [validation](VALIDATION.txt).
+**0.5.3 fixes autostart cancellation during boot. Hardware tests confirmed
+D64/G64 autostart, manual LOAD*, and in-game disk swaps.** The bitstream is
+identical to the tested 0.5.3-test. Earlier reports cover Dock keyboard,
+picture/audio, EasyFlash and other features, not an exhaustive new test.
+FPGA build, timing and simulations passed; see [validation](VALIDATION.txt).
 
 ## Updaters
 
-0.5.1 is listed in both public openFPGA catalogs under Experimental.C64MiSTer.
-The renamed 0.5.2 entry must propagate after publication. Install manually
-until it appears; asset/settings migration is not automatic.
-See [updater status](UPDATERS.md).
+The core is registered with openFPGA Library. 0.5.3 requires the next catalog
+update before pupdate/Pocket Sync offer it. Manual installation works now.
+See [updater status](UPDATERS.md). Older releases remain as a rollback archive.
 
 ## Limits
 

@@ -9,7 +9,7 @@
       "description": "C64: disk autostart, activity, EasyFlash and Dock keyboard",
       "author": "toby01019",
       "url": "https://github.com/toby01019/openFPGA-C64-MiSTer",
-      "version": "0.5.2-alpha",
+      "version": "0.5.3-alpha",
       "date_release": "2026-10-27"
     },
     "framework": {

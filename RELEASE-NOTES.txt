@@ -1,41 +1,33 @@
-## C64 MiSTer for Analogue Pocket 0.5.2-alpha
+## C64 Pocket 0.5.3-alpha — Hardware-tested autostart fix
 
-Disk autostart and a small activity indicator, with the new core ID
-`toby01019.C64` and standard platform `c64`.
+Fixes disk autostart doing nothing after a cold start: the internal keyboard
+boot guard was incorrectly treated as manual input, cancelling autostart.
 
-**Public alpha: this new FPGA build and the renamed installation have NOT
-yet been tested on real Pocket hardware.** Earlier successful tests cover
-0.5.1 and earlier. Keep 0.5.1 as a fallback.
+**Hardware testing confirmed D64/G64 automatic loading and game start,
+manual LOAD*, and in-game disk swaps without unwanted LOAD/RUN.**
+The released FPGA bitstream is byte-identical to the tested 0.5.3-test.
+This remains an alpha, not a guarantee for every game or replacement ROM.
 
-### New features
-- Guarded Disk 8 D64/G64 autostart at an empty standard BASIC READY prompt.
-- RUN only after a successful load returns to BASIC; no extra RUN for self-starting programs.
-- In-game disk changes remain insert-only; manual input cancels autostart.
-- Small activity icon, not a percentage progress bar.
-- Core Settings > Disk assist enables the helpers individually or switches them off.
+### Installation
+Download **C64-Pocket-0.5.3-Test-SD-EN.zip**. Back up the SD, power off Pocket,
+extract to its root, merge folders and replace core files. From 0.5.2 there
+is **no renaming or folder migration**. From 0.5.1 or older, follow the
+included migration instructions. Provide your own system ROMs.
 
-### Install and migrate
-Use **C64-Pocket-0.5.2-Test-SD-EN.zip**, not the Source ZIP. Back up the SD first.
-Read **MIGRATION-EN.txt** or **MIGRATION-DE.txt** inside the ZIP. Copy your own
-ROMs/games from `Assets/c64mister/common/` to `Assets/c64/common/`; avoid
-overwriting shared files from other C64 cores. Reapply core settings and
-reselect disks. After testing, move the old `Cores/Experimental.C64MiSTer/`
-folder to your backup to avoid duplicate entries. Do not delete your old assets.
+Under **Core Settings > Disk assist**, use **Auto start + activity**.
+At empty BASIC READY select D64/G64 in Disk 8, close the menu and release
+buttons. Manual LOAD*/RUN remain available; Activity only disables autostart.
 
-### Updaters
-0.5.1 is now listed in the public library under its old ID. The new identity
-must propagate through the next catalog update. Manual SD-ZIP installation
-is available immediately; automatic listing is verified separately.
+### Validation and availability
+FPGA build, timing and focused regression tests passed; see VALIDATION.txt.
+Only autostart cancellation wiring changed functionally. Picture, audio,
+disk and keyboard RTL remain unchanged. Hardware tests cover the checks above.
+The registered core ID remains `toby01019.C64` on platform `c64`.
+pupdate/Pocket Sync need the next catalog update to offer 0.5.3; no live
+updater installation test is claimed. Manual installation is available now.
 
-### Validation
-FPGA compile and timing passed: 16,359/18,480 ALMs, minimum slack +0.025 ns.
-Focused autostart/actual-6510/menu/activity tests and existing regressions passed.
-The long integration test preceded the isolated menu-button guard; that guard
-was tested separately with the real CPU model and included in the final build.
-Identity changes preserve FPGA/game/sample bytes and all 115 hardware-source hashes.
-Official openFPGA validator passes (optional platform image recommendation).
-
-No D81/1581, NTSC, TAP, mouse, Sleep or savestates. EasyFlash writes are volatile.
-No system ROMs, Sherwood or Caren included. Author-owned TobyPink is included
-with permission. MiSTer/myc64/APF credits and licensing remain intact.
-AI-assisted development is disclosed. English menus and EN/DE guides included.
+0.5.2 remains in the [release archive](https://github.com/toby01019/openFPGA-C64-MiSTer/releases/tag/v0.5.2-alpha).
+Also available on [itch.io](https://toby01019.itch.io/c64-mister-analogue-pocket).
+English menus, English/German guides. No system ROMs or third-party games;
+author-owned TobyPink is included with permission. AI-assisted development;
+MiSTer/myc64/APF credits and existing licences remain intact.

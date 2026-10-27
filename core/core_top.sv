@@ -575,11 +575,13 @@ module core_top (
   if(core_reset || menu_sync)assist_controls_ready<=0;
   else if(key_sync[15:0]==0)assist_controls_ready<=1;
  end
+ // The boot/release guard captures controls without being user input.
+ // Only an available keyboard, visible overlay or real key may cancel.
  pocket_autostart disk_autostart(.clk(clk_core),.reset(core_reset),
   .enabled(assist_sync[0] && !cart_attached),.paused(c64_paused),.menu(menu_sync || !assist_controls_ready),
   .available(keyboard_ready_sync),.mounted(disk_mounted_sync),
-  .cancel((|auto_sync) || (assist_controls_ready && !menu_sync &&
-          ((|virtual_keys) || (|dock_keys) || keyboard_capture || (|key_sync[15:0])))),
+  .cancel((|auto_sync) || (keyboard_ready_sync && assist_controls_ready && !menu_sync &&
+          ((|virtual_keys) || (|dock_keys) || keyboard_visible || (|key_sync[15:0])))),
   .cpu_valid(monitor_valid),.cpu_addr(monitor_addr),.cpu_data(monitor_data),
   .matrix(autostart_keys),.typing(autostart_typing),.waiting(autostart_waiting),.prompt_ready(autostart_prompt));
  wire [63:0] combined_keys=virtual_keys|dock_keys|autostart_keys;

@@ -1,5 +1,5 @@
-C64 Pocket 0.5.2-alpha - Autostart und Aktivitaetsanzeige
-Entwicklungs-/Testfassung. Diese Erweiterung ist noch nicht auf echter Hardware getestet.
+C64 Pocket 0.5.3-alpha - Autostart und Aktivitaetsanzeige
+D64/G64-Autostart, LOAD* und Diskwechsel auf Hardware getestet.
 
 Core Settings -> Disk assist:
 - Auto start + activity: beide Hilfen eingeschaltet (Vorgabe).

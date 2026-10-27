@@ -1,0 +1,12 @@
+0.5.3 autostart fix
+The internal keyboard capture signal includes a boot/release guard. BASIC
+can reach READY while that guard still blocks controls. Treating capture as
+user input marked the BASIC line dirty and prevented disk autostart.
+core/core_top.sv now requires an available keyboard and actual input or a
+visible keyboard. The state machine, disk, video, audio and keyboard RTL are
+unchanged (pocket_autostart.sv has only line-ending differences from 0.5.2).
+The actual-6510/top-level fixture reproduces the old wiring failure and
+passes with the correction. Existing regression tests passed. Exploratory
+full-ROM simulations were not completed successfully and are not counted
+as passing tests. The earlier IRQ-gap hypothesis was not retained.
+Hardware feedback confirms D64/G64 autostart, LOAD* and in-game disk swaps.

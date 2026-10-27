@@ -1,8 +1,11 @@
-PASS identity toby01019.C64, platform c64.
-PASS official openFPGA validator (exit 0; optional platform image recommendation).
-PASS 10 FPGA/config/game/sample files byte-identical to privately sent 0.5.2.
-PASS 115 exact hardware build source hashes.
-PASS ZIP integrity and SHA256 checksums.
-Migration guidance DE/EN included; no automatic settings migration claimed.
-No new hardware or live updater installation test performed.
-Public alpha release; privately sent test ZIP and previous release retained as history.
+0.5.3-alpha release validation
+PASS all 115 exact hardware-source hashes.
+PASS FPGA build; 16,318/18,480 ALMs; 64 timing checks, minimum slack +0.026 ns.
+PASS detailed video setup/hold and remaining-hold reports (zero violations).
+PASS actual-6510 top-level boot guard regression and autostart unit suite.
+PASS virtual/Dock keyboard, Shift labels, menu, D64/G64, SID-I2S and video regressions.
+Video test includes a deliberate failing 382-pixel negative control.
+PASS public FPGA bitstream identical to hardware-tested 0.5.3-test.
+Bitstream SHA256: ccc400402f09becdd2d62235fd7edb7fb1858e2e6c88460b72dcd158628eb311
+Hardware feedback: D64/G64 autostart, manual LOAD*, in-game disk swaps passed.
+No live pupdate/Pocket Sync installation test. Not an exhaustive game test.

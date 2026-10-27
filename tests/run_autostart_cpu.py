@@ -31,10 +31,14 @@ end
 initial begin
  force dut.reset_n=1;force dut.core_run=0;force dut.host_write=0;
  force dut.pause_request=0;force dut.disk_pause=0;force dut.disk9_pause=0;
- force dut.load_state=12;force dut.disk_mounted=0;
+ force dut.load_state=11;force dut.disk_mounted=0;
  for(i=0;i<65536;i=i+1)dut.main_ram[i]=0;
  $readmemh("autostart_cpu_rom.hex",dut.c64.buslogic.kernel_c64.ram);
  repeat(100)@(negedge b);force dut.core_run=1;
+ wait(entries==1 && waits>2);repeat(100)@(negedge b);
+ force dut.load_state=12;
+ repeat(100)@(negedge b);
+ if(dut.disk_autostart.line_dirty)$fatal(1,"boot keyboard guard incorrectly treated as user input");
  wait(dut.autostart_prompt);@(negedge b);
  if(entries!=1 || waits<2)$fatal(1,"opcode tap includes data reads or missed CPU fetches %d/%d",entries,waits);
  force dut.os_menu=1;force dut.cont1_key=32'h20;repeat(8)@(negedge b);
@@ -64,3 +68,4 @@ assert r.returncode==0,r.stderr[-4000:]
 r=subprocess.run([str(B/'vvp.exe'),str(T/'autostart_cpu.vvp')],cwd=T,capture_output=True,text=True,timeout=300)
 log=r.stdout+r.stderr;(T/'autostart_cpu.log').write_text(log);print(log[-1000:])
 assert r.returncode==0 and 'PASS actual 6510' in log
+

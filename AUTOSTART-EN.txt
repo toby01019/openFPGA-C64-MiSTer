@@ -1,5 +1,5 @@
-C64 Pocket 0.5.2-alpha - Disk autostart and activity indicator
-Development/test build. These additions have NOT been tested on real hardware.
+C64 Pocket 0.5.3-alpha - Disk autostart and activity indicator
+Hardware-tested D64/G64 autostart, LOAD* and disk swaps.
 
 Core Settings -> Disk assist:
 Auto start + activity (default), Activity only, Auto start only, or Off.
@@ -22,4 +22,4 @@ The C64 picture also stops while the machine is paused for host IO.
 
 Quick hardware check: start a known D64 from READY; try a G64 and a game
 that requests another disk; select Off and check manual LOAD*/RUN and both
-keyboards. Check picture and sound remain unchanged. Keep 0.5.1 as fallback.
+keyboards. Check picture and sound remain unchanged. Keep 0.5.2 as fallback.
