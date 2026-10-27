@@ -19,3 +19,7 @@ References:
 - https://github.com/openfpga-library/analogue-pocket#adding-a-new-core
 - https://github.com/neil-morrison44/pocket-sync#why-isnt-some-core-in-the-list
 - https://github.com/mattpannella/pupdate
+
+## Registration accepted
+
+[Request #1862](https://github.com/openfpga-library/analogue-pocket/issues/1862) / [merged PR #1863](https://github.com/openfpga-library/analogue-pocket/pull/1863). Public catalog generation is pending as of 27 October. See [installation validation](UPDATER-VALIDATION.md).

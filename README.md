@@ -26,6 +26,8 @@ The FPGA bitstream is unchanged from the original 0.5.1-alpha.
 
 ## Updaters
 
+**27 October:** [catalog registration accepted and merged](https://github.com/openfpga-library/analogue-pocket/pull/1863). Public inventory generation is still pending. The actual pupdate installation from the GitHub ZIP passed with a local accepted-entry fixture; [validation details](UPDATER-VALIDATION.md).
+
 The release ZIP has Cores, Platforms and Assets at its root. The existing
 `Experimental.C64MiSTer` ID is intentionally retained for in-place upgrades.
 [Updater integration/status](UPDATERS.md). Catalog acceptance is separate
