@@ -1,0 +1,3 @@
+PASS compiled TobyPink audio init: mode 0, ready 1, no Ultimate filesystem access, 83 CPU cycles
+PASS compiled TobyPink audio init: mode 1, ready 0, no Ultimate filesystem access, 68 CPU cycles
+PASS compiled TobyPink audio init: mode 2, ready 0, no Ultimate filesystem access, 53 CPU cycles

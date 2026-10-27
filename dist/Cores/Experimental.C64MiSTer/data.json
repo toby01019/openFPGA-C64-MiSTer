@@ -1,0 +1,144 @@
+{
+  "data": {
+    "magic": "APF_VER_1",
+    "data_slots": [
+      {
+        "name": "PRG",
+        "id": 1,
+        "required": false,
+        "deferload": true,
+        "parameters": 9,
+        "filename": "",
+        "extensions": [
+          "prg"
+        ],
+        "size_maximum": 65538
+      },
+      {
+        "name": "Disk 8",
+        "id": 2,
+        "required": false,
+        "deferload": true,
+        "parameters": 1,
+        "filename": "",
+        "extensions": [
+          "d64",
+          "g64"
+        ]
+      },
+      {
+        "name": "Cartridge",
+        "id": 3,
+        "required": false,
+        "deferload": true,
+        "parameters": 9,
+        "filename": "",
+        "extensions": [
+          "crt"
+        ],
+        "size_maximum": 1050688
+      },
+      {
+        "name": "Disk 9",
+        "id": 4,
+        "required": false,
+        "deferload": true,
+        "parameters": 1,
+        "filename": "",
+        "extensions": [
+          "d64",
+          "g64"
+        ]
+      },
+      {
+        "name": "Internal file",
+        "id": 6,
+        "required": false,
+        "deferload": true,
+        "parameters": 0,
+        "filename": "",
+        "extensions": [
+          "d64",
+          "g64"
+        ]
+      },
+      {
+        "name": "Internal file",
+        "id": 7,
+        "required": false,
+        "deferload": true,
+        "parameters": 0,
+        "filename": "",
+        "extensions": [
+          "d64",
+          "g64"
+        ]
+      },
+      {
+        "name": "BASIC ROM",
+        "id": 200,
+        "required": true,
+        "deferload": true,
+        "parameters": 8,
+        "filename": "basic.bin",
+        "extensions": [
+          "bin"
+        ],
+        "address": 0,
+        "size_exact": 8192
+      },
+      {
+        "name": "Character ROM",
+        "id": 201,
+        "required": true,
+        "deferload": true,
+        "parameters": 8,
+        "filename": "characters.bin",
+        "extensions": [
+          "bin"
+        ],
+        "address": 0,
+        "size_exact": 4096
+      },
+      {
+        "name": "KERNAL ROM",
+        "id": 202,
+        "required": true,
+        "deferload": true,
+        "parameters": 8,
+        "filename": "kernal.bin",
+        "extensions": [
+          "bin"
+        ],
+        "address": 0,
+        "size_exact": 8192
+      },
+      {
+        "name": "1541 ROM",
+        "id": 203,
+        "required": false,
+        "deferload": true,
+        "parameters": 8,
+        "filename": "1541.bin",
+        "extensions": [
+          "bin"
+        ],
+        "address": 0,
+        "size_exact": 16384
+      },
+      {
+        "name": "TobyPink audio bank",
+        "id": 205,
+        "required": false,
+        "deferload": true,
+        "parameters": 8,
+        "filename": "V027-AUDIO.REU",
+        "extensions": [
+          "reu"
+        ],
+        "size_maximum": 1048576,
+        "address": 0
+      }
+    ]
+  }
+}

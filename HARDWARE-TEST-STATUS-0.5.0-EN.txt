@@ -1,0 +1,28 @@
+HARDWARE TEST STATUS - 26 October 2026
+
+0.5.0-alpha has received positive real Analogue Pocket test feedback.
+Confirmed: TobyPink's added digital screams and shotgun samples, with a
+further positive report after switching to the machine gun; Caren and the
+Tangled Tentacles 2018 Thank You Edition now runs with EasyFlash support.
+Eye of the Beholder was also reported as apparently working.
+The tester reported that existing functionality still seemed to work.
+Earlier 0.4.8 tests confirmed D64/G64 with LOAD*, clean picture/sound and
+keyboard transparency, palettes and Reset Core.
+
+These are successful practical tests, not exhaustive compatibility testing.
+No change was made to the 0.5.0 FPGA bitstream or game files for this
+documentation update. The version remains 0.5.0-alpha.
+
+Known limits remain: no D81/1581, NTSC, TAP, Sleep, savestates or external
+Dock USB keyboard. EasyFlash changes are volatile, not saved back to SD.
+TobyPink audio is a targeted two-voice subset, not full Ultimate emulation.
+
+Optional follow-up: longer Caren play with further loading; TobyPink with
+music and repeated effects; normal D64/G64 loading and Reset Core. If
+testing disk SAVE, use a disposable copy and verify it after reopening the
+core; wait a few seconds after SAVE before switching off. Never use originals.
+
+Dock USB keyboard is a future investigation only. Consult myc64-pocket
+solely for APF report-layout/interface clues. Do not import its unrelated
+core code or assume the reference implementation is correct. Validate the
+layout against Analogue documentation and focused tests before integration.

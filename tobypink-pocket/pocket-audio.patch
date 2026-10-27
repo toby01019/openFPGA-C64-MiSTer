@@ -1,0 +1,31 @@
+--- Ultimate-V027/sample.s
++++ Pocket-V027/sample.s
+@@ -169,6 +169,28 @@
+  lda #0
+  sta _ua_ready
+  sta _ua_status
++ ; Pocket edition: the APF loader preloads V027-AUDIO.REU. No Ultimate
++ ; filesystem command is issued on Pocket. Missing/disabled audio falls
++ ; back to the original SID effects. Keep Ultimate's original path below.
++ lda $df18
++ cmp #$50
++ bne @ultimate
++ lda $df19
++ cmp #$4b
++ bne @ultimate
++ lda $df1a
++ cmp #1
++ bne ua_init_return
++ lda $df1b
++ and #1
++ beq ua_init_return
++ lda #1
++ sta _ua_ready
++ lda #0
++ sta $df20
++ sta $df40
++ rts
++@ultimate:
+  lda $df1d
+  cmp #$c9
+  bne ua_init_return

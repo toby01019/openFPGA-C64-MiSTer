@@ -1,0 +1,4 @@
+PASS pixel equivalence transparency=0 checked=421240
+PASS pixel equivalence transparency=1 checked=842472
+PASS pixel equivalence transparency=2 checked=1263704
+PASS keyboard pipeline: 1263704 exact core samples current combinational/pipeline, unshifted pixels outside LOAD* shortcut row unchanged versus 0.4.5, all 3 transparency modes, selected/held/sticky keys, banner, engraving, visibility/pause, exact 4-clock delay

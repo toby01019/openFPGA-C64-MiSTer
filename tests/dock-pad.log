@@ -1,0 +1,1 @@
+PASS real PAD serial frames: 32-bit types, exact six keyboard bytes, only complete-frame publication, incomplete-frame timeout releases all slots

@@ -1,0 +1,6 @@
+PASS optional PCM loader mode 0: 2050 bytes, 1 starts, 1 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 1: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 2: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 3: 0 bytes, 0 starts, 0 finish, 0 abort; BASIC boot permitted
+PASS optional PCM loader mode 4: 1024 bytes, 1 starts, 0 finish, 1 abort; BASIC boot permitted
+PASS optional PCM loader mode 5: 2050 bytes, 1 starts, 1 finish, 0 abort; BASIC boot permitted

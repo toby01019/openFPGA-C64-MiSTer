@@ -1,0 +1,236 @@
+{
+  "interact": {
+    "magic": "APF_VER_1",
+    "variables": [
+      {
+        "name": "Joystick port",
+        "id": 0,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000000",
+        "writeonly": true,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Port 2"
+          },
+          {
+            "value": 1,
+            "name": "Port 1"
+          }
+        ]
+      },
+      {
+        "name": "Keyboard transparency",
+        "id": 1,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000004",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Opaque"
+          },
+          {
+            "value": 1,
+            "name": "25%"
+          },
+          {
+            "value": 2,
+            "name": "50%"
+          }
+        ]
+      },
+      {
+        "name": "Write protection",
+        "id": 2,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000008",
+        "writeonly": true,
+        "persist": true,
+        "defaultval": 1,
+        "options": [
+          {
+            "value": 1,
+            "name": "On"
+          },
+          {
+            "value": 0,
+            "name": "Off"
+          }
+        ]
+      },
+      {
+        "name": "REU memory",
+        "id": 3,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA000000C",
+        "writeonly": true,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Off"
+          },
+          {
+            "value": 1,
+            "name": "512 KiB"
+          },
+          {
+            "value": 2,
+            "name": "2 MiB"
+          },
+          {
+            "value": 3,
+            "name": "16 MiB"
+          }
+        ]
+      },
+      {
+        "name": "Drive 9",
+        "id": 4,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000010",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Off"
+          },
+          {
+            "value": 1,
+            "name": "1541 (D64/G64)"
+          }
+        ]
+      },
+      {
+        "name": "Reset Core",
+        "id": 5,
+        "type": "action",
+        "enabled": true,
+        "address": "0xA0000014",
+        "value": 1,
+        "writeonly": true
+      },
+      {
+        "name": "Palette",
+        "id": 6,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000018",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Colodore"
+          },
+          {
+            "value": 1,
+            "name": "Ultimate"
+          },
+          {
+            "value": 2,
+            "name": "Pepto-PAL"
+          },
+          {
+            "value": 3,
+            "name": "Vice"
+          },
+          {
+            "value": 4,
+            "name": "Vice6569R1"
+          },
+          {
+            "value": 5,
+            "name": "Vice6569R5"
+          },
+          {
+            "value": 6,
+            "name": "Vice8565R2"
+          },
+          {
+            "value": 7,
+            "name": "Lemon64"
+          }
+        ]
+      },
+      {
+        "name": "SID model",
+        "id": 7,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA000001C",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 1,
+        "options": [
+          {
+            "value": 0,
+            "name": "6581"
+          },
+          {
+            "value": 1,
+            "name": "8580"
+          }
+        ]
+      },
+      {
+        "name": "Ultimate Audio (TobyPink)",
+        "id": 8,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000020",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 0,
+        "options": [
+          {
+            "value": 0,
+            "name": "Off"
+          },
+          {
+            "value": 1,
+            "name": "On (2 voices)"
+          }
+        ]
+      },
+      {
+        "name": "Dock USB keyboard",
+        "id": 9,
+        "type": "list",
+        "enabled": true,
+        "address": "0xA0000024",
+        "writeonly": false,
+        "persist": true,
+        "defaultval": 1,
+        "options": [
+          {
+            "value": 0,
+            "name": "Off"
+          },
+          {
+            "value": 1,
+            "name": "On - QWERTY"
+          },
+          {
+            "value": 2,
+            "name": "On - QWERTZ (Y/Z)"
+          }
+        ]
+      }
+    ]
+  }
+}

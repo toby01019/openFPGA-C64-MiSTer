@@ -1,0 +1,80 @@
+C64 Pocket 0.5.1-alpha - Dock USB keyboard test build
+
+HARDWARE TEST STATUS - 27 October 2026
+
+Positive real Analogue Pocket/Dock USB keyboard test confirmed on hardware: USB keyboard works. This confirms basic operation for
+that tested setup, not every keyboard, layout or reconnect/error case.
+Keyboard model and Pocket/Dock firmware were not supplied in this report.
+Earlier real-Pocket 0.5.0 feedback covers EasyFlash/Caren, TobyPink effects,
+disk loading, picture/sound and on-screen keyboard (see historical status).
+FPGA compilation, timing and focused/integrated simulations also passed.
+The 0.5.1 FPGA bitstream is unchanged for this documentation update.
+
+INSTALL AND USE
+1. Back up the SD card. Turn the Pocket off and extract the SD package to
+   its root, merging folders and replacing core files. Keep your own ROMs.
+2. Use an Analogue Dock and a wired USB HID keyboard. Start C64MiSTer and
+   check 0.5.1-alpha. The Pocket's USB-C SD access mode is not a keyboard port.
+3. Core Settings -> Dock USB keyboard:
+   On - QWERTY (default), On - QWERTZ (Y/Z), or Off.
+4. Release all keyboard keys after core startup, Reset Core, closing the
+   Pocket menu, reconnecting the keyboard or changing this setting. A neutral
+   report is required before typing, so held menu keys cannot leak into C64.
+
+KEYS
+The keyboard drives real C64 matrix contacts, not Windows/macOS text input.
+QWERTZ swaps Y and Z only. Symbols follow C64 Shift legends, not the host OS
+or every printed German/US PC keycap. Shift+2 gives a quote; Shift+4 gives $.
+Up to six ordinary HID keys plus modifiers can be held simultaneously.
+
+PC key / position                 C64 function
+Letters, digits, Space, Enter     Same C64 keys; keypad digits/Enter also work
+Left / Right Shift               Corresponding C64 Shift
+Left / Right Ctrl, Tab           C64 CTRL
+Alt or Windows/Command key       Commodore key
+Caps Lock                       C64 SHIFT LOCK toggle
+Escape                          RUN/STOP
+F1 ... F8                       C64 F1 ... F8 (even keys generate Shift chord)
+F12                             RESTORE; Escape+F12 = RUN/STOP+RESTORE
+Backspace or Delete             DEL
+Insert                          Shift+DEL (INS)
+Home / End                      HOME / Shift+HOME (CLR)
+Arrow keys                      C64 cursor keys (Up/Left use Shift chords)
+Page Up                         C64 up-arrow character key
+US ` position                   C64 left-arrow character key
+US [ / ] positions              C64 @ / *
+US backslash / ISO extra key    C64 pound
+US ; / quote positions          C64 : / ;
+US minus / equals positions     C64 - / +
+Comma, period, slash            C64 , . /
+Keypad + - * / and decimal      C64 + - * / and period
+
+SHIFT LOCK clears when the keyboard disconnects, input times out, a menu
+opens, mode changes or the core resets. Report rollover/error releases all
+keys and requires a neutral report. Unsupported keys are ignored.
+Keyboard lock LEDs are not driven by the C64 and may show a different state.
+The existing virtual keyboard, joystick, LOAD*, transparency and shortcuts
+remain available. A physical keyboard may also type with the virtual panel
+open. F12 is RESTORE, not a core reset or cartridge-eject command.
+
+SHORT HARDWARE CHECK (WHEN POCKET AND DOCK ARE AVAILABLE)
+1. Type PRINT 123 and Enter in BASIC. Try Shift+4 ($), Y/Z, cursor keys and
+   F1/F2 in a program that uses them. Caps Lock should toggle once per press.
+2. Hold a key, open/close the Pocket menu, then release all keys. No key
+   should remain stuck. Repeat after unplug/replug and Reset Core.
+3. Open the virtual keyboard with Y; check typing and joystick operation
+   after closing it. Briefly check D64/G64, Caren and TobyPink picture/audio.
+A short report with Pocket/Dock firmware, keyboard model and what failed
+is enough. Hubs, wireless receivers and keyboards requiring unusual HID
+drivers are not promised. No mouse support was added.
+
+IMPLEMENTATION REFERENCES
+Original implementation; no old myc64-pocket decoder was imported.
+The reference was used only to identify the APF report interface. Register
+layout, device type and modifier-byte order were independently checked in:
+https://www.analogue.co/developer/docs/openfpga/bus-communication
+https://github.com/open-fpga/core-example-kbmouse-targetdata
+APF Player 3 must have type 4. Full reports cross the clock boundary through
+a held-data mailbox; incomplete reports never publish key state. A PAD
+timeout clears the controller slots; an additional watchdog releases keys
+if reports stop. Keyboard contacts merge with the existing C64 matrix.

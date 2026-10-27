@@ -1,0 +1,52 @@
+{
+  "input": {
+    "magic": "APF_VER_1",
+    "controllers": [
+      {
+        "type": "default",
+        "mappings": [
+          {
+            "id": 0,
+            "name": "Fire",
+            "key": "pad_btn_a"
+          },
+          {
+            "id": 1,
+            "name": "RUN/STOP",
+            "key": "pad_btn_x"
+          },
+          {
+            "id": 2,
+            "name": "Shift",
+            "key": "pad_trig_l"
+          },
+          {
+            "id": 3,
+            "name": "F1 / C= (keyboard)",
+            "key": "pad_trig_r"
+          },
+          {
+            "id": 4,
+            "name": "Return",
+            "key": "pad_btn_start"
+          },
+          {
+            "id": 5,
+            "name": "Space",
+            "key": "pad_btn_select"
+          },
+          {
+            "id": 6,
+            "name": "Keyboard / release",
+            "key": "pad_btn_y"
+          },
+          {
+            "id": 7,
+            "name": "Close keyboard",
+            "key": "pad_btn_b"
+          }
+        ]
+      }
+    ]
+  }
+}

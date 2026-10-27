@@ -1,0 +1,29 @@
+HARDWARE-TESTSTAND - 26. Oktober 2026
+
+Positive Rueckmeldung zur 0.5.0-alpha auf einem echten Analogue Pocket:
+TobyPink mit zusaetzlichen Schreien und Shotgun-Samples; auch nach dem
+Wechsel auf MG kam eine positive Rueckmeldung. Caren and the Tangled
+Tentacles 2018 Thank You Edition laeuft nun mit EasyFlash-Unterstuetzung.
+Eye of the Beholder scheint laut Rueckmeldung ebenfalls zu funktionieren.
+Auch die bisherigen Funktionen scheinen weiterhin zu funktionieren.
+Bei 0.4.8 waren D64/G64 mit LOAD*, Bild/Ton, Tastatur-Transparenz, Paletten
+und Reset Core bereits auf Hardware bestaetigt.
+
+Dies sind erfolgreiche Praxistests, kein vollstaendiger Kompatibilitaetstest.
+FPGA-Bitstream und Spieldateien bleiben bytegleich; diese Aktualisierung
+aendert nur die Dokumentation. Versionsnummer weiterhin 0.5.0-alpha.
+
+Bekannte Grenzen bleiben: kein D81/1581, NTSC, TAP, Sleep, Savestates oder
+externe USB-Tastatur am Dock. EasyFlash-Aenderungen sind fluechtig und werden
+nicht auf SD gespeichert. TobyPink-Audio ist gezielte Zwei-Stimmen-
+Unterstuetzung, keine vollstaendige Ultimate-Emulation.
+
+Optional: Caren laenger mit Nachladen spielen; TobyPink mit Musik und
+wiederholten Effekten; normales D64/G64-Laden und Reset Core. Disketten-SAVE
+nur auf einer entbehrlichen Kopie testen und nach erneutem Oeffnen des Cores
+pruefen; nach SAVE einige Sekunden warten. Keine Originaldisketten benutzen.
+
+Dock-USB-Tastatur bleibt eine spaetere Untersuchung. myc64-pocket nur als
+Hinweis auf APF-Reportlayout und Schnittstelle heranziehen, keinen fremden
+Core-Code ungeprueft uebernehmen. Mit Analogue-Dokumentation abgleichen und
+mit gezielten Tests absichern, bevor etwas integriert wird.

@@ -1,0 +1,5 @@
+0.5.1-alpha - hardware feedback / GitHub distribution update
+27 October 2026: successful Dock USB keyboard operation confirmed on hardware. Setup details and exhaustive edge cases not yet recorded.
+No FPGA/game-data change. Packaging adds matching GitHub metadata, credits,
+updater documentation and current test status. Existing core ID
+Experimental.C64MiSTer retained to update existing installations in place.

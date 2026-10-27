@@ -1,0 +1,1552 @@
+Modules list:
+-------------
+game.o:
+    CODE              Offs=000000  Size=002C81  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=000C6A  Align=00001  Fill=0000
+    BSS               Offs=000000  Size=000E78  Align=00001  Fill=0000
+graphics.o:
+    CODE              Offs=002C81  Size=000403  Align=00001  Fill=0000
+    RODATA            Offs=000C6A  Size=0008B3  Align=00001  Fill=0000
+    BSS               Offs=000E78  Size=000021  Align=00001  Fill=0000
+movement.o:
+    CODE              Offs=003084  Size=000325  Align=00001  Fill=0000
+    RODATA            Offs=00151D  Size=000014  Align=00001  Fill=0000
+raster.o:
+    CODE              Offs=0033A9  Size=000277  Align=00001  Fill=0000
+    RODATA            Offs=001531  Size=000008  Align=00001  Fill=0000
+sample.o:
+    CODE              Offs=003620  Size=00027D  Align=00001  Fill=0000
+    RODATA            Offs=001539  Size=000498  Align=00001  Fill=0000
+    BSS               Offs=000E99  Size=000006  Align=00001  Fill=0000
+sprites.o:
+    CODE              Offs=00389D  Size=00019B  Align=00001  Fill=0000
+    RODATA            Offs=0019D1  Size=000010  Align=00001  Fill=0000
+mechanics.o:
+    CODE              Offs=003A38  Size=0000E0  Align=00001  Fill=0000
+    BSS               Offs=000E9F  Size=000002  Align=00001  Fill=0000
+projectile.o:
+    CODE              Offs=003B18  Size=0001F9  Align=00001  Fill=0000
+weapons.o:
+    CODE              Offs=003D11  Size=000626  Align=00001  Fill=0000
+    RODATA            Offs=0019E1  Size=000080  Align=00001  Fill=0000
+    BSS               Offs=000EA1  Size=00004A  Align=00001  Fill=0000
+coast.o:
+    CODE              Offs=004337  Size=0000A6  Align=00001  Fill=0000
+    RODATA            Offs=001A61  Size=000280  Align=00001  Fill=0000
+    BSS               Offs=000EEB  Size=000004  Align=00001  Fill=0000
+scroll.o:
+    CODE              Offs=0043DD  Size=001505  Align=00001  Fill=0000
+    RODATA            Offs=001CE1  Size=000319  Align=00001  Fill=0000
+    BSS               Offs=000EEF  Size=00000A  Align=00001  Fill=0000
+landing.o:
+    CODE              Offs=0058E2  Size=0003C8  Align=00001  Fill=0000
+    RODATA            Offs=001FFA  Size=000036  Align=00001  Fill=0000
+    BSS               Offs=000EF9  Size=000006  Align=00001  Fill=0000
+bonus.o:
+    CODE              Offs=005CAA  Size=000060  Align=00001  Fill=0000
+    RODATA            Offs=002030  Size=000006  Align=00001  Fill=0000
+    BSS               Offs=000EFF  Size=000006  Align=00001  Fill=0000
+health.o:
+    CODE              Offs=005D0A  Size=00017E  Align=00001  Fill=0000
+    BSS               Offs=000F05  Size=00000C  Align=00001  Fill=0000
+details.o:
+    CODE              Offs=005E88  Size=000118  Align=00001  Fill=0000
+    BSS               Offs=000F11  Size=000001  Align=00001  Fill=0000
+world.o:
+    CODE              Offs=005FA0  Size=000077  Align=00001  Fill=0000
+    RODATA            Offs=002036  Size=00004A  Align=00001  Fill=0000
+actors.o:
+    CODE              Offs=006017  Size=00023F  Align=00001  Fill=0000
+    RODATA            Offs=002080  Size=00001C  Align=00001  Fill=0000
+    BSS               Offs=000F12  Size=00000C  Align=00001  Fill=0000
+spritepack.o:
+    CODE              Offs=006256  Size=00009F  Align=00001  Fill=0000
+    RODATA            Offs=00209C  Size=0002FD  Align=00001  Fill=0000
+campaign.o:
+    CODE              Offs=0062F5  Size=0003E9  Align=00001  Fill=0000
+    RODATA            Offs=002399  Size=0000E4  Align=00001  Fill=0000
+    BSS               Offs=000F1E  Size=000022  Align=00001  Fill=0000
+transit.o:
+    CODE              Offs=0066DE  Size=00019B  Align=00001  Fill=0000
+    RODATA            Offs=00247D  Size=00003E  Align=00001  Fill=0000
+    BSS               Offs=000F40  Size=000003  Align=00001  Fill=0000
+preview.o:
+    CODE              Offs=006879  Size=000101  Align=00001  Fill=0000
+    RODATA            Offs=0024BB  Size=0003B2  Align=00001  Fill=0000
+    BSS               Offs=000F43  Size=00000A  Align=00001  Fill=0000
+reward.o:
+    CODE              Offs=00697A  Size=00038D  Align=00001  Fill=0000
+    BSS               Offs=000F4D  Size=000006  Align=00001  Fill=0000
+toby.o:
+    CODE              Offs=006D07  Size=0000C3  Align=00001  Fill=0000
+    RODATA            Offs=00286D  Size=00000C  Align=00001  Fill=0000
+foes.o:
+    CODE              Offs=006DCA  Size=000331  Align=00001  Fill=0000
+    RODATA            Offs=002879  Size=0002D9  Align=00001  Fill=0000
+    BSS               Offs=000F53  Size=00001C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(add.o):
+    CODE              Offs=0070FB  Size=00001C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(addeqsp.o):
+    CODE              Offs=007117  Size=000011  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(addysp.o):
+    CODE              Offs=007128  Size=00000E  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(aslax3.o):
+    CODE              Offs=007136  Size=00000E  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(asrax1.o):
+    CODE              Offs=007144  Size=00000A  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(asrax3.o):
+    CODE              Offs=00714E  Size=000014  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(callmain.o):
+    CODE              Offs=007162  Size=000017  Align=00001  Fill=0000
+    DATA              Offs=000000  Size=000004  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(condes.o):
+    CODE              Offs=007179  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=000004  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=00000C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(crt0.o):
+    STARTUP           Offs=000000  Size=000033  Align=00001  Fill=0000
+    ONCE              Offs=00000C  Size=00001A  Align=00001  Fill=0000
+    INIT              Offs=000000  Size=00001C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp1.o):
+    CODE              Offs=007185  Size=000009  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp2.o):
+    CODE              Offs=00718E  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp3.o):
+    CODE              Offs=00719B  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp4.o):
+    CODE              Offs=0071A8  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp5.o):
+    CODE              Offs=0071B5  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(decsp6.o):
+    CODE              Offs=0071C2  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(exehdr.o):
+    EXEHDR            Offs=000000  Size=00000C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(icmp.o):
+    CODE              Offs=0071CF  Size=00002E  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp1.o):
+    CODE              Offs=0071FD  Size=000007  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp2.o):
+    CODE              Offs=007204  Size=000016  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp3.o):
+    CODE              Offs=00721A  Size=000005  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp4.o):
+    CODE              Offs=00721F  Size=000005  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp6.o):
+    CODE              Offs=007224  Size=000005  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(incsp8.o):
+    CODE              Offs=007229  Size=000005  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(kernal.o):
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(ldai.o):
+    CODE              Offs=00722E  Size=00000C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(loadaddr.o):
+    LOADADDR          Offs=000000  Size=000002  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(makebool.o):
+    CODE              Offs=00723A  Size=00002C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(memcpy.o):
+    CODE              Offs=007266  Size=00003C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(memset.o):
+    CODE              Offs=0072A2  Size=00005D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(mod.o):
+    CODE              Offs=0072FF  Size=000011  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(mul8.o):
+    CODE              Offs=007310  Size=00003A  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(mulax10.o):
+    CODE              Offs=00734A  Size=000019  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(mulax3.o):
+    CODE              Offs=007363  Size=000011  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(mulax6.o):
+    CODE              Offs=007374  Size=000016  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(negabs.o):
+    CODE              Offs=00738A  Size=000012  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(popptr1.o):
+    CODE              Offs=00739C  Size=00000E  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(pusha.o):
+    CODE              Offs=0073AA  Size=000016  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(pushax.o):
+    CODE              Offs=0073C0  Size=00001A  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(pushwsp.o):
+    CODE              Offs=0073DA  Size=00001C  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(shelp.o):
+    CODE              Offs=0073F6  Size=000020  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(staspidx.o):
+    CODE              Offs=007416  Size=000016  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(staxsp.o):
+    CODE              Offs=00742C  Size=00000B  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(staxspi.o):
+    CODE              Offs=007437  Size=00001B  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(sub.o):
+    CODE              Offs=007452  Size=000015  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(subysp.o):
+    CODE              Offs=007467  Size=00000D  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(udiv.o):
+    CODE              Offs=007474  Size=00004F  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(umod.o):
+    CODE              Offs=0074C3  Size=000011  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(zerobss.o):
+    CODE              Offs=0074D4  Size=000023  Align=00001  Fill=0000
+C:\Users\toby0\Documents\Codex\2026-10-08\ich-m-chte-dass-wir-ein\work\tools\cc65\lib\c64.lib(zeropage.o):
+    ZEROPAGE          Offs=000000  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000002  00001B  00001A  00001
+LOADADDR              0007FF  000800  000002  00001
+EXEHDR                000801  00080C  00000C  00001
+STARTUP               00080D  00083F  000033  00001
+CODE                  000840  007D36  0074F7  00001
+RODATA                007D37  00A888  002B52  00001
+DATA                  00A889  00A8B1  000029  00001
+INIT                  00A8B2  00A8CD  00001C  00001
+ONCE                  00A8CE  00A8F3  000026  00001
+BSS                   00AC00  00BB6E  000F6F  00001
+
+
+Exports list by name:
+---------------------
+BSOUT                     00FFD2 RLA    __BSS_RUN__               00AC00 RLA    
+__BSS_SIZE__              000F6F REA    __CONSTRUCTOR_COUNT__     000000 REA    
+__CONSTRUCTOR_TABLE__     00A8F4 RLA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      00A889 RLA    __EXEHDR__                000001 REA    
+__HEADER_LAST__           00080D RLA    __LOADADDR__              000001 REA    
+__MAIN_SIZE__             00B7F3 REA    __MAIN_START__            00080D RLA    
+__ONCE_RUN__              00A8CE RLA    __ONCE_SIZE__             000026 REA    
+__STARTUP__               000001 REA    ___bzero                  007AE2 RLA    
+_ammo                     00AC08 RLA    _attack                   00AC18 RLA    
+_bar_active               00BB05 RLA    _bar_draw                 00659A RLA    
+_bar_erase                00655E RLA    _base_color               00B076 RLA    
+_base_screen              00AC66 RLA    _beach_camera_step        003BB5 RLA    
+_begin_flight             002AE6 RLA    _blood_spread             003478 RLA    
+_bonus_erase              006502 RLA    _bonus_reset              0064EA RLA    
+_bonus_spawn              0064F9 RLA    _bonus_tick               006502 RLA    
+_bubble_at                00B893 RLA    _bubble_begin             003640 RLA    
+_bubble_color             00B949 RLA    _bubble_commit            003836 RLA    
+_bubble_drawn             00B885 RLA    _bubble_finish            003646 RLA    
+_bubble_height            00B88A RLA    _bubble_hide              003618 RLA    
+_bubble_kind              00B88B RLA    _bubble_screen            00B895 RLA    
+_bubble_show              003672 RLA    _bubble_width             00B889 RLA    
+_bubble_x                 00B88F RLA    _bubble_y                 00B891 RLA    
+_bullet_step              004990 RLA    _campaign_fly             006C4D RLA    
+_campaign_hud             006C09 RLA    _campaign_reset           006B35 RLA    
+_campaign_room            006B70 RLA    _campaign_save            006BC2 RLA    
+_can_land                 006CB5 RLA    _cave_background          0067E0 RLA    
+_cave_exit                006CF9 RLA    _cave_exit_art            006840 RLA    
+_cave_id                  00BB1E RLA    _cell                     004B77 RLA    
+_chainsaw_audio           004ACC RLA    _chainsaw_restore         004AFC REA    
+_climbing                 00AC17 RLA    _collect                  0042A6 RLA    
+_controls                 0034C1 RLA    _crystal_glint            006D90 RLA    
+_damage_enemy             001531 RLA    _death_age                00BB1D RLA    
+_death_start              00694F RLA    _death_tick               006955 RLA    
+_debug_input              00AC09 RLA    _destination              00BB1F RLA    
+_distance                 004278 RLA    _draw_actors              00296B RLA    
+_draw_page                00BA19 RLA    _drop_x                   0087BD RLA    
+_drop_y                   0087C3 RLA    _drops                    00AC34 RLA    
+_enemies                  00AC20 RLA    _enemy_after              00687D RLA    
+_enemy_air                00BB18 RLA    _enemy_before             006857 RLA    
+_enemy_idle               00694E RLA    _enemy_old_x              00BB12 REA    
+_enemy_talk               00B88C RLA    _engine_tick              007067 RLA    
+_enter_cave               006CE3 RLA    _exit_hint                006E63 RLA    
+_face                     00AC13 RLA    _final_shore              006D2C RLA    
+_fireheld                 00AC1B RLA    _flash_time               00BAE9 RLA    
+_flight_bullet_step       0049AE RLA    _flight_colors            00B076 REA    
+_flight_details           0066C8 RLA    _flight_dir               00BB24 RLA    
+_flight_map               00AC66 REA    _flight_offset            00B9FE RLA    
+_flight_phase             004C1E RLA    _flight_physics           003B00 RLA    
+_flight_reserve           00A272 RLA    _flight_scroll            004CF5 RLA    
+_flight_speed             00BAEF RLA    _flight_splatter          0067B3 RLA    
+_flight_time              00AC02 RLA    _foes_commit              0077E9 RLA    
+_foes_prepare             00761D RLA    _foes_reset               00760A RLA    
+_foes_schedule            00784C RLA    _forest_map               00C788 REA    
+_forest_map_data          008356 RLA    _frame                    00AC00 RLA    
+_gore_time                00B486 RLA    _gore_x                   00B487 RLA    
+_gore_y                   00B488 RLA    _grounded                 00AC16 RLA    
+_gun_audio                00490A RLA    _gun_sound                0048E3 RLA    
+_halloween_tiles          0087E1 RLA    _head                     00AC46 RLA    
+_hide                     00414A RLA    _hud                      000A0B RLA    
+_input                    00B9FD RLA    _invincible               00AC1A RLA    
+_landing_reset            006143 RLA    _landing_state            00BAF9 RLA    
+_landing_tick             006169 RLA    _landing_walk             006318 RLA    
+_last_input               00AC1C RLA    _launch_ground            006466 RLA    
+_launch_phase             00BB40 RLA    _level                    00AC05 RLA    
+_lift_sound               007022 RLA    _load_flight_background   006B22 RLA    
+_load_sprites             006A96 RLA    _load_walk                006B04 RLA    
+_load_world_font          0035BD RLA    _main                     003367 RLA    
+_melee                    001621 RLA    _memcpy                   007AA6 RLA    
+_memset                   007AEA RLA    _new_room                 000E2C RLA    
+_pad_draw                 006CE0 RLA    _pad_erase                006CDD RLA    
+_pending_page             00BA1B RLA    _pink                     00AC07 RLA    
+_player_physics           003955 RLA    _pose                     00AC1D RLA    
+_preview_draw             0070DB RLA    _preview_erase            0070DA RLA    
+_preview_install          0070B9 RLA    _publish_sprites          004184 RLA    
+_pvy                      00AC12 RLA    _px                       00AC0A RLA    
+_py                       00AC0C RLA    _raster_band              00BA0B RLA    
+_raster_body              003BF1 RLA    _raster_count             00BA17 RLA    
+_raster_exit              003CEA REA    _raster_irq               003BEC RLA    
+_raster_nmi               003BE9 RLA    _raster_scroll            00BA0F RLA    
+_restore_ui_font          00359E RLA    _return_shore             006476 RLA    
+_reward_room              0071BA RLA    _reward_scene_ready       00BB52 RLA    
+_reward_tick              0072C0 RLA    _sample_left              00BA99 RLA    
+_sample_nmi               003F3F RLA    _sample_shot              003E60 RLA    
+_sample_start             003EC7 RLA    _scene_fx                 006463 RLA    
+_scene_irq_line           00BB64 RLA    _score_digits             00BAFF RLA    
+_score_hud                006523 RLA    _scream_time              00AC1F RLA    
+_scroll_beach             00BA0D RLA    _scroll_jungle            00BA0C RLA    
+_scroll_water             00BA0E RLA    _shot                     00AC19 RLA    
+_shot_dir                 00AC14 RLA    _shot_vy                  00AC15 RLA    
+_shot_x                   00AC0E RLA    _shot_y                   00AC10 RLA    
+_show_drop                000C1A RLA    _sound                    000997 RLA    
+_sound_time               00AC1E RLA    _speeder_exhaust          00492B RLA    
+_spr_color                00BA4C RLA    _spr_enabled              00BA5E RLA    
+_spr_high                 00BA5C RLA    _spr_image                00BA3C RLA    
+_spr_multi                00BA60 RLA    _spr_x                    00BA1C RLA    
+_spr_y                    00BA2C RLA    _sprite                   0040DD RLA    
+_sprite_data              007D37 RLA    _sprite_mode              004158 RLA    
+_sprite_ready             00BA1A RLA    _stage                    00AC04 RLA    
+_toby_death_y             0075FA RLA    _toby_flight_head         00670B RLA    
+_toby_lower               007547 RLA    _transit_tick             006F80 RLA    
+_ua_init                  003F7F RLA    _ua_ready                 00BA9C RLA    
+_ui_font                  009054 RLA    _unpack_assets            006AA9 RLA    
+_unpack_font              006E3F RLA    _video_tick               00BAF7 RLA    
+_wait_frame               005A46 RLA    _weapon                   00BAA1 RLA    
+_weapon_control           0045C4 RLA    _weapon_erase             0047B7 RLA    
+_weapon_hud               0048C9 RLA    _weapon_key               00BAA2 RLA    
+_weapon_projectile        004358 RLA    _weapon_projectiles       00470E RLA    
+_weapon_pump_pose         0048CA RLA    _weapon_render            0047F0 RLA    
+_weapon_reset             0048B2 RLA    _weapon_tick              004551 RLA    
+_world_font               00C000 REA    _world_x                  00BB22 RLA    
+addeqysp                  007959 RLA    addysp                    007969 RLA    
+addysp1                   007968 RLA    aslax3                    007976 RLA    
+asrax1                    007984 RLA    asrax3                    00798E RLA    
+boolult                   007A99 RLA    c_sp                      000002 RLZ    
+callmain                  0079A2 RLA    cave_sprite               00A1F2 RLA    
+decsp1                    0079C5 RLA    decsp2                    0079CE RLA    
+decsp3                    0079DB RLA    decsp4                    0079E8 RLA    
+decsp5                    0079F5 RLA    decsp6                    007A02 RLA    
+donelib                   0079B9 RLA    gun_kind                  00BA6A RLA    
+incsp1                    007A3D RLA    incsp2                    007A4C RLA    
+incsp3                    007A5A RLA    incsp4                    007A5F RLA    
+incsp6                    007A64 RLA    incsp8                    007A69 RLA    
+initlib                   00A8CE RLA    ldaidx                    007A6E RLA    
+mulax10                   007B8A RLA    mulax3                    007BA3 RLA    
+mulax6                    007BB4 RLA    negax                     007BCE RLA    
+pink_cave_sprite          00A232 RLA    popax                     007A44 RLA    
+popptr1                   007BDC RLA    popsargsudiv16            007C36 RLA    
+ptr1                      00000A RLZ    ptr2                      00000C RLZ    
+ptr3                      00000E RLZ    ptr4                      000010 RLZ    
+pusha                     007BEE RLA    pusha0                    007C02 RLA    
+pushax                    007C04 RLA    pushw0sp                  007C1A RLA    
+pushwysp                  007C1C RLA    regsave                   000006 RLZ    
+shlax3                    007976 RLA    sreg                      000004 RLZ    
+staspidx                  007C56 RLA    stax0sp                   007C6C RLA    
+staxspidx                 007C77 RLA    staxysp                   007C6E RLA    
+subysp                    007CA7 RLA    tmp1                      000012 RLZ    
+tmp2                      000013 RLZ    tmp3                      000014 RLZ    
+tmp4                      000015 RLZ    tosadda0                  00793B RLA    
+tosaddax                  00793D RLA    tosicmp                   007A11 RLA    
+tosmoda0                  007B3F RLA    tosmula0                  007B50 RLA    
+tossubax                  007C94 RLA    tosudiva0                 007CB4 RLA    
+tosumoda0                 007D03 RLA    tosumula0                 007B50 RLA    
+udiv16                    007CC5 RLA    zerobss                   007D14 RLA    
+
+
+
+Exports list by value:
+----------------------
+__DESTRUCTOR_COUNT__      000000 REA    __CONSTRUCTOR_COUNT__     000000 REA    
+__EXEHDR__                000001 REA    __STARTUP__               000001 REA    
+__LOADADDR__              000001 REA    c_sp                      000002 RLZ    
+sreg                      000004 RLZ    regsave                   000006 RLZ    
+ptr1                      00000A RLZ    ptr2                      00000C RLZ    
+ptr3                      00000E RLZ    ptr4                      000010 RLZ    
+tmp1                      000012 RLZ    tmp2                      000013 RLZ    
+tmp3                      000014 RLZ    tmp4                      000015 RLZ    
+__ONCE_SIZE__             000026 REA    __MAIN_START__            00080D RLA    
+__HEADER_LAST__           00080D RLA    _sound                    000997 RLA    
+_hud                      000A0B RLA    _show_drop                000C1A RLA    
+_new_room                 000E2C RLA    __BSS_SIZE__              000F6F REA    
+_damage_enemy             001531 RLA    _melee                    001621 RLA    
+_draw_actors              00296B RLA    _begin_flight             002AE6 RLA    
+_main                     003367 RLA    _blood_spread             003478 RLA    
+_controls                 0034C1 RLA    _restore_ui_font          00359E RLA    
+_load_world_font          0035BD RLA    _bubble_hide              003618 RLA    
+_bubble_begin             003640 RLA    _bubble_finish            003646 RLA    
+_bubble_show              003672 RLA    _bubble_commit            003836 RLA    
+_player_physics           003955 RLA    _flight_physics           003B00 RLA    
+_beach_camera_step        003BB5 RLA    _raster_nmi               003BE9 RLA    
+_raster_irq               003BEC RLA    _raster_body              003BF1 RLA    
+_raster_exit              003CEA REA    _sample_shot              003E60 RLA    
+_sample_start             003EC7 RLA    _sample_nmi               003F3F RLA    
+_ua_init                  003F7F RLA    _sprite                   0040DD RLA    
+_hide                     00414A RLA    _sprite_mode              004158 RLA    
+_publish_sprites          004184 RLA    _distance                 004278 RLA    
+_collect                  0042A6 RLA    _weapon_projectile        004358 RLA    
+_weapon_tick              004551 RLA    _weapon_control           0045C4 RLA    
+_weapon_projectiles       00470E RLA    _weapon_erase             0047B7 RLA    
+_weapon_render            0047F0 RLA    _weapon_reset             0048B2 RLA    
+_weapon_hud               0048C9 RLA    _weapon_pump_pose         0048CA RLA    
+_gun_sound                0048E3 RLA    _gun_audio                00490A RLA    
+_speeder_exhaust          00492B RLA    _bullet_step              004990 RLA    
+_flight_bullet_step       0049AE RLA    _chainsaw_audio           004ACC RLA    
+_chainsaw_restore         004AFC REA    _cell                     004B77 RLA    
+_flight_phase             004C1E RLA    _flight_scroll            004CF5 RLA    
+_wait_frame               005A46 RLA    _landing_reset            006143 RLA    
+_landing_tick             006169 RLA    _landing_walk             006318 RLA    
+_scene_fx                 006463 RLA    _launch_ground            006466 RLA    
+_return_shore             006476 RLA    _bonus_reset              0064EA RLA    
+_bonus_spawn              0064F9 RLA    _bonus_erase              006502 RLA    
+_bonus_tick               006502 RLA    _score_hud                006523 RLA    
+_bar_erase                00655E RLA    _bar_draw                 00659A RLA    
+_flight_details           0066C8 RLA    _toby_flight_head         00670B RLA    
+_flight_splatter          0067B3 RLA    _cave_background          0067E0 RLA    
+_cave_exit_art            006840 RLA    _enemy_before             006857 RLA    
+_enemy_after              00687D RLA    _enemy_idle               00694E RLA    
+_death_start              00694F RLA    _death_tick               006955 RLA    
+_load_sprites             006A96 RLA    _unpack_assets            006AA9 RLA    
+_load_walk                006B04 RLA    _load_flight_background   006B22 RLA    
+_campaign_reset           006B35 RLA    _campaign_room            006B70 RLA    
+_campaign_save            006BC2 RLA    _campaign_hud             006C09 RLA    
+_campaign_fly             006C4D RLA    _can_land                 006CB5 RLA    
+_pad_erase                006CDD RLA    _pad_draw                 006CE0 RLA    
+_enter_cave               006CE3 RLA    _cave_exit                006CF9 RLA    
+_final_shore              006D2C RLA    _crystal_glint            006D90 RLA    
+_unpack_font              006E3F RLA    _exit_hint                006E63 RLA    
+_transit_tick             006F80 RLA    _lift_sound               007022 RLA    
+_engine_tick              007067 RLA    _preview_install          0070B9 RLA    
+_preview_erase            0070DA RLA    _preview_draw             0070DB RLA    
+_reward_room              0071BA RLA    _reward_tick              0072C0 RLA    
+_toby_lower               007547 RLA    _toby_death_y             0075FA RLA    
+_foes_reset               00760A RLA    _foes_prepare             00761D RLA    
+_foes_commit              0077E9 RLA    _foes_schedule            00784C RLA    
+tosadda0                  00793B RLA    tosaddax                  00793D RLA    
+addeqysp                  007959 RLA    addysp1                   007968 RLA    
+addysp                    007969 RLA    shlax3                    007976 RLA    
+aslax3                    007976 RLA    asrax1                    007984 RLA    
+asrax3                    00798E RLA    callmain                  0079A2 RLA    
+donelib                   0079B9 RLA    decsp1                    0079C5 RLA    
+decsp2                    0079CE RLA    decsp3                    0079DB RLA    
+decsp4                    0079E8 RLA    decsp5                    0079F5 RLA    
+decsp6                    007A02 RLA    tosicmp                   007A11 RLA    
+incsp1                    007A3D RLA    popax                     007A44 RLA    
+incsp2                    007A4C RLA    incsp3                    007A5A RLA    
+incsp4                    007A5F RLA    incsp6                    007A64 RLA    
+incsp8                    007A69 RLA    ldaidx                    007A6E RLA    
+boolult                   007A99 RLA    _memcpy                   007AA6 RLA    
+___bzero                  007AE2 RLA    _memset                   007AEA RLA    
+tosmoda0                  007B3F RLA    tosmula0                  007B50 RLA    
+tosumula0                 007B50 RLA    mulax10                   007B8A RLA    
+mulax3                    007BA3 RLA    mulax6                    007BB4 RLA    
+negax                     007BCE RLA    popptr1                   007BDC RLA    
+pusha                     007BEE RLA    pusha0                    007C02 RLA    
+pushax                    007C04 RLA    pushw0sp                  007C1A RLA    
+pushwysp                  007C1C RLA    popsargsudiv16            007C36 RLA    
+staspidx                  007C56 RLA    stax0sp                   007C6C RLA    
+staxysp                   007C6E RLA    staxspidx                 007C77 RLA    
+tossubax                  007C94 RLA    subysp                    007CA7 RLA    
+tosudiva0                 007CB4 RLA    udiv16                    007CC5 RLA    
+tosumoda0                 007D03 RLA    zerobss                   007D14 RLA    
+_sprite_data              007D37 RLA    _forest_map_data          008356 RLA    
+_drop_x                   0087BD RLA    _drop_y                   0087C3 RLA    
+_halloween_tiles          0087E1 RLA    _ui_font                  009054 RLA    
+cave_sprite               00A1F2 RLA    pink_cave_sprite          00A232 RLA    
+_flight_reserve           00A272 RLA    __DESTRUCTOR_TABLE__      00A889 RLA    
+__ONCE_RUN__              00A8CE RLA    initlib                   00A8CE RLA    
+__CONSTRUCTOR_TABLE__     00A8F4 RLA    __BSS_RUN__               00AC00 RLA    
+_frame                    00AC00 RLA    _flight_time              00AC02 RLA    
+_stage                    00AC04 RLA    _level                    00AC05 RLA    
+_pink                     00AC07 RLA    _ammo                     00AC08 RLA    
+_debug_input              00AC09 RLA    _px                       00AC0A RLA    
+_py                       00AC0C RLA    _shot_x                   00AC0E RLA    
+_shot_y                   00AC10 RLA    _pvy                      00AC12 RLA    
+_face                     00AC13 RLA    _shot_dir                 00AC14 RLA    
+_shot_vy                  00AC15 RLA    _grounded                 00AC16 RLA    
+_climbing                 00AC17 RLA    _attack                   00AC18 RLA    
+_shot                     00AC19 RLA    _invincible               00AC1A RLA    
+_fireheld                 00AC1B RLA    _last_input               00AC1C RLA    
+_pose                     00AC1D RLA    _sound_time               00AC1E RLA    
+_scream_time              00AC1F RLA    _enemies                  00AC20 RLA    
+_drops                    00AC34 RLA    _head                     00AC46 RLA    
+_base_screen              00AC66 RLA    _flight_map               00AC66 REA    
+_flight_colors            00B076 REA    _base_color               00B076 RLA    
+_gore_time                00B486 RLA    _gore_x                   00B487 RLA    
+_gore_y                   00B488 RLA    __MAIN_SIZE__             00B7F3 REA    
+_bubble_drawn             00B885 RLA    _bubble_width             00B889 RLA    
+_bubble_height            00B88A RLA    _bubble_kind              00B88B RLA    
+_enemy_talk               00B88C RLA    _bubble_x                 00B88F RLA    
+_bubble_y                 00B891 RLA    _bubble_at                00B893 RLA    
+_bubble_screen            00B895 RLA    _bubble_color             00B949 RLA    
+_input                    00B9FD RLA    _flight_offset            00B9FE RLA    
+_raster_band              00BA0B RLA    _scroll_jungle            00BA0C RLA    
+_scroll_beach             00BA0D RLA    _scroll_water             00BA0E RLA    
+_raster_scroll            00BA0F RLA    _raster_count             00BA17 RLA    
+_draw_page                00BA19 RLA    _sprite_ready             00BA1A RLA    
+_pending_page             00BA1B RLA    _spr_x                    00BA1C RLA    
+_spr_y                    00BA2C RLA    _spr_image                00BA3C RLA    
+_spr_color                00BA4C RLA    _spr_high                 00BA5C RLA    
+_spr_enabled              00BA5E RLA    _spr_multi                00BA60 RLA    
+gun_kind                  00BA6A RLA    _sample_left              00BA99 RLA    
+_ua_ready                 00BA9C RLA    _weapon                   00BAA1 RLA    
+_weapon_key               00BAA2 RLA    _flash_time               00BAE9 RLA    
+_flight_speed             00BAEF RLA    _video_tick               00BAF7 RLA    
+_landing_state            00BAF9 RLA    _score_digits             00BAFF RLA    
+_bar_active               00BB05 RLA    _enemy_old_x              00BB12 REA    
+_enemy_air                00BB18 RLA    _death_age                00BB1D RLA    
+_cave_id                  00BB1E RLA    _destination              00BB1F RLA    
+_world_x                  00BB22 RLA    _flight_dir               00BB24 RLA    
+_launch_phase             00BB40 RLA    _reward_scene_ready       00BB52 RLA    
+_scene_irq_line           00BB64 RLA    _world_font               00C000 REA    
+_forest_map               00C788 REA    BSOUT                     00FFD2 RLA    
+
+
+
+Imports list:
+-------------
+BSOUT (kernal.o):
+    crt0.o                    c64/crt0.s:10
+__BSS_RUN__ ([linker generated]):
+    zerobss.o                 common/zerobss.s:8
+    reward.o                  reward.s:367
+__BSS_SIZE__ ([linker generated]):
+    zerobss.o                 common/zerobss.s:8
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s:18
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s:18
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s:19
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s:19
+__EXEHDR__ (exehdr.o):
+    [linker generated]        C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\tobypink-pocket\source\game.cfg:6
+__HEADER_LAST__ ([linker generated]):
+    [linker generated]        C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\tobypink-pocket\source\game.cfg:14
+    [linker generated]        C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\tobypink-pocket\source\game.cfg:14
+__LOADADDR__ (loadaddr.o):
+    [linker generated]        C:\Users\toby0\Documents\Codex\2026-10-24\playstation-core-f-r-analogue-pocket\work\tobypink-pocket\source\game.cfg:5
+__MAIN_SIZE__ ([linker generated]):
+    crt0.o                    c64/crt0.s:11
+__MAIN_START__ ([linker generated]):
+    crt0.o                    c64/crt0.s:11
+__ONCE_RUN__ ([linker generated]):
+    reward.o                  reward.s:367
+__ONCE_SIZE__ ([linker generated]):
+    reward.o                  reward.s:367
+__STARTUP__ (crt0.o):
+    game.o                    game.s:13
+___bzero (memset.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+_ammo (game.o):
+    weapons.o                 weapons.s:8
+    mechanics.o               mechanics.s:4
+_attack (game.o):
+    landing.o                 landing.s:6
+    weapons.o                 weapons.s:8
+_bar_active (health.o):
+    actors.o                  actors.s:212
+    bonus.o                   bonus.s:5
+    game.o                    game.s:6459
+_bar_draw (health.o):
+    graphics.o                graphics.s:495
+_bar_erase (health.o):
+    graphics.o                graphics.s:489
+_base_color (game.o):
+    campaign.o                campaign.s:494
+_base_screen (game.o):
+    campaign.o                campaign.s:494
+    spritepack.o              spritepack.s:97
+_beach_camera_step (movement.o):
+    game.o                    game.s:6494
+_begin_flight (game.o):
+    transit.o                 transit.s:3
+    landing.o                 landing.s:4
+_blood_spread (game.o):
+    actors.o                  actors.s:5
+_bonus_erase (bonus.o):
+    game.o                    game.s:6457
+_bonus_reset (bonus.o):
+    game.o                    game.s:6457
+_bonus_spawn (bonus.o):
+    game.o                    game.s:6457
+_bonus_tick (bonus.o):
+    game.o                    game.s:6457
+_bubble_at (game.o):
+    health.o                  health.s:170
+    graphics.o                graphics.s:9
+_bubble_begin (graphics.o):
+    game.o                    game.s:6479
+_bubble_color (game.o):
+    graphics.o                graphics.s:10
+_bubble_commit (graphics.o):
+    raster.o                  raster.s:263
+_bubble_drawn (game.o):
+    reward.o                  reward.s:365
+    actors.o                  actors.s:212
+    health.o                  health.s:170
+    graphics.o                graphics.s:9
+_bubble_finish (graphics.o):
+    game.o                    game.s:6479
+_bubble_height (game.o):
+    health.o                  health.s:170
+    graphics.o                graphics.s:9
+_bubble_hide (graphics.o):
+    game.o                    game.s:153
+_bubble_kind (game.o):
+    graphics.o                graphics.s:8
+_bubble_screen (game.o):
+    graphics.o                graphics.s:10
+_bubble_show (graphics.o):
+    game.o                    game.s:154
+_bubble_width (game.o):
+    health.o                  health.s:170
+    graphics.o                graphics.s:9
+_bubble_x (game.o):
+    graphics.o                graphics.s:8
+_bubble_y (game.o):
+    graphics.o                graphics.s:8
+_bullet_step (weapons.o):
+    projectile.o              projectile.s:3
+_campaign_fly (campaign.o):
+    game.o                    game.s:6469
+_campaign_hud (campaign.o):
+    details.o                 details.s:148
+    game.o                    game.s:6469
+_campaign_reset (campaign.o):
+    game.o                    game.s:6469
+_campaign_room (campaign.o):
+    game.o                    game.s:6469
+_campaign_save (campaign.o):
+    transit.o                 transit.s:4
+    landing.o                 landing.s:441
+    mechanics.o               mechanics.s:129
+_can_land (campaign.o):
+    landing.o                 landing.s:421
+_cave_background (world.o):
+    reward.o                  reward.s:4
+    game.o                    game.s:6463
+_cave_exit (campaign.o):
+    game.o                    game.s:6469
+_cave_exit_art (world.o):
+    game.o                    game.s:6511
+_cave_id (campaign.o):
+    landing.o                 landing.s:441
+_cell (coast.o):
+    game.o                    game.s:120
+_chainsaw_audio (weapons.o):
+    game.o                    game.s:6503
+_chainsaw_restore (weapons.o):
+    game.o                    game.s:6507
+_climbing (game.o):
+    toby.o                    toby.s:6
+    landing.o                 landing.s:3
+    movement.o                movement.s:5
+_collect (mechanics.o):
+    game.o                    game.s:150
+_controls (graphics.o):
+    reward.o                  reward.s:189
+    game.o                    game.s:129
+_crystal_glint (campaign.o):
+    landing.o                 landing.s:423
+_damage_enemy (game.o):
+    projectile.o              projectile.s:2
+_death_age (actors.o):
+    toby.o                    toby.s:4
+_death_start (actors.o):
+    game.o                    game.s:6463
+_death_tick (actors.o):
+    game.o                    game.s:6463
+_debug_input (game.o):
+    graphics.o                graphics.s:8
+_destination (campaign.o):
+    preview.o                 preview.s:180
+    landing.o                 landing.s:441
+_distance (mechanics.o):
+    weapons.o                 weapons.s:795
+    projectile.o              projectile.s:2
+    game.o                    game.s:119
+_draw_actors (game.o):
+    landing.o                 landing.s:4
+_draw_page (game.o):
+    foes.o                    foes.s:5
+    toby.o                    toby.s:4
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    transit.o                 transit.s:4
+    campaign.o                campaign.s:8
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:4
+    graphics.o                graphics.s:563
+_drop_x (game.o):
+    campaign.o                campaign.s:343
+_drop_y (game.o):
+    campaign.o                campaign.s:343
+_drops (game.o):
+    campaign.o                campaign.s:5
+    weapons.o                 weapons.s:795
+    projectile.o              projectile.s:2
+    mechanics.o               mechanics.s:4
+_enemies (game.o):
+    foes.o                    foes.s:5
+    actors.o                  actors.s:4
+    health.o                  health.s:3
+    landing.o                 landing.s:6
+    projectile.o              projectile.s:2
+    movement.o                movement.s:405
+_enemy_after (actors.o):
+    game.o                    game.s:6463
+_enemy_air (actors.o):
+    bonus.o                   bonus.s:70
+_enemy_before (actors.o):
+    game.o                    game.s:6463
+_enemy_idle (actors.o):
+    game.o                    game.s:6463
+_enemy_old_x (actors.o):
+    foes.o                    foes.s:5
+_enemy_talk (game.o):
+    landing.o                 landing.s:6
+_engine_tick (transit.o):
+    game.o                    game.s:6475
+_enter_cave (campaign.o):
+    landing.o                 landing.s:421
+_exit_hint (campaign.o):
+    game.o                    game.s:6485
+_face (game.o):
+    campaign.o                campaign.s:7
+    landing.o                 landing.s:3
+    weapons.o                 weapons.s:8
+    movement.o                movement.s:5
+_final_shore (campaign.o):
+    landing.o                 landing.s:421
+_fireheld (game.o):
+    landing.o                 landing.s:6
+    weapons.o                 weapons.s:8
+_flash_time (weapons.o):
+    transit.o                 transit.s:6
+_flight_bullet_step (weapons.o):
+    game.o                    game.s:6451
+_flight_colors (game.o):
+    scroll.o                  scroll.s:6
+_flight_details (details.o):
+    game.o                    game.s:6461
+_flight_dir (campaign.o):
+    details.o                 details.s:2
+    landing.o                 landing.s:436
+    scroll.o                  scroll.s:7
+    weapons.o                 weapons.s:716
+    movement.o                movement.s:405
+_flight_map (game.o):
+    scroll.o                  scroll.s:6
+_flight_offset (game.o):
+    scroll.o                  scroll.s:6
+_flight_phase (scroll.o):
+    game.o                    game.s:6477
+_flight_physics (movement.o):
+    game.o                    game.s:169
+_flight_reserve (preview.o):
+    game.o                    game.s:6481
+_flight_scroll (scroll.o):
+    game.o                    game.s:6449
+_flight_speed (scroll.o):
+    campaign.o                campaign.s:591
+    movement.o                movement.s:435
+_flight_splatter (details.o):
+    game.o                    game.s:6473
+_flight_time (game.o):
+    landing.o                 landing.s:8
+_foes_commit (foes.o):
+    raster.o                  raster.s:267
+_foes_prepare (foes.o):
+    weapons.o                 weapons.s:868
+_foes_reset (foes.o):
+    spritepack.o              spritepack.s:4
+_foes_schedule (foes.o):
+    raster.o                  raster.s:267
+_forest_map (game.o):
+    world.o                   world.s:2
+_forest_map_data (game.o):
+    world.o                   world.s:84
+_frame (game.o):
+    foes.o                    foes.s:5
+    reward.o                  reward.s:4
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:343
+    actors.o                  actors.s:4
+    details.o                 details.s:3
+    scroll.o                  scroll.s:5
+    weapons.o                 weapons.s:535
+    movement.o                movement.s:6
+    graphics.o                graphics.s:8
+_gore_time (game.o):
+    landing.o                 landing.s:6
+    weapons.o                 weapons.s:535
+_gore_x (game.o):
+    actors.o                  actors.s:5
+    details.o                 details.s:119
+    weapons.o                 weapons.s:718
+_gore_y (game.o):
+    actors.o                  actors.s:5
+    weapons.o                 weapons.s:718
+_grounded (game.o):
+    landing.o                 landing.s:3
+    movement.o                movement.s:5
+_gun_audio (weapons.o):
+    game.o                    game.s:6443
+_gun_sound (weapons.o):
+    game.o                    game.s:6443
+_halloween_tiles (game.o):
+    scroll.o                  scroll.s:6
+_head (game.o):
+    landing.o                 landing.s:6
+_hide (sprites.o):
+    weapons.o                 weapons.s:11
+    game.o                    game.s:125
+_hud (game.o):
+    weapons.o                 weapons.s:11
+    mechanics.o               mechanics.s:4
+_input (game.o):
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:5
+    landing.o                 landing.s:3
+    scroll.o                  scroll.s:911
+    weapons.o                 weapons.s:8
+    movement.o                movement.s:6
+_invincible (game.o):
+    landing.o                 landing.s:6
+_landing_reset (landing.o):
+    transit.o                 transit.s:4
+    game.o                    game.s:6455
+_landing_state (landing.o):
+    transit.o                 transit.s:207
+    campaign.o                campaign.s:469
+    scroll.o                  scroll.s:913
+    movement.o                movement.s:400
+    game.o                    game.s:6455
+_landing_tick (landing.o):
+    game.o                    game.s:6455
+_landing_walk (landing.o):
+    transit.o                 transit.s:3
+    game.o                    game.s:6455
+_last_input (game.o):
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:5
+    landing.o                 landing.s:3
+    weapons.o                 weapons.s:8
+    movement.o                movement.s:6
+_launch_ground (landing.o):
+    transit.o                 transit.s:3
+_launch_phase (transit.o):
+    campaign.o                campaign.s:6
+    landing.o                 landing.s:425
+    movement.o                movement.s:402
+    game.o                    game.s:6471
+_level (game.o):
+    campaign.o                campaign.s:5
+_lift_sound (transit.o):
+    landing.o                 landing.s:426
+_load_flight_background (spritepack.o):
+    game.o                    game.s:6509
+_load_sprites (spritepack.o):
+    game.o                    game.s:6467
+_load_walk (spritepack.o):
+    landing.o                 landing.s:4
+_load_world_font (graphics.o):
+    reward.o                  reward.s:4
+    game.o                    game.s:137
+_main (game.o):
+    callmain.o                runtime/callmain.s:11
+_melee (game.o):
+    weapons.o                 weapons.s:11
+_memcpy (memcpy.o):
+    game.o                    game.s:14
+_memset (memset.o):
+    game.o                    game.s:16
+_new_room (game.o):
+    campaign.o                campaign.s:5
+_pad_draw (campaign.o):
+    game.o                    game.s:6469
+_pad_erase (campaign.o):
+    game.o                    game.s:6469
+_pending_page (game.o):
+    foes.o                    foes.s:5
+    sprites.o                 sprites.s:4
+    raster.o                  raster.s:13
+    graphics.o                graphics.s:563
+_pink (game.o):
+    campaign.o                campaign.s:5
+    mechanics.o               mechanics.s:4
+_player_physics (movement.o):
+    game.o                    game.s:142
+_pose (game.o):
+    toby.o                    toby.s:6
+    weapons.o                 weapons.s:8
+_preview_draw (preview.o):
+    campaign.o                campaign.s:467
+    landing.o                 landing.s:494
+_preview_erase (preview.o):
+    campaign.o                campaign.s:467
+_preview_install (preview.o):
+    details.o                 details.s:146
+    landing.o                 landing.s:494
+_publish_sprites (sprites.o):
+    reward.o                  reward.s:189
+    game.o                    game.s:127
+_pvy (game.o):
+    landing.o                 landing.s:3
+    movement.o                movement.s:5
+_px (game.o):
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:5
+    actors.o                  actors.s:4
+    details.o                 details.s:3
+    landing.o                 landing.s:3
+    weapons.o                 weapons.s:8
+    mechanics.o               mechanics.s:4
+    movement.o                movement.s:5
+_py (game.o):
+    toby.o                    toby.s:4
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:5
+    actors.o                  actors.s:4
+    details.o                 details.s:3
+    landing.o                 landing.s:3
+    weapons.o                 weapons.s:8
+    mechanics.o               mechanics.s:4
+    movement.o                movement.s:5
+_raster_band (game.o):
+    reward.o                  reward.s:189
+    raster.o                  raster.s:10
+_raster_body (raster.o):
+    foes.o                    foes.s:480
+    reward.o                  reward.s:189
+_raster_count (game.o):
+    raster.o                  raster.s:10
+_raster_exit (raster.o):
+    foes.o                    foes.s:6
+    reward.o                  reward.s:189
+_raster_irq (raster.o):
+    foes.o                    foes.s:6
+    reward.o                  reward.s:189
+    game.o                    game.s:112
+_raster_nmi (raster.o):
+    reward.o                  reward.s:189
+    game.o                    game.s:113
+_raster_scroll (game.o):
+    scroll.o                  scroll.s:5
+    raster.o                  raster.s:12
+_restore_ui_font (graphics.o):
+    game.o                    game.s:138
+_return_shore (landing.o):
+    campaign.o                campaign.s:471
+_reward_room (reward.o):
+    campaign.o                campaign.s:585
+_reward_scene_ready (reward.o):
+    campaign.o                campaign.s:586
+    raster.o                  raster.s:9
+_reward_tick (reward.o):
+    game.o                    game.s:6505
+_sample_left (sample.o):
+    transit.o                 transit.s:5
+    landing.o                 landing.s:7
+    scroll.o                  scroll.s:6
+    graphics.o                graphics.s:564
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+_sample_nmi (sample.o):
+    raster.o                  raster.s:7
+_sample_shot (sample.o):
+    weapons.o                 weapons.s:767
+_sample_start (sample.o):
+    actors.o                  actors.s:5
+    game.o                    game.s:167
+_scene_fx (landing.o):
+    game.o                    game.s:6455
+_scene_irq_line (foes.o):
+    raster.o                  raster.s:267
+_score_digits (bonus.o):
+    campaign.o                campaign.s:8
+_score_hud (bonus.o):
+    game.o                    game.s:6457
+_scream_time (game.o):
+    transit.o                 transit.s:5
+_scroll_beach (game.o):
+    scroll.o                  scroll.s:5
+_scroll_jungle (game.o):
+    scroll.o                  scroll.s:5
+_scroll_water (game.o):
+    scroll.o                  scroll.s:5
+_shot (game.o):
+    transit.o                 transit.s:6
+    landing.o                 landing.s:6
+    weapons.o                 weapons.s:9
+    projectile.o              projectile.s:2
+_shot_dir (game.o):
+    weapons.o                 weapons.s:9
+    projectile.o              projectile.s:2
+_shot_vy (game.o):
+    weapons.o                 weapons.s:9
+    projectile.o              projectile.s:2
+_shot_x (game.o):
+    weapons.o                 weapons.s:9
+    projectile.o              projectile.s:2
+_shot_y (game.o):
+    weapons.o                 weapons.s:9
+    projectile.o              projectile.s:2
+_show_drop (game.o):
+    campaign.o                campaign.s:5
+    weapons.o                 weapons.s:795
+    projectile.o              projectile.s:2
+    mechanics.o               mechanics.s:4
+_sound (game.o):
+    mechanics.o               mechanics.s:4
+_sound_time (game.o):
+    weapons.o                 weapons.s:9
+    sample.o                  sample.s:359
+_speeder_exhaust (weapons.o):
+    game.o                    game.s:6447
+_spr_color (game.o):
+    foes.o                    foes.s:6
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:5
+    raster.o                  raster.s:13
+_spr_enabled (game.o):
+    foes.o                    foes.s:6
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    transit.o                 transit.s:4
+    campaign.o                campaign.s:8
+    actors.o                  actors.s:212
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:6
+    raster.o                  raster.s:14
+_spr_high (game.o):
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:6
+    raster.o                  raster.s:14
+_spr_image (game.o):
+    foes.o                    foes.s:6
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:5
+    raster.o                  raster.s:13
+_spr_multi (game.o):
+    foes.o                    foes.s:6
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:6
+    raster.o                  raster.s:14
+_spr_x (game.o):
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:5
+    raster.o                  raster.s:13
+_spr_y (game.o):
+    foes.o                    foes.s:6
+    toby.o                    toby.s:5
+    reward.o                  reward.s:4
+    preview.o                 preview.s:3
+    details.o                 details.s:2
+    landing.o                 landing.s:5
+    weapons.o                 weapons.s:719
+    sprites.o                 sprites.s:5
+    raster.o                  raster.s:13
+_sprite (sprites.o):
+    actors.o                  actors.s:5
+    game.o                    game.s:124
+_sprite_data (game.o):
+    spritepack.o              spritepack.s:3
+_sprite_mode (sprites.o):
+    game.o                    game.s:126
+_sprite_ready (game.o):
+    reward.o                  reward.s:189
+    actors.o                  actors.s:212
+    sprites.o                 sprites.s:4
+    raster.o                  raster.s:13
+_stage (game.o):
+    foes.o                    foes.s:5
+    toby.o                    toby.s:4
+    preview.o                 preview.s:3
+    transit.o                 transit.s:3
+    campaign.o                campaign.s:5
+    health.o                  health.s:3
+    bonus.o                   bonus.s:4
+    landing.o                 landing.s:3
+    scroll.o                  scroll.s:1044
+    coast.o                   coast.s:4
+    weapons.o                 weapons.s:8
+    sample.o                  sample.s:3
+    raster.o                  raster.s:10
+    graphics.o                graphics.s:495
+_toby_death_y (toby.o):
+    actors.o                  actors.s:286
+_toby_flight_head (details.o):
+    game.o                    game.s:6461
+_toby_lower (toby.o):
+    weapons.o                 weapons.s:866
+_transit_tick (transit.o):
+    game.o                    game.s:6471
+_ua_init (sample.o):
+    game.o                    game.s:168
+_ua_ready (sample.o):
+    landing.o                 landing.s:7
+    weapons.o                 weapons.s:869
+_ui_font (graphics.o):
+    transit.o                 transit.s:209
+    actors.o                  actors.s:284
+_unpack_assets (spritepack.o):
+    reward.o                  reward.s:2
+    preview.o                 preview.s:177
+    world.o                   world.s:84
+    game.o                    game.s:6513
+_unpack_font (campaign.o):
+    graphics.o                graphics.s:174
+_video_tick (scroll.o):
+    raster.o                  raster.s:6
+_wait_frame (scroll.o):
+    reward.o                  reward.s:189
+    game.o                    game.s:128
+_weapon (weapons.o):
+    sample.o                  sample.s:3
+    game.o                    game.s:6451
+_weapon_control (weapons.o):
+    game.o                    game.s:6443
+_weapon_erase (weapons.o):
+    game.o                    game.s:6443
+_weapon_hud (weapons.o):
+    game.o                    game.s:6443
+_weapon_key (weapons.o):
+    graphics.o                graphics.s:7
+_weapon_projectile (projectile.o):
+    weapons.o                 weapons.s:11
+_weapon_projectiles (weapons.o):
+    game.o                    game.s:6443
+_weapon_pump_pose (weapons.o):
+    game.o                    game.s:6443
+_weapon_render (weapons.o):
+    game.o                    game.s:6443
+_weapon_reset (weapons.o):
+    transit.o                 transit.s:4
+    actors.o                  actors.s:212
+    landing.o                 landing.s:7
+    game.o                    game.s:6443
+_weapon_tick (weapons.o):
+    game.o                    game.s:6443
+_world_font (graphics.o):
+    game.o                    game.s:180
+_world_x (campaign.o):
+    preview.o                 preview.s:3
+    landing.o                 landing.s:436
+addeqysp (addeqsp.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+addysp (addysp.o):
+    incsp8.o                  runtime/incsp8.s:8
+    incsp6.o                  runtime/incsp6.s:8
+    incsp4.o                  runtime/incsp4.s:8
+    incsp3.o                  runtime/incsp3.s:8
+    sprites.o                 sprites.s:7
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+addysp1 (addysp.o):
+    sub.o                     runtime/sub.s:8
+aslax3 (aslax3.o):
+    game.o                    game.s:6530
+asrax1 (asrax1.o):
+    game.o                    game.s:6530
+asrax3 (asrax3.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+boolult (makebool.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+c_sp (zeropage.o):
+    subysp.o                  runtime/subysp.s:9
+    sub.o                     runtime/sub.s:9
+    staxspi.o                 runtime/staxspi.s:10
+    staxsp.o                  runtime/staxsp.s:8
+    staspidx.o                runtime/staspidx.s:9
+    pushwsp.o                 runtime/pushwsp.s:8
+    pushax.o                  runtime/pushax.s:8
+    pusha.o                   runtime/pusha.s:8
+    popptr1.o                 runtime/popptr1.s:9
+    memset.o                  common/memset.s:20
+    memcpy.o                  common/memcpy.s:15
+    incsp2.o                  runtime/incsp2.s:8
+    incsp1.o                  runtime/incsp1.s:8
+    icmp.o                    runtime/icmp.s:9
+    decsp6.o                  runtime/decsp6.s:8
+    decsp5.o                  runtime/decsp5.s:8
+    decsp4.o                  runtime/decsp4.s:8
+    decsp3.o                  runtime/decsp3.s:8
+    decsp2.o                  runtime/decsp2.s:8
+    decsp1.o                  runtime/decsp1.s:8
+    crt0.o                    /home/runner/work/cc65/cc65/asminc/zeropage.inc:11
+    addysp.o                  runtime/addysp.s:8
+    addeqsp.o                 runtime/addeqsp.s:8
+    add.o                     runtime/add.s:12
+    coast.o                   coast.s:5
+    projectile.o              projectile.s:5
+    mechanics.o               mechanics.s:6
+    sprites.o                 sprites.s:8
+    game.o                    game.s:10
+callmain (callmain.o):
+    crt0.o                    c64/crt0.s:9
+cave_sprite (preview.o):
+    landing.o                 landing.s:495
+decsp1 (decsp1.o):
+    projectile.o              projectile.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+decsp2 (decsp2.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+decsp3 (decsp3.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+decsp4 (decsp4.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+decsp5 (decsp5.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+decsp6 (decsp6.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+donelib (condes.o):
+    crt0.o                    c64/crt0.s:8
+gun_kind (game.o):
+    weapons.o                 weapons.s:10
+incsp1 (incsp1.o):
+    projectile.o              projectile.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+incsp2 (incsp2.o):
+    staxspi.o                 runtime/staxspi.s:9
+    staspidx.o                runtime/staspidx.s:8
+    popptr1.o                 runtime/popptr1.s:8
+    mechanics.o               mechanics.s:5
+    sprites.o                 sprites.s:7
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+incsp3 (incsp3.o):
+    coast.o                   coast.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+incsp4 (incsp4.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+incsp6 (incsp6.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+incsp8 (incsp8.o):
+    game.o                    game.s:6530
+initlib (condes.o):
+    crt0.o                    c64/crt0.s:8
+ldaidx (ldai.o):
+    game.o                    game.s:6530
+mulax10 (mulax10.o):
+    projectile.o              projectile.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+mulax3 (mulax3.o):
+    projectile.o              projectile.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+mulax6 (mulax6.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+negax (negabs.o):
+    shelp.o                   runtime/shelp.s:11
+    mod.o                     runtime/mod.s:11
+    game.o                    game.s:6530
+pink_cave_sprite (preview.o):
+    landing.o                 landing.s:495
+popax (incsp2.o):
+    shelp.o                   runtime/shelp.s:11
+    memset.o                  common/memset.s:19
+    memcpy.o                  common/memcpy.s:14
+popptr1 (popptr1.o):
+    umod.o                    runtime/umod.s:8
+    udiv.o                    runtime/udiv.s:9
+    mul8.o                    runtime/mul8.s:9
+    memcpy.o                  common/memcpy.s:14
+popsargsudiv16 (shelp.o):
+    mod.o                     runtime/mod.s:11
+ptr1 (zeropage.o):
+    zerobss.o                 common/zerobss.s:9
+    udiv.o                    runtime/udiv.s:10
+    staxspi.o                 runtime/staxspi.s:10
+    staspidx.o                runtime/staspidx.s:9
+    shelp.o                   runtime/shelp.s:12
+    popptr1.o                 runtime/popptr1.s:9
+    mulax6.o                  runtime/mulax6.s:9
+    mulax3.o                  runtime/mulax3.s:9
+    mulax10.o                 runtime/mulax10.s:9
+    mul8.o                    runtime/mul8.s:10
+    memset.o                  common/memset.s:20
+    memcpy.o                  common/memcpy.s:15
+    ldai.o                    runtime/ldai.s:8
+    foes.o                    foes.s:7
+    reward.o                  reward.s:1
+    preview.o                 preview.s:4
+    campaign.o                campaign.s:9
+    spritepack.o              spritepack.s:5
+    world.o                   world.s:3
+    details.o                 details.s:120
+    health.o                  health.s:4
+    landing.o                 landing.s:10
+    coast.o                   coast.s:5
+    weapons.o                 weapons.s:13
+    projectile.o              projectile.s:5
+    graphics.o                graphics.s:11
+    game.o                    game.s:11
+ptr2 (zeropage.o):
+    memset.o                  common/memset.s:20
+    memcpy.o                  common/memcpy.s:15
+    foes.o                    foes.s:7
+    reward.o                  reward.s:1
+    preview.o                 preview.s:4
+    campaign.o                campaign.s:9
+    spritepack.o              spritepack.s:5
+    world.o                   world.s:3
+    health.o                  health.s:4
+    coast.o                   coast.s:5
+    graphics.o                graphics.s:11
+    game.o                    game.s:11
+ptr3 (zeropage.o):
+    memset.o                  common/memset.s:20
+    memcpy.o                  common/memcpy.s:15
+    foes.o                    foes.s:7
+    campaign.o                campaign.s:9
+    spritepack.o              spritepack.s:5
+    world.o                   world.s:3
+    graphics.o                graphics.s:11
+ptr4 (zeropage.o):
+    umod.o                    runtime/umod.s:9
+    udiv.o                    runtime/udiv.s:10
+    shelp.o                   runtime/shelp.s:12
+    mul8.o                    runtime/mul8.s:10
+pusha (pusha.o):
+    actors.o                  actors.s:6
+    projectile.o              projectile.s:4
+    sprites.o                 sprites.s:7
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+pusha0 (pushax.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+pushax (pushax.o):
+    callmain.o                runtime/callmain.s:11
+    actors.o                  actors.s:6
+    weapons.o                 weapons.s:12
+    projectile.o              projectile.s:4
+    mechanics.o               mechanics.s:5
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+pushw0sp (pushwsp.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+pushwysp (pushwsp.o):
+    game.o                    game.s:6530
+regsave (zeropage.o):
+    game.o                    game.s:10
+shlax3 (aslax3.o):
+    projectile.o              projectile.s:4
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+sreg (zeropage.o):
+    umod.o                    runtime/umod.s:9
+    udiv.o                    runtime/udiv.s:10
+    mod.o                     runtime/mod.s:12
+    icmp.o                    runtime/icmp.s:9
+    game.o                    game.s:10
+staspidx (staspidx.o):
+    game.o                    game.s:6530
+stax0sp (staxsp.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+staxspidx (staxspi.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+staxysp (staxsp.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+subysp (subysp.o):
+    game.o                    game.s:6530
+tmp1 (zeropage.o):
+    staxspi.o                 runtime/staxspi.s:10
+    staspidx.o                runtime/staspidx.s:9
+    shelp.o                   runtime/shelp.s:12
+    mod.o                     runtime/mod.s:12
+    asrax3.o                  runtime/asrax3.s:9
+    asrax1.o                  runtime/asrax1.s:8
+    aslax3.o                  runtime/aslax3.s:8
+    add.o                     runtime/add.s:12
+    foes.o                    foes.s:7
+    campaign.o                campaign.s:9
+    spritepack.o              spritepack.s:5
+    world.o                   world.s:3
+    details.o                 details.s:120
+    health.o                  health.s:4
+    weapons.o                 weapons.s:13
+    mechanics.o               mechanics.s:6
+    sprites.o                 sprites.s:8
+    movement.o                movement.s:7
+    graphics.o                graphics.s:11
+    game.o                    game.s:11
+tmp2 (zeropage.o):
+    shelp.o                   runtime/shelp.s:12
+    campaign.o                campaign.s:9
+    spritepack.o              spritepack.s:5
+    health.o                  health.s:4
+    mechanics.o               mechanics.s:6
+    sprites.o                 sprites.s:8
+    graphics.o                graphics.s:11
+tmp3 (zeropage.o):
+    mechanics.o               mechanics.s:6
+    sprites.o                 sprites.s:8
+    movement.o                movement.s:7
+tmp4 (zeropage.o):
+    sprites.o                 sprites.s:8
+    movement.o                movement.s:7
+    graphics.o                graphics.s:11
+tosadda0 (add.o):
+    game.o                    game.s:6530
+tosaddax (add.o):
+    game.o                    game.s:6530
+tosicmp (icmp.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+tosmoda0 (mod.o):
+    game.o                    game.s:6530
+tosmula0 (mul8.o):
+    game.o                    game.s:6530
+tossubax (sub.o):
+    game.o                    game.s:6530
+tosudiva0 (udiv.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+tosumoda0 (umod.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+tosumula0 (mul8.o):
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+    game.o                    game.s:6530
+udiv16 (udiv.o):
+    umod.o                    runtime/umod.s:8
+    shelp.o                   runtime/shelp.s:11
+zerobss (zerobss.o):
+    crt0.o                    c64/crt0.s:9
+

@@ -1,0 +1,58 @@
+C64 Pocket 0.5.1-alpha - Testfassung mit USB-Tastatur am Dock
+
+HARDWARE-TESTSTAND - 27. Oktober 2026
+
+Positive Rueckmeldung vom echten Pocket/Dock: Die Tests bestaetigen die
+USB-Tastatur erfolgreich getestet. Damit ist die Grundfunktion in diesem
+Aufbau bestaetigt, nicht jedes Tastaturmodell oder jeder Sonderfall.
+Tastaturmodell und Pocket-/Dock-Firmware wurden dabei nicht mitgeteilt.
+Fruehere 0.5.0-Pocket-Tests bestaetigen EasyFlash/Caren, TobyPink-Samples,
+Disketten, Bild/Ton und Bildschirmtastatur; siehe historischen Teststand.
+FPGA-Bau, Timing und gezielte/Gesamtsimulationen sind ebenfalls bestanden.
+Der 0.5.1-FPGA-Bitstream bleibt fuer dieses Dokumentationsupdate unveraendert.
+
+SD sichern, Pocket ausschalten und das Paket ins SD-Hauptverzeichnis
+entpacken. Ordner zusammenfuehren, Core-Dateien ersetzen, eigene ROMs
+behalten. Versionsnummer 0.5.1-alpha pruefen.
+
+Benoetigt werden ein Analogue Dock und eine kabelgebundene USB-HID-Tastatur.
+Der USB-C-Anschluss fuer den SD-Zugriff dient nicht als Tastaturanschluss.
+Unter Core Settings -> Dock USB keyboard stehen zur Wahl:
+On - QWERTY (Standard), On - QWERTZ (Y/Z) und Off.
+QWERTZ tauscht nur Y/Z; Sonderzeichen folgen der C64-Belegung. Es gibt
+keine Windows-/macOS-Texteingabe. Shift+2 ergibt Anfuehrungszeichen,
+Shift+4 das Dollarzeichen. Sechs normale Tasten plus Modifikatoren.
+
+Wichtig: Nach Start, Reset Core, Schliessen des Pocket-Menues, Umstecken
+oder Umstellen des Tastaturmodus zuerst alle Tasten loslassen. So werden
+keine gehaltenen Menue-Tasten versehentlich an den C64 weitergereicht.
+
+WICHTIGE TASTEN
+Enter/Leertaste/Buchstaben/Ziffern: entsprechende C64-Tasten.
+Shift links/rechts: entsprechende C64-Shift-Taste.
+Ctrl links/rechts oder Tab: C64 CTRL. Alt/Windows/Command: Commodore.
+Caps Lock: C64 SHIFT LOCK, einmal pro Druck umschalten.
+Escape: RUN/STOP. F1-F8: entsprechende C64-Funktionstasten.
+F12: RESTORE, kein Core-Reset. Escape+F12: RUN/STOP+RESTORE.
+Backspace/Delete: DEL. Insert: INS. Home: HOME. End: CLR.
+Pfeiltasten: C64-Cursortasten. Bild hoch: C64-Pfeil-hoch-Zeichentaste.
+Die ausfuehrliche Zuordnung der Sondertasten steht in DOCK-KEYBOARD-EN.txt.
+SHIFT LOCK wird bei Menue, Reset, Abziehen, Timeout oder Moduswechsel geloest.
+Die Lock-LEDs der USB-Tastatur werden nicht vom C64 gesteuert.
+Die Bildschirmtastatur, Joysticksteuerung und LOAD* bleiben erhalten.
+Mausunterstuetzung wurde nicht hinzugefuegt.
+
+KURZER TEST, SOBALD POCKET UND DOCK DA SIND
+1. In BASIC PRINT 123 und Enter tippen. Dollarzeichen, Y/Z und Cursor
+   ausprobieren. In einem passenden Programm F1/F2 und Caps Lock pruefen.
+2. Taste halten, Pocket-Menue oeffnen/schliessen, dann alles loslassen.
+   Nichts darf haengen bleiben. Auch nach Umstecken und Reset Core pruefen.
+3. Bildschirmtastatur mit Y oeffnen/schliessen; danach Joystick und kurz
+   D64/G64, Caren sowie TobyPink mit Bild/Ton ausprobieren.
+Bei Fehlern genuegen Firmware von Pocket/Dock, Tastaturmodell und die
+Schritte bis zum Problem. Hubs und Funkempfaenger sind nicht zugesichert.
+
+Es wurde kein alter myc64-pocket-Tastaturcode uebernommen. Nur Hinweise zur
+APF-Schnittstelle wurden betrachtet und mit Analogue-Dokumentation sowie
+dem offiziellen Beispiel abgeglichen. Vollstaendige Berichte werden sicher
+ueber die Taktgrenze uebertragen; Abziehen/Timeout loest alle Tasten.

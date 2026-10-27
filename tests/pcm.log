@@ -1,0 +1,1 @@
+PASS PCM: real V027 bank, LE16 two voices, rate, signed stereo mix/saturation, invalid bank/bounds, reset drain, unchanged SID bypass; 104450 cycles checked

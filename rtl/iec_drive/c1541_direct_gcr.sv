@@ -1,0 +1,283 @@
+//-------------------------------------------------------------------------------
+//
+// C1541 direct gcr module
+// (C) 2021 Alexey Melnikov
+//
+// ------------------------------------------------------------------------------
+// Major Updates 2025/2026 by Robin Wünderlich:
+//  - low level read logic (based on schematics)
+//  - disk rotation simulation
+//  - non blocking track read/write
+//  - AGC flux events (weak bits)
+//  - 64 bit track buffer
+//  - skew preserving track change
+//
+// TODO:
+// - investigate potential T65 inaccurate so_n handling (e.g. not preventing
+// so_n sampling for upto 2 cycles into next instruction after an instruction
+// sets/clears overflow)
+//
+//-------------------------------------------------------------------------------
+
+module c1541_direct_gcr #(parameter POCKET_TRACK_CDC=0)
+(
+	input        clk,
+	input        ce,
+	input        reset,
+
+	input  [2:0] drive_rpm,
+	input        drive_wobble,
+
+	output [7:0] dout,
+	input  [7:0] din,
+	input        mode,
+	input        mtr,
+	input  [1:0] freq,
+	input        wps_n,
+	output       sync_n,
+	output       byte_n,
+
+	input        disk_present,
+	output       we,
+
+	input         sd_clk,
+	input  [13:0] sd_buff_addr,
+	input  [63:0] sd_buff_dout,
+	output [63:0] sd_buff_din,
+	input         sd_buff_wr
+);
+
+assign we          = buff_we;
+assign sd_buff_din = (sd_buff_addr[13:3] >= ((host_track_length + 13'd9) >> 3)) ?
+					 64'hFFFFFFFFFFFFFFFF : sd_buff_do;
+assign dout        = shreg[7:0];
+
+reg [12:0] track_len, len_valid;
+// A host-managed Pocket track is uploaded while the drive is paused/reset.
+// Keep the header deterministic before the first host upload.
+reg [12:0] track_new_host = 0;
+wire [12:0] track_new,host_track_length;
+generate if(POCKET_TRACK_CDC)begin: pocket_track_cdc
+ // Host changes the header only while the Pocket drive is paused. The held
+ // bus settles through two stages before the commit/pause handshake resumes
+ // the drive; synchronising also separates CDC from position rescaling.
+ (* async_reg="true" *) reg [12:0] length_meta=0,length_sync=0;
+ (* async_reg="true" *) reg [12:0] readback_meta=0,readback_sync=0;
+ always @(posedge clk)begin length_meta<=track_new_host;length_sync<=length_meta;end
+ always @(posedge sd_clk)begin readback_meta<=track_len_adj;readback_sync<=readback_meta;end
+ assign track_new=length_sync;
+ assign host_track_length=readback_sync;
+end else begin: shared_clock_track
+ assign track_new=track_new_host;
+ assign host_track_length=track_len_adj;
+end endgenerate
+
+// snoop track size
+wire len_update = sd_buff_wr && (sd_buff_addr[13:3] == 0);
+always @(posedge sd_clk) if(len_update) begin
+	track_new_host[12:0] <= sd_buff_dout[12:0];
+end
+
+iecdrv_bitmem64 #(10) buffer
+(
+	.clock_a(sd_clk),
+	.address_a(sd_buff_addr[12:3]),
+	.data_a(sd_buff_dout),
+	// wrap-around write protection
+	.wren_a(sd_buff_wr & ~sd_buff_addr[13]),
+	.q_a(sd_buff_do),
+
+	.clock_b(clk),
+	.address_b({buff_addr[15:3], ~buff_addr[2:0]}),
+	.data_b(ht),
+	.wren_b(buff_we),
+	.q_b(buff_do)
+);
+
+wire [63:0] sd_buff_do;
+reg  [15:0] buff_addr;
+reg   [7:0] buff_di;
+wire        buff_do;
+reg         buff_we;
+
+wire [31:0] random_data;
+random_xor lfsr(
+	.clock(clk),
+	.reset(reset),
+	.seed(0),
+	.lfsr(random_data)
+);
+
+// 1541 part designations are based on the schematics in:
+// "Commodore 1541 Troubleshooting & Repair Guide – M. Peltier".
+// the UC1 chip integrates several discrete 1540 parts,
+// which are referenced by their 1540 designations
+assign sync_n = ~&shreg | ~mode;                               // UC2  (UC1)
+assign byte_n = ~&UE3_bit_cnt | &shreg | UF4_enc_phase_cnt[1]; // UF3C (UC1) (soe: c1541_logic)
+
+reg  [9:0] shreg;              // UD2 74LS164, UE4A+UE4B 74LS74 (UC1)
+reg  [3:0] UF4_enc_phase_cnt;  // 74LS193 (UC1)
+reg  [3:0] UE6_enc_clk_cnt;    // 74LS193
+reg  [2:0] UE3_bit_cnt;        // 74LS191 (UC1)
+reg  [2:0] UD3_bit_cnt_w;      // 74LS165 (UC1)
+reg  [9:0] flux_cnt;
+reg        hf;                 // data from head
+reg        ht;                 // data to head
+
+// clks per bitcell in relation to track length:
+// = (CLK_FREQ / (8 * (BASE_RPM/60))) / track_len
+// -> BASE_ROT_TARGET = 400_000 (+/- wobble)
+// wobble will vary slightly for other rpm settings
+localparam        BASE_RPM         =         300;
+localparam        CLK_FREQ         =  16_000_000;
+localparam        BASE_ROT_TARGET  =     400_000;
+localparam        WBL_FREQ         =          45; // WPM * 10
+localparam        WBL_MAX          =          24; // RPM * 100
+localparam        WBL_CLKS_PER_STP = (((CLK_FREQ/(4*WBL_MAX_OFFSET)) * 600) / WBL_FREQ);
+localparam signed WBL_MAX_OFFSET   = ((BASE_ROT_TARGET/ 100) * WBL_MAX)/BASE_RPM;
+
+wire [18:0] base_rot_targets[8] = '{19'd400_000, 19'd399_867, 19'd399_334, 19'd398_671,
+                                    19'd397_351, 19'd401_338, 19'd400_668, 19'd400_133};
+
+wire       [19:0] rot_target = $signed({1'b0, base_rot_targets[drive_rpm]})
+							   + (drive_wobble ? wbl_offset : 10'sd0);
+reg        [19:0] rot_clk_cnt;
+reg        [31:0] wbl_step_cnt;
+reg signed [9:0]  wbl_offset;
+reg               wbl_dir;
+
+// use len_valid as proxy for empty (half) tracks
+wire [12:0] track_new_adj = (track_new > 'd6000) ? track_new : len_valid;
+wire [12:0] track_len_adj = (track_len > 'd6000) ? track_len : len_valid;
+wire [13:0] recip = rec[track_len_adj-6000];
+wire buff_do_adj = (track_len > 'd6000) ? buff_do : buff_addr[0];
+
+// precalc reciprocals for track_len_adj = 6000 .. 8047
+reg  [13:0] rec[0:2191] = '{default:0};
+initial begin
+	integer i;
+	for(i = 0; i < 2192; i = i + 1) begin
+		rec[i] = 14'((1 << 26) / (i + 6000));
+	end
+end
+
+always @(posedge clk) begin
+	buff_we <= 0;
+
+	if(reset) begin
+		// Drive inferred ROM's write ports to silence warning 10030 cleanly
+		rec[0] <= 14'((1 << 26) / (0 + 6000));
+
+		buff_addr           <= 16;
+		UE3_bit_cnt         <= 0;
+		UD3_bit_cnt_w       <= 0;
+		shreg               <= 0;
+		hf                  <= 0;
+		ht                  <= 0;
+		rot_clk_cnt         <= 0;
+		UF4_enc_phase_cnt   <= 0;
+		UE6_enc_clk_cnt     <= 0;
+		flux_cnt            <= 10'd256;
+		wbl_offset          <= 0;
+		wbl_step_cnt        <= 0;
+		wbl_dir             <= 0;
+		track_len           <= 0;
+		len_valid           <= 'd7142;
+	end
+	else if(ce) begin
+
+		// simulate independent rotation of disk (usually at 300RPM):
+		// let drive read logic self sync on the data,
+		// if writing, synchronize to encoder/decoder phase
+		if(mode) begin
+			if(rot_clk_cnt >= rot_target) begin
+				rot_clk_cnt <=  rot_clk_cnt - rot_target + track_len_adj;
+				if (track_new_adj == track_len_adj) begin
+					if(buff_addr >= {track_len_adj + 1'd1, 3'b111})
+						buff_addr <= 16'd16;
+					else begin
+						buff_addr <=  buff_addr + 1'd1;
+					end
+				end
+			end else if(mtr)
+				rot_clk_cnt <= rot_clk_cnt + track_len_adj;
+				else rot_clk_cnt <= 0;
+		end else
+			if(&UE6_enc_clk_cnt && (UF4_enc_phase_cnt[1:0] == 2'b01)) begin
+				if(buff_addr >= {track_len_adj + 1'd1, 3'b111}) buff_addr <= 16;
+				else buff_addr <=  buff_addr + 1'd1;
+			end
+
+		// drivers of hf (flux reversals from data, or random flux reversals)
+		if(!mode)                                          hf <= 0;
+		else if(!flux_cnt)                                 hf <= 1;
+		else if(disk_present && rot_clk_cnt >= rot_target) hf <= buff_do_adj;
+		else                                               hf <= 0;  // demux dogma
+
+		// random flux reversal counter (weak bits/bad gcr)
+		if(!flux_cnt)
+		   flux_cnt <= random_data[6:0] + 10'd40;
+		else if((rot_clk_cnt >= rot_target) && buff_do_adj)
+		   flux_cnt <= random_data[5:0] + 10'd256;
+		   else flux_cnt <= flux_cnt - 1'b1;
+
+		// encoder-decoder clock, divider based on freq
+		// flux reversals reset UE6 and UF4 counters
+		if (hf) begin
+			UE6_enc_clk_cnt   <= {2'b00,freq};
+			UF4_enc_phase_cnt <= 0;
+		end else if (&UE6_enc_clk_cnt) begin
+			UE6_enc_clk_cnt   <= {2'b00,freq};
+			UF4_enc_phase_cnt <= UF4_enc_phase_cnt + 1'b1;
+		end else begin
+			UE6_enc_clk_cnt   <= UE6_enc_clk_cnt + 1'b1;
+		end
+
+		// encoder-decoder
+		// a one bit will be clocked into the shift register in phase b0010.
+		// if the allowed time window expires without a flux reversal 0 bits
+		// will be clocked into the shift register (phases b0110, b1010 etc.)
+		if(&UE6_enc_clk_cnt) begin
+			// transition into phase bxx10
+			if(UF4_enc_phase_cnt[1:0] == 2'b01) begin
+				shreg          <= {shreg[8:0], ~|UF4_enc_phase_cnt[3:2]}; // UE5a (UC1)
+				UE3_bit_cnt    <= UE3_bit_cnt   + 1'b1;
+				UD3_bit_cnt_w  <= UD3_bit_cnt_w + 1'b1;
+			end
+			// transition into phase bxx11
+			else if((UF4_enc_phase_cnt[1:0] == 2'b10) && (&UE3_bit_cnt)) begin
+				buff_di        <= din;
+				UD3_bit_cnt_w  <= 0;
+			end
+			// transition into phase bxx00 (writing)
+			else if((UF4_enc_phase_cnt[1:0] == 2'b11)) begin
+				if(!mode) begin
+					ht <= buff_di[~UD3_bit_cnt_w];
+					if(wps_n) buff_we <= ~mode;
+				end
+			end
+		end
+
+		if(~sync_n) UE3_bit_cnt <= 0;
+
+		// drive wobble
+		if(wbl_step_cnt >= WBL_CLKS_PER_STP) begin
+			wbl_step_cnt <= 0;
+			wbl_dir      <= (wbl_offset >  WBL_MAX_OFFSET) ? 1'b0 :
+							(wbl_offset < -WBL_MAX_OFFSET) ? 1'b1 :
+							wbl_dir;
+			wbl_offset   <= wbl_offset + (wbl_dir ? 10'sd1 : -10'sd1);
+		end else
+			wbl_step_cnt <= wbl_step_cnt + 1'b1;
+
+		// adjustment for disk geometry if head moves to new track
+		// use valid length of neighbouring track as proxy for empty track
+		track_len <= track_new;
+		if(track_new_adj != track_len_adj) begin
+			if(track_new > 'd6000) len_valid <= track_new;
+			buff_addr <= 16'(((43'h0 + ((buff_addr - 16) * track_new_adj)) * recip) >> 26) + 16'd16;
+			end
+	end
+end
+
+endmodule

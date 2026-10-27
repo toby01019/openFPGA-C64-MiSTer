@@ -1,0 +1,3 @@
+Pixel clock phase: 35 ns; padding: 2; pipeline: 1
+PASS keyboard video: disabled RGB passthrough, paused coordinates, VS reset, 270 active lines, 382 accepted pixels per line, native pixel sampling, RTL frame dump
+PASS native keyboard: all 103140 pixels match the verified renderer

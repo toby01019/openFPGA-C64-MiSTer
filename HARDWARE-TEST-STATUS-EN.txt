@@ -1,0 +1,9 @@
+HARDWARE TEST STATUS - 27 October 2026
+
+Positive real Analogue Pocket/Dock USB keyboard test confirmed on hardware: USB keyboard works. This confirms basic operation for
+that tested setup, not every keyboard, layout or reconnect/error case.
+Keyboard model and Pocket/Dock firmware were not supplied in this report.
+Earlier real-Pocket 0.5.0 feedback covers EasyFlash/Caren, TobyPink effects,
+disk loading, picture/sound and on-screen keyboard (see historical status).
+FPGA compilation, timing and focused/integrated simulations also passed.
+The 0.5.1 FPGA bitstream is unchanged for this documentation update.
