@@ -1,10 +1,11 @@
-"""Actual rebuilt 6510 routines -> Pocket PCM registers -> real V027 samples."""
+"""Actual rebuilt 6510 routines -> Pocket PCM registers -> real V029 samples."""
 from pathlib import Path
 import re,subprocess
-P=Path(__file__).resolve().parent;C=P.parent if(P.parent/'core').is_dir()else P.parent/'c64-pocket-port';T=P/'tests'
+P=Path(__file__).resolve().parent;C=Path('C:/Users/toby0/Documents/Codex/2026-10-24/playstation-core-f-r-analogue-pocket/work/c64-pocket-port')
 B=Path('C:/Users/toby0/Documents/Codex/Projekte/IMSAI8080/08_Werkzeuge/Icarus/bin')
-labels={name:int(addr,16)for addr,name in re.findall(r'al ([0-9A-Fa-f]+) \.([^\s]+)',(P/'toby-saves-the-pink-v0.3.27.lbl').read_text())}
-prg=(P/'toby-saves-the-pink-v0.3.27.prg').read_bytes();load=int.from_bytes(prg[:2],'little')
+T=P/'tests'
+labels={name:int(addr,16)for addr,name in re.findall(r'al ([0-9A-Fa-f]+) \.([^\s]+)',(P/'toby-saves-the-pink-v0.3.29.lbl').read_text())}
+prg=(P/'toby-saves-the-pink-v0.3.29.prg').read_bytes();load=int.from_bytes(prg[:2],'little')
 ram=bytearray(65536);ram[load:load+len(prg)-2]=prg[2:]
 stub=bytearray.fromhex('78 a2 ff 9a')
 for name in ['_ua_init','_sample_shot','_sample_start']:
@@ -46,7 +47,7 @@ module tb;
   end
   cycles=cycles+1;
   if(called && count0>=64 && count1>=64)begin
-   if(underrun)$fatal(1,"sample underrun");$display("PASS compiled TobyPink on MiSTer T65 -> Pocket PCM: shot/scream register descriptors and %0d/%0d actual V027 samples, no underrun",count0,count1);$finish;
+   if(underrun)$fatal(1,"sample underrun");$display("PASS compiled TobyPink on MiSTer T65 -> Pocket PCM: shot/scream register descriptors and %0d/%0d actual V029 samples, no underrun",count0,count1);$finish;
   end
   if(cycles>1000000)$fatal(1,"compiled playback timeout");
  end

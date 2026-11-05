@@ -4987,6 +4987,7 @@ L0053:	jmp     incsp4
 .segment	"CODE"
 
 .proc _draw_actors: near
+ jsr _toby_stride
  lda #0
  sta _pose
  lda _grounded
@@ -5046,10 +5047,10 @@ L0053:	jmp     incsp4
  lda _fireheld
  cmp #9
  bcs @player
- lda _input
- and #12
+ lda _toby_walk_active
  beq @player
- lda _frame
+ lda _toby_walk_phase
+ lsr
  lsr
  and #7
  asl
@@ -6528,3 +6529,5 @@ beach_clear: .byte 251,247
 _enemy_next_phrase: .res 1
 .segment "RODATA"
 enemy_bubble_kinds: .byte 2,3,5
+
+.import _toby_stride,_toby_walk_active,_toby_walk_phase

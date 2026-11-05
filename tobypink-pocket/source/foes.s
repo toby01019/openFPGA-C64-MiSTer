@@ -6,6 +6,8 @@
 .import _spr_y,_spr_image,_spr_color,_spr_enabled,_spr_multi,_raster_irq,_raster_exit
 .importzp ptr1,ptr2,ptr3,tmp1,tmp2
 .segment "BSS"
+_foe_stride: .res 2
+.export _foe_stride
 slot: .res 1
 offset: .res 1
 image_base: .res 1
@@ -26,6 +28,10 @@ mux_best: .res 1
 mux_pair: .res 1
 .segment "CODE"
 _foes_reset:
+ lda #0
+ sta _foe_stride
+ lda #16
+ sta _foe_stride+1
  lda #255
  sta front_page
  lda #0
@@ -111,11 +117,27 @@ _foes_prepare:
  asl
  tay
  lda _enemies,x
- cmp _enemy_old_x,y
- bne @moving
- lda _enemies+1,x
- cmp _enemy_old_x+1,y
+ sec
+ sbc _enemy_old_x,y
  beq @facing
+ bpl @distance
+ eor #255
+ clc
+ adc #1
+@distance:
+ cmp #5
+ bcs @facing
+ ldy slot
+ clc
+ adc _foe_stride,y
+ and #31
+ sta _foe_stride,y
+ lsr
+ lsr
+ clc
+ adc #1
+ sta body_index
+ jmp @facing
 @moving:
  ; Offset the two walkers so their changed poses are rebuilt on
  ; separate frames instead of producing a simultaneous raster spike.

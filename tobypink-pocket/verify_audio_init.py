@@ -1,10 +1,10 @@
 """Execute the rebuilt game's audio initialisation on the actual MiSTer T65 CPU."""
 from pathlib import Path
 import re,subprocess,json
-P=Path(__file__).resolve().parent;C=P.parent if(P.parent/'core').is_dir()else P.parent/'c64-pocket-port'
+P=Path(__file__).resolve().parent;C=Path('C:/Users/toby0/Documents/Codex/2026-10-24/playstation-core-f-r-analogue-pocket/work/c64-pocket-port')
 B=Path('C:/Users/toby0/Documents/Codex/Projekte/IMSAI8080/08_Werkzeuge/Icarus/bin')
-labels={name:int(addr,16) for addr,name in re.findall(r'al ([0-9A-Fa-f]+) \.([^\s]+)',(P/'toby-saves-the-pink-v0.3.27.lbl').read_text())}
-prg=(P/'toby-saves-the-pink-v0.3.27.prg').read_bytes();load=int.from_bytes(prg[:2],'little')
+labels={name:int(addr,16) for addr,name in re.findall(r'al ([0-9A-Fa-f]+) \.([^\s]+)',(P/'toby-saves-the-pink-v0.3.29.lbl').read_text())}
+prg=(P/'toby-saves-the-pink-v0.3.29.prg').read_bytes();load=int.from_bytes(prg[:2],'little')
 ram=bytearray(65536);ram[load:load+len(prg)-2]=prg[2:]
 entry=labels['_ua_init'];ram[0x200:0x20b]=bytes([0x78,0xa2,0xff,0x9a,0x20,entry&255,entry>>8,0x4c,7,2,0xea]);ram[0xfffc:0xfffe]=b'\x00\x02'
 out=P/'tests';out.mkdir(exist_ok=True);(out/'game.hex').write_text('\n'.join(f'{v:02x}'for v in ram))

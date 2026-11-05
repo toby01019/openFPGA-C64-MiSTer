@@ -27,10 +27,17 @@ module pocket_cartridge #(parameter integer ROM_BYTES=65536, parameter OCEAN_FF_
  wire cart_exrom,cart_game,bank_wr,bank_hi,bank_16k;
  wire upload_start;wire[23:0]upload_addr;wire[7:0]upload_data;
  reg upload_ack=0;
- wire ef_selected=EASYFLASH && cart_id==32;
+ reg [6:0] md_banks=0;
+ always @(posedge clk)begin
+  if(reset || load_start)md_banks<=0;
+  else if(bank_wr && {1'b0,bank_num[5:0]}>=md_banks)md_banks<={1'b0,bank_num[5:0]}+1'b1;
+ end
+ wire [5:0] md_mask=md_banks<=16 ? 6'd15:md_banks<=32 ? 6'd31:6'd63;
+ wire md_selected=EASYFLASH && cart_id==19;
+ wire ef_selected=EASYFLASH && (cart_id==32 || cart_id==19);
  wire ef_ready,ef_ack,ef_exrom,ef_game,ef_ram_we,ef_io_rd;
  wire [7:0] ef_data,ef_io_data;
- pocket_crt #(.MAX_PAYLOAD_BYTES(ROM_BYTES),.ALLOW_OCEAN_FF_TAIL(OCEAN_FF_TAIL),.EASYFLASH(EASYFLASH),.ALLOWED_TYPES(TYPES)) parser(
+ pocket_crt #(.MAX_PAYLOAD_BYTES(ROM_BYTES),.ALLOW_OCEAN_FF_TAIL(OCEAN_FF_TAIL),.EASYFLASH(EASYFLASH),.MAGICDESK(EASYFLASH),.ALLOWED_TYPES(TYPES)) parser(
   .clk(clk),.reset(reset),.load_start(load_start),.file_size(file_size),
   .byte_valid(byte_valid),.byte_data(byte_data),.byte_ready(byte_ready),.finish(finish),
   .busy(busy),.attached(attached),.error(error),.error_code(error_code),
@@ -63,7 +70,7 @@ module pocket_cartridge #(parameter integer ROM_BYTES=65536, parameter OCEAN_FF_
   else if(mapper_reset_n && in_ram && mapper_ce && mapper_we)cart_ram[legacy_addr[12:0]]<=mapper_out;
  end
  generate if(EASYFLASH)begin:easyflash_port
-  pocket_easyflash ef(.clk(clk),.reset(reset || load_start),.active(mapper_reset_n && ef_selected),.prepare(busy && ef_selected),
+  pocket_easyflash ef(.magicdesk(md_selected),.magicdesk_mask(md_mask),.clk(clk),.reset(reset || load_start),.active(mapper_reset_n && ef_selected),.prepare(busy && ef_selected),
    .romL(romL),.romH(romH),.UMAXromH(UMAXromH),.IOE(IOE),.IOF(IOF),.mem_write(mem_write),.mem_ce(mem_ce),
    .addr(addr_in),.data(data_in),.main_data(main_ram_data),.ram_data(ram_q),
    .exrom(ef_exrom),.game(ef_game),.ram_we(ef_ram_we),.io_rd(ef_io_rd),.cpu_data(ef_data),.io_data(ef_io_data),
@@ -101,3 +108,5 @@ module pocket_cartridge #(parameter integer ROM_BYTES=65536, parameter OCEAN_FF_
  assign mem_data_out=ef_selected ? data_in:mapper_out;
  assign mem_addr=ef_selected ? {9'b0,addr_in}:legacy_addr;
 endmodule
+
+

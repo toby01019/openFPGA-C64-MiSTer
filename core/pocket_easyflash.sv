@@ -7,7 +7,8 @@ module pocket_easyflash #(
  parameter INIT_WORDS=524288,
  parameter FLASH_SECTOR_CYCLES=1000000
 )(
- input wire clk,reset,active,prepare,
+ input wire clk,reset,active,prepare,magicdesk,
+ input wire [5:0] magicdesk_mask,
  input wire romL,romH,UMAXromH,IOE,IOF,mem_write,mem_ce,
  input wire [15:0] addr,input wire [7:0] data,main_data,ram_data,
  output wire exrom,game,ram_we,io_rd,
@@ -22,20 +23,21 @@ module pocket_easyflash #(
  reg [5:0] bank=0;
  reg [2:0] control=0;
  reg old_ioe=0,old_iof=0;
- wire high_chip=romH || UMAXromH;
+ wire high_chip=!magicdesk && (romH || UMAXromH);
  wire rom_select=romL || high_chip;
  wire [19:0] read_addr={high_chip,bank,addr[12:0]};
  always @(posedge clk)begin
   old_ioe<=IOE;old_iof<=IOF;
   if(!active)begin bank<=0;control<=0;end
   else if(IOE && !old_ioe && mem_write)begin
-   if(addr[1])control<=data[2:0];else bank<=data[5:0];
+   if(magicdesk)begin bank<=data[5:0] & magicdesk_mask;control[2]<=data[7];end
+   else if(addr[1])control<=data[2:0];else bank<=data[5:0];
   end
  end
- assign exrom=active ? !control[1]:1'b1;
- assign game=active ? (!control[0] && control[2]):1'b1;
- assign ram_we=active && IOF && !old_iof && mem_write;
- assign io_rd=active && IOF;
+ assign exrom=active ? (magicdesk ? control[2]:!control[1]):1'b1;
+ assign game=active && !magicdesk ? (!control[0] && control[2]):1'b1;
+ assign ram_we=active && !magicdesk && IOF && !old_iof && mem_write;
+ assign io_rd=active && !magicdesk && IOF;
  assign io_data=ram_data;
 
  wire [7:0] flash0_data,flash1_data,flash0_out,flash1_out;
@@ -44,16 +46,16 @@ module pocket_easyflash #(
  reg [7:0] flash0_in=8'hff,flash1_in=8'hff;
  wire grant0,grant1;
  am29f040 #(.MEM_READ_LATENCY(7),.SECTOR_ERASE_LAT_CYC(FLASH_SECTOR_CYCLES)) flash0(
-  .clk(clk),.reset_n(active),.ce_n(!(active && mem_ce && rom_select && !high_chip)),
+  .clk(clk),.reset_n(active && !magicdesk),.ce_n(!(active && !magicdesk && mem_ce && rom_select && !high_chip)),
   .we_n(!mem_write),.addr({bank,addr[12:0]}),.dq_in(data),.dq_out(flash0_data),.dq_oe(flash0_oe),
   .mem_cycle(grant0),.mem_addr(flash0_addr),.mem_in(flash0_in),.mem_out(flash0_out),
   .mem_ce(ce0),.mem_we(we0),.mem_req(req0));
  am29f040 #(.MEM_READ_LATENCY(7),.SECTOR_ERASE_LAT_CYC(FLASH_SECTOR_CYCLES)) flash1(
-  .clk(clk),.reset_n(active),.ce_n(!(active && mem_ce && rom_select && high_chip)),
+  .clk(clk),.reset_n(active && !magicdesk),.ce_n(!(active && !magicdesk && mem_ce && rom_select && high_chip)),
   .we_n(!mem_write),.addr({bank,addr[12:0]}),.dq_in(data),.dq_out(flash1_data),.dq_oe(flash1_oe),
   .mem_cycle(grant1),.mem_addr(flash1_addr),.mem_in(flash1_in),.mem_out(flash1_out),
   .mem_ce(ce1),.mem_we(we1),.mem_req(req1));
- wire status_oe=high_chip ? flash1_oe:flash0_oe;
+ wire status_oe=!magicdesk && (high_chip ? flash1_oe:flash0_oe);
  wire [7:0] status_data=high_chip ? flash1_data:flash0_data;
 
  reg initialized=0;
@@ -122,3 +124,5 @@ module pocket_easyflash #(
   end
  end
 endmodule
+
+

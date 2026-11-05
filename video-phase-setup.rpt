@@ -1,7 +1,7 @@
 ----------------
 ; Command Info ;
 ----------------
-Report Timing: Found 5 setup paths (0 violated).  Worst case slack is 10.570 
+Report Timing: Found 5 setup paths (0 violated).  Worst case slack is 8.081 
 
 Tcl Command:
     report_timing -setup -file video-phase-setup.rpt -from [get_registers {*video_stage*}] -to [get_registers {*video_adapter*}] -npaths 5 -detail full_path
@@ -17,32 +17,32 @@ Options:
 Delay Model:
     Slow 1100mV 85C Model
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Summary of Paths                                                                                                                                                                                                                                                                                            ;
-+--------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
-; Slack  ; From Node                          ; To Node                                              ; Launch Clock                                                                  ; Latch Clock                                                                   ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
-; 10.570 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[4]  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.518     ; 4.481      ;
-; 10.572 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[3]  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.518     ; 4.479      ;
-; 10.573 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[14] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.517     ; 4.479      ;
-; 10.574 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[1]  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.518     ; 4.477      ;
-; 10.575 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[12] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.517     ; 4.477      ;
-+--------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Summary of Paths                                                                                                                                                                                                                                                                                           ;
++-------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                                              ; Launch Clock                                                                  ; Latch Clock                                                                   ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
+; 8.081 ; core_top:ic|video_stage_control[4] ; core_top:ic|pocket_video:video_adapter|video_rgb[10] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.540     ; 6.948      ;
+; 8.088 ; core_top:ic|video_stage_control[4] ; core_top:ic|pocket_video:video_adapter|video_rgb[21] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.539     ; 6.942      ;
+; 8.129 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[10] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.489     ; 6.951      ;
+; 8.136 ; core_top:ic|video_stage_control[0] ; core_top:ic|pocket_video:video_adapter|video_rgb[21] ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.488     ; 6.945      ;
+; 8.169 ; core_top:ic|video_stage_control[4] ; core_top:ic|pocket_video:video_adapter|last_rgb[11]  ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 15.859       ; -0.564     ; 6.836      ;
++-------+------------------------------------+------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------------+------------+------------+
 
-Path #1: Setup slack is 10.570 
+Path #1: Setup slack is 8.081 
 ===============================================================================
 +----------------------------------------------------------------------------------------------------+
 ; Path Summary                                                                                       ;
 +--------------------+-------------------------------------------------------------------------------+
 ; Property           ; Value                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|video_stage_control[0]                                            ;
-; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[4]                           ;
+; From Node          ; core_top:ic|video_stage_control[4]                                            ;
+; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                          ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 7.291                                                                         ;
-; Data Required Time ; 17.861                                                                        ;
-; Slack              ; 10.570                                                                        ;
+; Data Arrival Time  ; 9.788                                                                         ;
+; Data Required Time ; 17.869                                                                        ;
+; Slack              ; 8.081                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+
@@ -51,23 +51,23 @@ Path #1: Setup slack is 10.570
 ; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 ; Setup Relationship     ; 15.859 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; -0.518 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 4.481  ;       ;             ;            ;        ;        ;
+; Clock Skew             ; -0.540 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 6.948  ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;        ; 2     ;             ;            ;        ;        ;
 ; Physical Delays        ;        ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.689       ; 48         ; 0.000  ; 1.946  ;
-;    Cell                ;        ; 5     ; 3.949       ; 52         ; 0.377  ; 1.690  ;
+;    IC                  ;        ; 6     ; 3.693       ; 48         ; 0.000  ; 1.950  ;
+;    Cell                ;        ; 5     ; 3.975       ; 52         ; 0.377  ; 1.690  ;
 ;    PLL Compensation    ;        ; 1     ; -4.828      ; 0          ; -4.828 ; -4.828 ;
 ;   Data                 ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 3     ; 2.918       ; 65         ; 0.000  ; 2.288  ;
-;    Cell                ;        ; 4     ; 1.563       ; 35         ; 0.000  ; 0.634  ;
+;    IC                  ;        ; 3     ; 5.910       ; 85         ; 0.000  ; 3.565  ;
+;    Cell                ;        ; 4     ; 1.038       ; 15         ; 0.000  ; 0.642  ;
 ;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.487       ; 50         ; 0.000  ; 1.852  ;
-;    Cell                ;        ; 5     ; 3.553       ; 50         ; 0.346  ; 1.407  ;
+;    IC                  ;        ; 6     ; 3.501       ; 50         ; 0.000  ; 1.866  ;
+;    Cell                ;        ; 5     ; 3.547       ; 50         ; 0.346  ; 1.407  ;
 ;    PLL Compensation    ;        ; 1     ; -5.670      ; 0          ; -5.670 ; -5.670 ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
@@ -78,7 +78,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 2.810    ; 2.810    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 2.840    ; 2.840    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -90,18 +90,18 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   -2.686 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
 ;   -0.996 ;   1.690  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   -0.168 ;   0.828  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   0.209  ;   0.377  ; RR ; CELL ; 9754   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   2.155  ;   1.946  ; RR ; IC   ; 1      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|clk                                                    ;
-;   2.810  ;   0.655  ; RR ; CELL ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-; 7.291    ; 4.481    ;    ;      ;        ;                            ; data path                                                                        ;
-;   2.810  ;   0.000  ;    ; uTco ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-;   2.810  ;   0.000  ; FF ; CELL ; 4      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|q                                                      ;
-;   3.440  ;   0.630  ; FF ; IC   ; 1      ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|dataa                                                 ;
-;   4.074  ;   0.634  ; FF ; CELL ; 25     ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|combout                                               ;
-;   6.362  ;   2.288  ; FF ; IC   ; 1      ; LABCELL_X32_Y15_N39        ; ic|video_adapter|video_rgb~8|dataa                                               ;
-;   6.987  ;   0.625  ; FF ; CELL ; 1      ; LABCELL_X32_Y15_N39        ; ic|video_adapter|video_rgb~8|combout                                             ;
-;   6.987  ;   0.000  ; FF ; IC   ; 1      ; FF_X32_Y15_N40             ; ic|video_adapter|video_rgb[4]|d                                                  ;
-;   7.291  ;   0.304  ; FF ; CELL ; 1      ; FF_X32_Y15_N40             ; core_top:ic|pocket_video:video_adapter|video_rgb[4]                              ;
+;   0.209  ;   0.377  ; RR ; CELL ; 9781   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   2.159  ;   1.950  ; RR ; IC   ; 1      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|clk                                                    ;
+;   2.840  ;   0.681  ; RR ; CELL ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+; 9.788    ; 6.948    ;    ;      ;        ;                            ; data path                                                                        ;
+;   2.840  ;   0.000  ;    ; uTco ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+;   2.840  ;   0.000  ; FF ; CELL ; 6      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|q                                                      ;
+;   5.185  ;   2.345  ; FF ; IC   ; 1      ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|dataf                                                    ;
+;   5.277  ;   0.092  ; FF ; CELL ; 49     ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|combout                                                  ;
+;   8.842  ;   3.565  ; FF ; IC   ; 1      ; LABCELL_X25_Y15_N51        ; ic|video_adapter|video_rgb~20|dataa                                              ;
+;   9.484  ;   0.642  ; FR ; CELL ; 1      ; LABCELL_X25_Y15_N51        ; ic|video_adapter|video_rgb~20|combout                                            ;
+;   9.484  ;   0.000  ; RR ; IC   ; 1      ; FF_X25_Y15_N52             ; ic|video_adapter|video_rgb[10]|d                                                 ;
+;   9.788  ;   0.304  ; RR ; CELL ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,7 +110,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 15.859   ; 15.859   ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 18.151   ; 2.292    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 18.159   ; 2.300    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   15.859 ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   15.859 ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   15.859 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -123,11 +123,11 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   13.658 ;   1.407  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y3_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   14.431 ;   0.773  ; RR ; IC   ; 1      ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|inclk                 ;
 ;   14.777 ;   0.346  ; RR ; CELL ; 107    ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|outclk                ;
-;   16.629 ;   1.852  ; RR ; IC   ; 1      ; FF_X32_Y15_N40             ; ic|video_adapter|video_rgb[4]|clk                                                ;
-;   17.229 ;   0.600  ; RR ; CELL ; 1      ; FF_X32_Y15_N40             ; core_top:ic|pocket_video:video_adapter|video_rgb[4]                              ;
-;   18.151 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 17.861   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 17.861   ; 0.000    ;    ; uTsu ; 1      ; FF_X32_Y15_N40             ; core_top:ic|pocket_video:video_adapter|video_rgb[4]                              ;
+;   16.643 ;   1.866  ; RR ; IC   ; 1      ; FF_X25_Y15_N52             ; ic|video_adapter|video_rgb[10]|clk                                               ;
+;   17.237 ;   0.594  ; RR ; CELL ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
+;   18.159 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 17.869   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 17.869   ; 0.000    ;    ; uTsu ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------
@@ -136,20 +136,20 @@ Note: Negative delays are omitted from totals when calculating percentages
 HTML report is unavailable in plain text report export.
 
 
-Path #2: Setup slack is 10.572 
+Path #2: Setup slack is 8.088 
 ===============================================================================
 +----------------------------------------------------------------------------------------------------+
 ; Path Summary                                                                                       ;
 +--------------------+-------------------------------------------------------------------------------+
 ; Property           ; Value                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|video_stage_control[0]                                            ;
-; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[3]                           ;
+; From Node          ; core_top:ic|video_stage_control[4]                                            ;
+; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                          ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 7.289                                                                         ;
-; Data Required Time ; 17.861                                                                        ;
-; Slack              ; 10.572                                                                        ;
+; Data Arrival Time  ; 9.782                                                                         ;
+; Data Required Time ; 17.870                                                                        ;
+; Slack              ; 8.088                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+
@@ -158,23 +158,23 @@ Path #2: Setup slack is 10.572
 ; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 ; Setup Relationship     ; 15.859 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; -0.518 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 4.479  ;       ;             ;            ;        ;        ;
+; Clock Skew             ; -0.539 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 6.942  ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;        ; 2     ;             ;            ;        ;        ;
 ; Physical Delays        ;        ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.689       ; 48         ; 0.000  ; 1.946  ;
-;    Cell                ;        ; 5     ; 3.949       ; 52         ; 0.377  ; 1.690  ;
+;    IC                  ;        ; 6     ; 3.693       ; 48         ; 0.000  ; 1.950  ;
+;    Cell                ;        ; 5     ; 3.975       ; 52         ; 0.377  ; 1.690  ;
 ;    PLL Compensation    ;        ; 1     ; -4.828      ; 0          ; -4.828 ; -4.828 ;
 ;   Data                 ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 3     ; 2.916       ; 65         ; 0.000  ; 2.286  ;
-;    Cell                ;        ; 4     ; 1.563       ; 35         ; 0.000  ; 0.634  ;
+;    IC                  ;        ; 3     ; 5.910       ; 85         ; 0.000  ; 3.565  ;
+;    Cell                ;        ; 4     ; 1.032       ; 15         ; 0.000  ; 0.634  ;
 ;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.487       ; 50         ; 0.000  ; 1.852  ;
-;    Cell                ;        ; 5     ; 3.553       ; 50         ; 0.346  ; 1.407  ;
+;    IC                  ;        ; 6     ; 3.501       ; 50         ; 0.000  ; 1.866  ;
+;    Cell                ;        ; 5     ; 3.548       ; 50         ; 0.346  ; 1.407  ;
 ;    PLL Compensation    ;        ; 1     ; -5.670      ; 0          ; -5.670 ; -5.670 ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
@@ -185,7 +185,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 2.810    ; 2.810    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 2.840    ; 2.840    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -197,18 +197,18 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   -2.686 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
 ;   -0.996 ;   1.690  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   -0.168 ;   0.828  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   0.209  ;   0.377  ; RR ; CELL ; 9754   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   2.155  ;   1.946  ; RR ; IC   ; 1      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|clk                                                    ;
-;   2.810  ;   0.655  ; RR ; CELL ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-; 7.289    ; 4.479    ;    ;      ;        ;                            ; data path                                                                        ;
-;   2.810  ;   0.000  ;    ; uTco ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-;   2.810  ;   0.000  ; FF ; CELL ; 4      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|q                                                      ;
-;   3.440  ;   0.630  ; FF ; IC   ; 1      ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|dataa                                                 ;
-;   4.074  ;   0.634  ; FF ; CELL ; 25     ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|combout                                               ;
-;   6.360  ;   2.286  ; FF ; IC   ; 1      ; LABCELL_X32_Y15_N45        ; ic|video_adapter|video_rgb~6|dataa                                               ;
-;   6.985  ;   0.625  ; FF ; CELL ; 1      ; LABCELL_X32_Y15_N45        ; ic|video_adapter|video_rgb~6|combout                                             ;
-;   6.985  ;   0.000  ; FF ; IC   ; 1      ; FF_X32_Y15_N46             ; ic|video_adapter|video_rgb[3]|d                                                  ;
-;   7.289  ;   0.304  ; FF ; CELL ; 1      ; FF_X32_Y15_N46             ; core_top:ic|pocket_video:video_adapter|video_rgb[3]                              ;
+;   0.209  ;   0.377  ; RR ; CELL ; 9781   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   2.159  ;   1.950  ; RR ; IC   ; 1      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|clk                                                    ;
+;   2.840  ;   0.681  ; RR ; CELL ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+; 9.782    ; 6.942    ;    ;      ;        ;                            ; data path                                                                        ;
+;   2.840  ;   0.000  ;    ; uTco ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+;   2.840  ;   0.000  ; FF ; CELL ; 6      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|q                                                      ;
+;   5.185  ;   2.345  ; FF ; IC   ; 1      ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|dataf                                                    ;
+;   5.277  ;   0.092  ; FF ; CELL ; 49     ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|combout                                                  ;
+;   8.842  ;   3.565  ; FF ; IC   ; 1      ; LABCELL_X25_Y15_N48        ; ic|video_adapter|video_rgb~19|dataa                                              ;
+;   9.476  ;   0.634  ; FR ; CELL ; 1      ; LABCELL_X25_Y15_N48        ; ic|video_adapter|video_rgb~19|combout                                            ;
+;   9.476  ;   0.000  ; RR ; IC   ; 1      ; FF_X25_Y15_N50             ; ic|video_adapter|video_rgb[21]|d                                                 ;
+;   9.782  ;   0.306  ; RR ; CELL ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -217,7 +217,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 15.859   ; 15.859   ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 18.151   ; 2.292    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 18.160   ; 2.301    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   15.859 ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   15.859 ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   15.859 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -230,11 +230,11 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   13.658 ;   1.407  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y3_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   14.431 ;   0.773  ; RR ; IC   ; 1      ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|inclk                 ;
 ;   14.777 ;   0.346  ; RR ; CELL ; 107    ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|outclk                ;
-;   16.629 ;   1.852  ; RR ; IC   ; 1      ; FF_X32_Y15_N46             ; ic|video_adapter|video_rgb[3]|clk                                                ;
-;   17.229 ;   0.600  ; RR ; CELL ; 1      ; FF_X32_Y15_N46             ; core_top:ic|pocket_video:video_adapter|video_rgb[3]                              ;
-;   18.151 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 17.861   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 17.861   ; 0.000    ;    ; uTsu ; 1      ; FF_X32_Y15_N46             ; core_top:ic|pocket_video:video_adapter|video_rgb[3]                              ;
+;   16.643 ;   1.866  ; RR ; IC   ; 1      ; FF_X25_Y15_N50             ; ic|video_adapter|video_rgb[21]|clk                                               ;
+;   17.238 ;   0.595  ; RR ; CELL ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
+;   18.160 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 17.870   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 17.870   ; 0.000    ;    ; uTsu ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------
@@ -243,7 +243,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 HTML report is unavailable in plain text report export.
 
 
-Path #3: Setup slack is 10.573 
+Path #3: Setup slack is 8.129 
 ===============================================================================
 +----------------------------------------------------------------------------------------------------+
 ; Path Summary                                                                                       ;
@@ -251,12 +251,12 @@ Path #3: Setup slack is 10.573
 ; Property           ; Value                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 ; From Node          ; core_top:ic|video_stage_control[0]                                            ;
-; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[14]                          ;
+; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                          ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 7.289                                                                         ;
-; Data Required Time ; 17.862                                                                        ;
-; Slack              ; 10.573                                                                        ;
+; Data Arrival Time  ; 9.740                                                                         ;
+; Data Required Time ; 17.869                                                                        ;
+; Slack              ; 8.129                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+
@@ -265,23 +265,23 @@ Path #3: Setup slack is 10.573
 ; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 ; Setup Relationship     ; 15.859 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; -0.517 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 4.479  ;       ;             ;            ;        ;        ;
+; Clock Skew             ; -0.489 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 6.951  ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;        ; 2     ;             ;            ;        ;        ;
 ; Physical Delays        ;        ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.689       ; 48         ; 0.000  ; 1.946  ;
+;    IC                  ;        ; 6     ; 3.668       ; 48         ; 0.000  ; 1.925  ;
 ;    Cell                ;        ; 5     ; 3.949       ; 52         ; 0.377  ; 1.690  ;
 ;    PLL Compensation    ;        ; 1     ; -4.828      ; 0          ; -4.828 ; -4.828 ;
 ;   Data                 ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 3     ; 2.916       ; 65         ; 0.000  ; 2.286  ;
-;    Cell                ;        ; 4     ; 1.563       ; 35         ; 0.000  ; 0.634  ;
+;    IC                  ;        ; 3     ; 5.552       ; 80         ; 0.000  ; 3.565  ;
+;    Cell                ;        ; 4     ; 1.399       ; 20         ; 0.000  ; 0.642  ;
 ;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.487       ; 50         ; 0.000  ; 1.852  ;
-;    Cell                ;        ; 5     ; 3.554       ; 50         ; 0.346  ; 1.407  ;
+;    IC                  ;        ; 6     ; 3.501       ; 50         ; 0.000  ; 1.866  ;
+;    Cell                ;        ; 5     ; 3.547       ; 50         ; 0.346  ; 1.407  ;
 ;    PLL Compensation    ;        ; 1     ; -5.670      ; 0          ; -5.670 ; -5.670 ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
@@ -292,7 +292,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 2.810    ; 2.810    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 2.789    ; 2.789    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -304,18 +304,18 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   -2.686 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
 ;   -0.996 ;   1.690  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   -0.168 ;   0.828  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   0.209  ;   0.377  ; RR ; CELL ; 9754   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   2.155  ;   1.946  ; RR ; IC   ; 1      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|clk                                                    ;
-;   2.810  ;   0.655  ; RR ; CELL ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-; 7.289    ; 4.479    ;    ;      ;        ;                            ; data path                                                                        ;
-;   2.810  ;   0.000  ;    ; uTco ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-;   2.810  ;   0.000  ; FF ; CELL ; 4      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|q                                                      ;
-;   3.440  ;   0.630  ; FF ; IC   ; 1      ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|dataa                                                 ;
-;   4.074  ;   0.634  ; FF ; CELL ; 25     ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|combout                                               ;
-;   6.360  ;   2.286  ; FF ; IC   ; 1      ; LABCELL_X32_Y15_N42        ; ic|video_adapter|video_rgb~5|dataa                                               ;
-;   6.982  ;   0.622  ; FF ; CELL ; 1      ; LABCELL_X32_Y15_N42        ; ic|video_adapter|video_rgb~5|combout                                             ;
-;   6.982  ;   0.000  ; FF ; IC   ; 1      ; FF_X32_Y15_N44             ; ic|video_adapter|video_rgb[14]|d                                                 ;
-;   7.289  ;   0.307  ; FF ; CELL ; 1      ; FF_X32_Y15_N44             ; core_top:ic|pocket_video:video_adapter|video_rgb[14]                             ;
+;   0.209  ;   0.377  ; RR ; CELL ; 9781   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   2.134  ;   1.925  ; RR ; IC   ; 1      ; FF_X40_Y18_N41             ; ic|video_stage_control[0]|clk                                                    ;
+;   2.789  ;   0.655  ; RR ; CELL ; 1      ; FF_X40_Y18_N41             ; core_top:ic|video_stage_control[0]                                               ;
+; 9.740    ; 6.951    ;    ;      ;        ;                            ; data path                                                                        ;
+;   2.789  ;   0.000  ;    ; uTco ; 1      ; FF_X40_Y18_N41             ; core_top:ic|video_stage_control[0]                                               ;
+;   2.789  ;   0.000  ; FF ; CELL ; 4      ; FF_X40_Y18_N41             ; ic|video_stage_control[0]|q                                                      ;
+;   4.776  ;   1.987  ; FF ; IC   ; 1      ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|datad                                                    ;
+;   5.229  ;   0.453  ; FF ; CELL ; 49     ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|combout                                                  ;
+;   8.794  ;   3.565  ; FF ; IC   ; 1      ; LABCELL_X25_Y15_N51        ; ic|video_adapter|video_rgb~20|dataa                                              ;
+;   9.436  ;   0.642  ; FR ; CELL ; 1      ; LABCELL_X25_Y15_N51        ; ic|video_adapter|video_rgb~20|combout                                            ;
+;   9.436  ;   0.000  ; RR ; IC   ; 1      ; FF_X25_Y15_N52             ; ic|video_adapter|video_rgb[10]|d                                                 ;
+;   9.740  ;   0.304  ; RR ; CELL ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -324,7 +324,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 15.859   ; 15.859   ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 18.152   ; 2.293    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 18.159   ; 2.300    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   15.859 ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   15.859 ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   15.859 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -337,11 +337,11 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   13.658 ;   1.407  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y3_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   14.431 ;   0.773  ; RR ; IC   ; 1      ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|inclk                 ;
 ;   14.777 ;   0.346  ; RR ; CELL ; 107    ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|outclk                ;
-;   16.629 ;   1.852  ; RR ; IC   ; 1      ; FF_X32_Y15_N44             ; ic|video_adapter|video_rgb[14]|clk                                               ;
-;   17.230 ;   0.601  ; RR ; CELL ; 1      ; FF_X32_Y15_N44             ; core_top:ic|pocket_video:video_adapter|video_rgb[14]                             ;
-;   18.152 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 17.862   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 17.862   ; 0.000    ;    ; uTsu ; 1      ; FF_X32_Y15_N44             ; core_top:ic|pocket_video:video_adapter|video_rgb[14]                             ;
+;   16.643 ;   1.866  ; RR ; IC   ; 1      ; FF_X25_Y15_N52             ; ic|video_adapter|video_rgb[10]|clk                                               ;
+;   17.237 ;   0.594  ; RR ; CELL ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
+;   18.159 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 17.869   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 17.869   ; 0.000    ;    ; uTsu ; 1      ; FF_X25_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[10]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------
@@ -350,7 +350,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 HTML report is unavailable in plain text report export.
 
 
-Path #4: Setup slack is 10.574 
+Path #4: Setup slack is 8.136 
 ===============================================================================
 +----------------------------------------------------------------------------------------------------+
 ; Path Summary                                                                                       ;
@@ -358,12 +358,12 @@ Path #4: Setup slack is 10.574
 ; Property           ; Value                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 ; From Node          ; core_top:ic|video_stage_control[0]                                            ;
-; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[1]                           ;
+; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                          ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 7.287                                                                         ;
-; Data Required Time ; 17.861                                                                        ;
-; Slack              ; 10.574                                                                        ;
+; Data Arrival Time  ; 9.734                                                                         ;
+; Data Required Time ; 17.870                                                                        ;
+; Slack              ; 8.136                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+
@@ -372,23 +372,23 @@ Path #4: Setup slack is 10.574
 ; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 ; Setup Relationship     ; 15.859 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; -0.518 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 4.477  ;       ;             ;            ;        ;        ;
+; Clock Skew             ; -0.488 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 6.945  ;       ;             ;            ;        ;        ;
 ; Number of Logic Levels ;        ; 2     ;             ;            ;        ;        ;
 ; Physical Delays        ;        ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.689       ; 48         ; 0.000  ; 1.946  ;
+;    IC                  ;        ; 6     ; 3.668       ; 48         ; 0.000  ; 1.925  ;
 ;    Cell                ;        ; 5     ; 3.949       ; 52         ; 0.377  ; 1.690  ;
 ;    PLL Compensation    ;        ; 1     ; -4.828      ; 0          ; -4.828 ; -4.828 ;
 ;   Data                 ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 3     ; 2.914       ; 65         ; 0.000  ; 2.284  ;
-;    Cell                ;        ; 4     ; 1.563       ; 35         ; 0.000  ; 0.634  ;
+;    IC                  ;        ; 3     ; 5.552       ; 80         ; 0.000  ; 3.565  ;
+;    Cell                ;        ; 4     ; 1.393       ; 20         ; 0.000  ; 0.634  ;
 ;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.487       ; 50         ; 0.000  ; 1.852  ;
-;    Cell                ;        ; 5     ; 3.553       ; 50         ; 0.346  ; 1.407  ;
+;    IC                  ;        ; 6     ; 3.501       ; 50         ; 0.000  ; 1.866  ;
+;    Cell                ;        ; 5     ; 3.548       ; 50         ; 0.346  ; 1.407  ;
 ;    PLL Compensation    ;        ; 1     ; -5.670      ; 0          ; -5.670 ; -5.670 ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
@@ -399,7 +399,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 2.810    ; 2.810    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 2.789    ; 2.789    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -411,18 +411,18 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   -2.686 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
 ;   -0.996 ;   1.690  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   -0.168 ;   0.828  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   0.209  ;   0.377  ; RR ; CELL ; 9754   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   2.155  ;   1.946  ; RR ; IC   ; 1      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|clk                                                    ;
-;   2.810  ;   0.655  ; RR ; CELL ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-; 7.287    ; 4.477    ;    ;      ;        ;                            ; data path                                                                        ;
-;   2.810  ;   0.000  ;    ; uTco ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-;   2.810  ;   0.000  ; FF ; CELL ; 4      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|q                                                      ;
-;   3.440  ;   0.630  ; FF ; IC   ; 1      ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|dataa                                                 ;
-;   4.074  ;   0.634  ; FF ; CELL ; 25     ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|combout                                               ;
-;   6.358  ;   2.284  ; FF ; IC   ; 1      ; LABCELL_X32_Y15_N51        ; ic|video_adapter|video_rgb~2|dataa                                               ;
-;   6.983  ;   0.625  ; FF ; CELL ; 1      ; LABCELL_X32_Y15_N51        ; ic|video_adapter|video_rgb~2|combout                                             ;
-;   6.983  ;   0.000  ; FF ; IC   ; 1      ; FF_X32_Y15_N52             ; ic|video_adapter|video_rgb[1]|d                                                  ;
-;   7.287  ;   0.304  ; FF ; CELL ; 1      ; FF_X32_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[1]                              ;
+;   0.209  ;   0.377  ; RR ; CELL ; 9781   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   2.134  ;   1.925  ; RR ; IC   ; 1      ; FF_X40_Y18_N41             ; ic|video_stage_control[0]|clk                                                    ;
+;   2.789  ;   0.655  ; RR ; CELL ; 1      ; FF_X40_Y18_N41             ; core_top:ic|video_stage_control[0]                                               ;
+; 9.734    ; 6.945    ;    ;      ;        ;                            ; data path                                                                        ;
+;   2.789  ;   0.000  ;    ; uTco ; 1      ; FF_X40_Y18_N41             ; core_top:ic|video_stage_control[0]                                               ;
+;   2.789  ;   0.000  ; FF ; CELL ; 4      ; FF_X40_Y18_N41             ; ic|video_stage_control[0]|q                                                      ;
+;   4.776  ;   1.987  ; FF ; IC   ; 1      ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|datad                                                    ;
+;   5.229  ;   0.453  ; FF ; CELL ; 49     ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|combout                                                  ;
+;   8.794  ;   3.565  ; FF ; IC   ; 1      ; LABCELL_X25_Y15_N48        ; ic|video_adapter|video_rgb~19|dataa                                              ;
+;   9.428  ;   0.634  ; FR ; CELL ; 1      ; LABCELL_X25_Y15_N48        ; ic|video_adapter|video_rgb~19|combout                                            ;
+;   9.428  ;   0.000  ; RR ; IC   ; 1      ; FF_X25_Y15_N50             ; ic|video_adapter|video_rgb[21]|d                                                 ;
+;   9.734  ;   0.306  ; RR ; CELL ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -431,7 +431,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 15.859   ; 15.859   ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 18.151   ; 2.292    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 18.160   ; 2.301    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   15.859 ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   15.859 ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   15.859 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -444,11 +444,11 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   13.658 ;   1.407  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y3_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   14.431 ;   0.773  ; RR ; IC   ; 1      ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|inclk                 ;
 ;   14.777 ;   0.346  ; RR ; CELL ; 107    ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|outclk                ;
-;   16.629 ;   1.852  ; RR ; IC   ; 1      ; FF_X32_Y15_N52             ; ic|video_adapter|video_rgb[1]|clk                                                ;
-;   17.229 ;   0.600  ; RR ; CELL ; 1      ; FF_X32_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[1]                              ;
-;   18.151 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 17.861   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 17.861   ; 0.000    ;    ; uTsu ; 1      ; FF_X32_Y15_N52             ; core_top:ic|pocket_video:video_adapter|video_rgb[1]                              ;
+;   16.643 ;   1.866  ; RR ; IC   ; 1      ; FF_X25_Y15_N50             ; ic|video_adapter|video_rgb[21]|clk                                               ;
+;   17.238 ;   0.595  ; RR ; CELL ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
+;   18.160 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 17.870   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 17.870   ; 0.000    ;    ; uTsu ; 1      ; FF_X25_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[21]                             ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------
@@ -457,20 +457,20 @@ Note: Negative delays are omitted from totals when calculating percentages
 HTML report is unavailable in plain text report export.
 
 
-Path #5: Setup slack is 10.575 
+Path #5: Setup slack is 8.169 
 ===============================================================================
 +----------------------------------------------------------------------------------------------------+
 ; Path Summary                                                                                       ;
 +--------------------+-------------------------------------------------------------------------------+
 ; Property           ; Value                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
-; From Node          ; core_top:ic|video_stage_control[0]                                            ;
-; To Node            ; core_top:ic|pocket_video:video_adapter|video_rgb[12]                          ;
+; From Node          ; core_top:ic|video_stage_control[4]                                            ;
+; To Node            ; core_top:ic|pocket_video:video_adapter|last_rgb[11]                           ;
 ; Launch Clock       ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; Latch Clock        ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; Data Arrival Time  ; 7.287                                                                         ;
-; Data Required Time ; 17.862                                                                        ;
-; Slack              ; 10.575                                                                        ;
+; Data Arrival Time  ; 9.676                                                                         ;
+; Data Required Time ; 17.845                                                                        ;
+; Slack              ; 8.169                                                                         ;
 +--------------------+-------------------------------------------------------------------------------+
 
 +--------------------------------------------------------------------------------------+
@@ -479,23 +479,23 @@ Path #5: Setup slack is 10.575
 ; Property               ; Value  ; Count ; Total Delay ; % of Total ; Min    ; Max    ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 ; Setup Relationship     ; 15.859 ;       ;             ;            ;        ;        ;
-; Clock Skew             ; -0.517 ;       ;             ;            ;        ;        ;
-; Data Delay             ; 4.477  ;       ;             ;            ;        ;        ;
-; Number of Logic Levels ;        ; 2     ;             ;            ;        ;        ;
+; Clock Skew             ; -0.564 ;       ;             ;            ;        ;        ;
+; Data Delay             ; 6.836  ;       ;             ;            ;        ;        ;
+; Number of Logic Levels ;        ; 1     ;             ;            ;        ;        ;
 ; Physical Delays        ;        ;       ;             ;            ;        ;        ;
 ;  Arrival Path          ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.689       ; 48         ; 0.000  ; 1.946  ;
-;    Cell                ;        ; 5     ; 3.949       ; 52         ; 0.377  ; 1.690  ;
+;    IC                  ;        ; 6     ; 3.693       ; 48         ; 0.000  ; 1.950  ;
+;    Cell                ;        ; 5     ; 3.975       ; 52         ; 0.377  ; 1.690  ;
 ;    PLL Compensation    ;        ; 1     ; -4.828      ; 0          ; -4.828 ; -4.828 ;
 ;   Data                 ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 3     ; 2.914       ; 65         ; 0.000  ; 2.284  ;
-;    Cell                ;        ; 4     ; 1.563       ; 35         ; 0.000  ; 0.634  ;
+;    IC                  ;        ; 2     ; 5.905       ; 86         ; 2.345  ; 3.560  ;
+;    Cell                ;        ; 3     ; 0.931       ; 14         ; 0.000  ; 0.839  ;
 ;    uTco                ;        ; 1     ; 0.000       ; 0          ; 0.000  ; 0.000  ;
 ;  Required Path         ;        ;       ;             ;            ;        ;        ;
 ;   Clock                ;        ;       ;             ;            ;        ;        ;
-;    IC                  ;        ; 6     ; 3.487       ; 50         ; 0.000  ; 1.852  ;
-;    Cell                ;        ; 5     ; 3.554       ; 50         ; 0.346  ; 1.407  ;
+;    IC                  ;        ; 6     ; 3.501       ; 50         ; 0.000  ; 1.866  ;
+;    Cell                ;        ; 5     ; 3.523       ; 50         ; 0.346  ; 1.407  ;
 ;    PLL Compensation    ;        ; 1     ; -5.670      ; 0          ; -5.670 ; -5.670 ;
 +------------------------+--------+-------+-------------+------------+--------+--------+
 Note: Negative delays are omitted from totals when calculating percentages
@@ -506,7 +506,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 0.000    ; 0.000    ;    ;      ;        ;                            ; launch edge time                                                                 ;
-; 2.810    ; 2.810    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 2.840    ; 2.840    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   0.000  ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   0.000  ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   0.000  ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -518,18 +518,16 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   -2.686 ;   0.000  ; RR ; IC   ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ;
 ;   -0.996 ;   1.690  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y2_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   -0.168 ;   0.828  ; RR ; IC   ; 1      ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|inclk                 ;
-;   0.209  ;   0.377  ; RR ; CELL ; 9754   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
-;   2.155  ;   1.946  ; RR ; IC   ; 1      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|clk                                                    ;
-;   2.810  ;   0.655  ; RR ; CELL ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-; 7.287    ; 4.477    ;    ;      ;        ;                            ; data path                                                                        ;
-;   2.810  ;   0.000  ;    ; uTco ; 1      ; FF_X26_Y12_N32             ; core_top:ic|video_stage_control[0]                                               ;
-;   2.810  ;   0.000  ; FF ; CELL ; 4      ; FF_X26_Y12_N32             ; ic|video_stage_control[0]|q                                                      ;
-;   3.440  ;   0.630  ; FF ; IC   ; 1      ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|dataa                                                 ;
-;   4.074  ;   0.634  ; FF ; CELL ; 25     ; LABCELL_X25_Y12_N45        ; ic|video_adapter|padding~0|combout                                               ;
-;   6.358  ;   2.284  ; FF ; IC   ; 1      ; LABCELL_X32_Y15_N48        ; ic|video_adapter|video_rgb~1|dataa                                               ;
-;   6.980  ;   0.622  ; FF ; CELL ; 1      ; LABCELL_X32_Y15_N48        ; ic|video_adapter|video_rgb~1|combout                                             ;
-;   6.980  ;   0.000  ; FF ; IC   ; 1      ; FF_X32_Y15_N50             ; ic|video_adapter|video_rgb[12]|d                                                 ;
-;   7.287  ;   0.307  ; FF ; CELL ; 1      ; FF_X32_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[12]                             ;
+;   0.209  ;   0.377  ; RR ; CELL ; 9781   ; CLKCTRL_G9                 ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[2]~CLKENA0|outclk                ;
+;   2.159  ;   1.950  ; RR ; IC   ; 1      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|clk                                                    ;
+;   2.840  ;   0.681  ; RR ; CELL ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+; 9.676    ; 6.836    ;    ;      ;        ;                            ; data path                                                                        ;
+;   2.840  ;   0.000  ;    ; uTco ; 1      ; FF_X24_Y30_N59             ; core_top:ic|video_stage_control[4]                                               ;
+;   2.840  ;   0.000  ; FF ; CELL ; 6      ; FF_X24_Y30_N59             ; ic|video_stage_control[4]|q                                                      ;
+;   5.185  ;   2.345  ; FF ; IC   ; 1      ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|dataf                                                    ;
+;   5.277  ;   0.092  ; FF ; CELL ; 49     ; LABCELL_X48_Y20_N3         ; ic|video_adapter|active|combout                                                  ;
+;   8.837  ;   3.560  ; FF ; IC   ; 1      ; FF_X25_Y15_N47             ; ic|video_adapter|last_rgb[11]|ena                                                ;
+;   9.676  ;   0.839  ; FF ; CELL ; 1      ; FF_X25_Y15_N47             ; core_top:ic|pocket_video:video_adapter|last_rgb[11]                              ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -538,7 +536,7 @@ Note: Negative delays are omitted from totals when calculating percentages
 ; Total    ; Incr     ; RF ; Type ; Fanout ; Location                   ; Element                                                                          ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 ; 15.859   ; 15.859   ;    ;      ;        ;                            ; latch edge time                                                                  ;
-; 18.152   ; 2.293    ;    ;      ;        ;                            ; clock path                                                                       ;
+; 18.135   ; 2.276    ;    ;      ;        ;                            ; clock path                                                                       ;
 ;   15.859 ;   0.000  ;    ;      ;        ;                            ; source latency                                                                   ;
 ;   15.859 ;   0.000  ;    ;      ; 1      ; PIN_V15                    ; clk_74a                                                                          ;
 ;   15.859 ;   0.000  ; RR ; IC   ; 1      ; IOIBUF_X38_Y0_N1           ; clk_74a~input|i                                                                  ;
@@ -551,11 +549,11 @@ Note: Negative delays are omitted from totals when calculating percentages
 ;   13.658 ;   1.407  ; RR ; CELL ; 1      ; PLLOUTPUTCOUNTER_X54_Y3_N1 ; ic|mp1|mf_pllbase_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk    ;
 ;   14.431 ;   0.773  ; RR ; IC   ; 1      ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|inclk                 ;
 ;   14.777 ;   0.346  ; RR ; CELL ; 107    ; CLKCTRL_G10                ; ic|mp1|mf_pllbase_inst|altera_pll_i|outclk_wire[0]~CLKENA0|outclk                ;
-;   16.629 ;   1.852  ; RR ; IC   ; 1      ; FF_X32_Y15_N50             ; ic|video_adapter|video_rgb[12]|clk                                               ;
-;   17.230 ;   0.601  ; RR ; CELL ; 1      ; FF_X32_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[12]                             ;
-;   18.152 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
-; 17.862   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
-; 17.862   ; 0.000    ;    ; uTsu ; 1      ; FF_X32_Y15_N50             ; core_top:ic|pocket_video:video_adapter|video_rgb[12]                             ;
+;   16.643 ;   1.866  ; RR ; IC   ; 1      ; FF_X25_Y15_N47             ; ic|video_adapter|last_rgb[11]|clk                                                ;
+;   17.213 ;   0.570  ; RR ; CELL ; 1      ; FF_X25_Y15_N47             ; core_top:ic|pocket_video:video_adapter|last_rgb[11]                              ;
+;   18.135 ;   0.922  ;    ;      ;        ;                            ; clock pessimism removed                                                          ;
+; 17.845   ; -0.290   ;    ;      ;        ;                            ; clock uncertainty                                                                ;
+; 17.845   ; 0.000    ;    ; uTsu ; 1      ; FF_X25_Y15_N47             ; core_top:ic|pocket_video:video_adapter|last_rgb[11]                              ;
 +----------+----------+----+------+--------+----------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------

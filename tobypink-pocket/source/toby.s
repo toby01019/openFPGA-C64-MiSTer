@@ -113,3 +113,48 @@ _toby_death_y:
 .segment "RODATA"
 .include "toby-lower.inc"
 climb_lower: .byte 134,135,150,151
+
+; Advance the eight existing walk poses by distance travelled, not by
+; global time. Blocking, idle and teleports cannot animate a false step.
+.export _toby_stride,_toby_walk_active,_toby_walk_phase
+.import _px,_grounded
+.segment "BSS"
+stride_previous_x: .res 1
+stride_initialized: .res 1
+_toby_walk_active: .res 1
+_toby_walk_phase: .res 1
+.segment "CODE"
+_toby_stride:
+ lda #0
+ sta _toby_walk_active
+ lda stride_initialized
+ bne @delta
+ inc stride_initialized
+ lda _px
+ sta stride_previous_x
+ rts
+@delta:
+ lda _px
+ sec
+ sbc stride_previous_x
+ tax
+ lda _px
+ sta stride_previous_x
+ lda _grounded
+ beq @done
+ txa
+ beq @done
+ bpl @positive
+ eor #255
+ clc
+ adc #1
+@positive:
+ cmp #5
+ bcs @done
+ clc
+ adc _toby_walk_phase
+ and #31
+ sta _toby_walk_phase
+ inc _toby_walk_active
+@done:
+ rts

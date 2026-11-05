@@ -3,7 +3,7 @@
 // Metadata is provisional while busy; attach only after attached=1 at clean EOF.
 // Payload pages match MiSTer's cartridge ROM window at 0x200000.
 module pocket_crt #(parameter integer MAX_PAYLOAD_BYTES=2097152,
- parameter ALLOW_OCEAN_FF_TAIL=0,parameter EASYFLASH=0,
+ parameter ALLOW_OCEAN_FF_TAIL=0,parameter EASYFLASH=0,parameter MAGICDESK=0,
  parameter [127:0] ALLOWED_TYPES={128{1'b1}})(
  input wire clk,reset,load_start,
  input wire [31:0] file_size,
@@ -102,7 +102,8 @@ module pocket_crt #(parameter integer MAX_PAYLOAD_BYTES=2097152,
      else if((cart_id==0 && chip_bank!=0) || chip_bank>63 || (load_address!=16'h8000 && load_address!=16'ha000 && load_address!=16'he000))fail(6);
      else if(image_length!=8192 && image_length!=16384 && !(cart_id==18 && image_length==4096 && load_address==16'h8000 && pages==0 && chip_bank==0))fail(6);
      else if(image_length==16384 && load_address!=16'h8000)fail(6);
-     else if((pages+(image_length==16384 ? 2:1)>((EASYFLASH && cart_id==32) ? 128:(MAX_PAYLOAD_BYTES/8192)) && !erased_ocean_tail) || chip_count==255)fail(8);
+     else if(MAGICDESK && cart_id==19 && (load_address!=16'h8000 || image_length!=8192))fail(6);
+     else if((pages+(image_length==16384 ? 2:1)>((EASYFLASH && cart_id==32) ? 128:(MAGICDESK && cart_id==19) ? 64:(MAX_PAYLOAD_BYTES/8192)) && !erased_ocean_tail) || chip_count==255)fail(8);
      else if((cart_id==32 || cart_id==33) && (chip_bank>=64 || pages+(image_length==16384 ? 2:1)>128))fail(8);
      else if(seen[map_index] || (image_length==16384 && seen[map_index+1'b1]))fail(9);
      else begin
@@ -121,6 +122,7 @@ module pocket_crt #(parameter integer MAX_PAYLOAD_BYTES=2097152,
       end else begin
        if(EASYFLASH && cart_id==32)
         ram_addr<=24'h200000+{4'b0,(high_chip || (image_length==16384 && payload_pos[13])),chip_bank[5:0],payload_pos[12:0]};
+       else if(MAGICDESK && cart_id==19)ram_addr<=24'h200000+{5'b0,chip_bank[5:0],payload_pos[12:0]};
        else ram_addr<=24'h200000+{pages,13'b0}+payload_pos;
        ram_wdata<=byte_data;ram_start<=1;state<=WAIT_WRITE;
       end
@@ -137,3 +139,4 @@ module pocket_crt #(parameter integer MAX_PAYLOAD_BYTES=2097152,
   end
  end
 endmodule
+

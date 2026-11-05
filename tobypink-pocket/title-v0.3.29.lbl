@@ -1,0 +1,12 @@
+al 000B8D .loader_stub
+al 000A39 .ticker_glyph
+al 004B8F .title_detail_irq
+al 00080D .title_entry
+al 004BD6 .title_footer_irq
+al 000A03 .title_irq
+al 000AF3 .title_phase
+al 0008A4 .title_start
+al 000AF8 .title_text
+al 000AF7 .title_text_pos
+al 000AF5 .title_ticks
+al 000887 .title_wait

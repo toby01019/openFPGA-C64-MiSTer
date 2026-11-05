@@ -1,28 +1,33 @@
-C64 Pocket 0.5.3-alpha - Hardware-tested autostart fix
+C64 Pocket 0.5.4-beta - 5 November 2026
 
-Hardware feedback confirms automatic D64/G64 loading and starting, manual
-LOAD* and in-game disk changes without unwanted LOAD/RUN. This public
-package uses the exact FPGA bitstream tested as 0.5.3-test. It remains an
-alpha; this feedback is not an exhaustive test of every game or feature.
+Late beta: tested on a real Analogue Pocket. This is not a guarantee of
+compatibility with every game. The FPGA bitstream is identical to the
+successfully tested 0.5.4-test1.
 
-INSTALL: Back up your SD, power off Pocket, extract this SD ZIP to the SD
-root, merge folders and replace core files. From 0.5.2 no renaming or asset
-migration is needed. Keep your ROMs, games and settings. From 0.5.1 or older,
-read MIGRATION-EN.txt first. Core ID: toby01019.C64; platform: c64.
-Firmware 2.3+. Provide basic.bin, characters.bin, kernal.bin and 1541.bin
-in Assets/c64/common/. System ROMs are not included.
+New: Magic Desk cartridges up to 512 KiB. Toby confirmed the tested
+Van Helsing and Impossible Mission 3 trainer cartridges work, as does
+Sherwood. Third-party games and trainer cartridges are NOT bundled.
+Toby Pink V029 is included: distance-based walking animations and a new
+janitor. Toby confirmed gameplay and digital samples on his real Pocket.
 
-Core Settings > Disk assist: Auto start + activity, Activity only,
-Auto start only, or Off. At an empty standard BASIC READY prompt, select
-D64/G64 in Disk 8, close the Pocket menu and release all buttons.
-LOAD"*",8,1 is typed; RUN follows only after successful return to BASIC.
-In-game swaps are insert-only. Disk 9 does not autostart; attached cartridges
-disable disk autostart. Manual input cancels it. Existing LOAD*/RUN controls
-remain available. For replacement ROMs or problems use Activity only/Off.
-The top-right icon shows activity, not a percentage or remaining time.
+INSTALL: Back up your SD, turn off the Pocket, extract the SD ZIP into
+the SD root, merge folders and replace core files. Keep your own ROMs,
+games and saves. From 0.5.2/0.5.3 no renaming is needed. From 0.5.1 or
+older read MIGRATION-EN.txt. Core ID: toby01019.C64; platform: c64.
+Firmware 2.3 or later. Supply basic.bin, characters.bin, kernal.bin and
+the 16 KiB 1541.bin in Assets/c64/common. System ROMs are not bundled.
 
-TobyPink: enable REU 512 KiB and Ultimate Audio (2 voices), select its D64
-and start TOBY TITLE. V027-AUDIO.REU is sample data, not a start program.
-No D81/1581, NTSC, TAP, mouse, Sleep or savestates. EasyFlash writes volatile.
-English menus and EN/DE guides. AI-assisted community port based on MiSTer.
-Keep 0.5.2 as a fallback; older releases remain in the GitHub release archive.
+TOBY PINK: enable REU 512 KiB and Ultimate Audio (2 voices). Select
+Disk 8 > Games > Disketten D64 > TobyPink-Pocket-V029.d64; start TOBY TITLE.
+The sample bank retains the compatibility filename V027-AUDIO.REU;
+its bytes are identical to V029-AUDIO.REU. It is not a start program.
+Older game copies are not removed automatically.
+
+PRG, supported CRT/EasyFlash, D64/G64, two 1541 drives, disk assist,
+on-screen keyboard with Shift legends/LOAD*/RUN/transparency, and Dock
+USB keyboard remain available. No D81/1581, NTSC, TAP, mouse, sleep or
+savestates. EasyFlash writes are volatile. English menus; EN/DE guides.
+AI-assisted community port based on MiSTer C64; upstream notices apply.
+
+Published on GitHub and itch.io. Updaters need the next catalog refresh.
+Manual SD-ZIP installation is available now.

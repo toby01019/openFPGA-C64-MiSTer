@@ -33,4 +33,4 @@ Kurzer Hardwaretest:
 3. Disk assist -> Off: LOAD*, RUN und Tastaturen wie bisher bedienen.
 Bitte auf unveraendertes Bild und Ton achten. 0.5.1 als Rueckfall behalten.
 
-TobyPink: Vor dem Start REU 512 KiB und Ultimate Audio (2 voices) einschalten. TobyPink-Pocket-V027.d64 in Disk 8 auswaehlen. Erstes Programm: TOBY TITLE. V027-AUDIO.REU ist eine Samplebank, kein Startprogramm.
+TobyPink: Vor dem Start REU 512 KiB und Ultimate Audio (2 voices) einschalten. TobyPink-Pocket-V029.d64 in Disk 8 auswaehlen. Erstes Programm: TOBY TITLE. V027-AUDIO.REU ist eine Samplebank, kein Startprogramm.

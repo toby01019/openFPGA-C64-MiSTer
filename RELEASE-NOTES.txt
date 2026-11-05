@@ -1,33 +1,33 @@
-## C64 Pocket 0.5.3-alpha — Hardware-tested autostart fix
+C64 Pocket 0.5.4-beta - 5 November 2026
 
-Fixes disk autostart doing nothing after a cold start: the internal keyboard
-boot guard was incorrectly treated as manual input, cancelling autostart.
+Late beta: tested on a real Analogue Pocket. This is not a guarantee of
+compatibility with every game. The FPGA bitstream is identical to the
+successfully tested 0.5.4-test1.
 
-**Hardware testing confirmed D64/G64 automatic loading and game start,
-manual LOAD*, and in-game disk swaps without unwanted LOAD/RUN.**
-The released FPGA bitstream is byte-identical to the tested 0.5.3-test.
-This remains an alpha, not a guarantee for every game or replacement ROM.
+New: Magic Desk cartridges up to 512 KiB. Toby confirmed the tested
+Van Helsing and Impossible Mission 3 trainer cartridges work, as does
+Sherwood. Third-party games and trainer cartridges are NOT bundled.
+Toby Pink V029 is included: distance-based walking animations and a new
+janitor. Toby confirmed gameplay and digital samples on his real Pocket.
 
-### Installation
-Download **C64-Pocket-0.5.3-Test-SD-EN.zip**. Back up the SD, power off Pocket,
-extract to its root, merge folders and replace core files. From 0.5.2 there
-is **no renaming or folder migration**. From 0.5.1 or older, follow the
-included migration instructions. Provide your own system ROMs.
+INSTALL: Back up your SD, turn off the Pocket, extract the SD ZIP into
+the SD root, merge folders and replace core files. Keep your own ROMs,
+games and saves. From 0.5.2/0.5.3 no renaming is needed. From 0.5.1 or
+older read MIGRATION-EN.txt. Core ID: toby01019.C64; platform: c64.
+Firmware 2.3 or later. Supply basic.bin, characters.bin, kernal.bin and
+the 16 KiB 1541.bin in Assets/c64/common. System ROMs are not bundled.
 
-Under **Core Settings > Disk assist**, use **Auto start + activity**.
-At empty BASIC READY select D64/G64 in Disk 8, close the menu and release
-buttons. Manual LOAD*/RUN remain available; Activity only disables autostart.
+TOBY PINK: enable REU 512 KiB and Ultimate Audio (2 voices). Select
+Disk 8 > Games > Disketten D64 > TobyPink-Pocket-V029.d64; start TOBY TITLE.
+The sample bank retains the compatibility filename V027-AUDIO.REU;
+its bytes are identical to V029-AUDIO.REU. It is not a start program.
+Older game copies are not removed automatically.
 
-### Validation and availability
-FPGA build, timing and focused regression tests passed; see VALIDATION.txt.
-Only autostart cancellation wiring changed functionally. Picture, audio,
-disk and keyboard RTL remain unchanged. Hardware tests cover the checks above.
-The registered core ID remains `toby01019.C64` on platform `c64`.
-pupdate/Pocket Sync need the next catalog update to offer 0.5.3; no live
-updater installation test is claimed. Manual installation is available now.
+PRG, supported CRT/EasyFlash, D64/G64, two 1541 drives, disk assist,
+on-screen keyboard with Shift legends/LOAD*/RUN/transparency, and Dock
+USB keyboard remain available. No D81/1581, NTSC, TAP, mouse, sleep or
+savestates. EasyFlash writes are volatile. English menus; EN/DE guides.
+AI-assisted community port based on MiSTer C64; upstream notices apply.
 
-0.5.2 remains in the [release archive](https://github.com/toby01019/openFPGA-C64-MiSTer/releases/tag/v0.5.2-alpha).
-Also available on [itch.io](https://toby01019.itch.io/c64-mister-analogue-pocket).
-English menus, English/German guides. No system ROMs or third-party games;
-author-owned TobyPink is included with permission. AI-assisted development;
-MiSTer/myc64/APF credits and existing licences remain intact.
+Published on GitHub and itch.io. Updaters need the next catalog refresh.
+Manual SD-ZIP installation is available now.

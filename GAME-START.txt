@@ -24,4 +24,4 @@ Quick hardware check: start a known D64 from READY; try a G64 and a game
 that requests another disk; select Off and check manual LOAD*/RUN and both
 keyboards. Check picture and sound remain unchanged. Keep 0.5.1 as fallback.
 
-TobyPink: enable REU 512 KiB and Ultimate Audio (2 voices) before starting. Select TobyPink-Pocket-V027.d64 in Disk 8. First program: TOBY TITLE. V027-AUDIO.REU is sample data, not a start program.
+TobyPink: enable REU 512 KiB and Ultimate Audio (2 voices) before starting. Select TobyPink-Pocket-V029.d64 in Disk 8. First program: TOBY TITLE. V027-AUDIO.REU is sample data, not a start program.

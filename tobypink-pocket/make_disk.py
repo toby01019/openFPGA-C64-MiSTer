@@ -5,11 +5,11 @@ P=Path(__file__).resolve().parent
 original=P/'resources'
 local_tool=Path('C:/Users/toby0/Downloads/GTK3VICE-3.10-win64/GTK3VICE-3.10-win64/bin/c1541.exe')
 tool=os.environ.get('C1541',str(local_tool)if local_tool.exists()else 'c1541')
-out=P/'TobyPink-Pocket-V027.d64'
-files=[(P/'toby-try-to-save-the-pink-title-v0.3.27.prg','TOBY TITLE'),
-       (P/'toby-try-to-save-the-pink-v0.3.27.prg','TOBY PINK'),
-       (original/'toby-reward-music-v0.3.27.prg','TOBY MUSIC'),
-       (original/'toby-reward-scene-v0.3.27.prg','TOBY REWARD')]
+out=P/'TobyPink-Pocket-V029.d64'
+files=[(P/'toby-try-to-save-the-pink-title-v0.3.29.prg','TOBY TITLE'),
+       (P/'toby-try-to-save-the-pink-v0.3.29.prg','TOBY PINK'),
+       (original/'toby-reward-music-v0.3.29.prg','TOBY MUSIC'),
+       (original/'toby-reward-scene-v0.3.29.prg','TOBY REWARD')]
 args=[tool,'-format','toby pink,38','d64',str(out)]
 for f,name in files:args+=['-write',str(f),name]
 r=subprocess.run(args,capture_output=True,text=True);assert r.returncode==0,r.stdout+r.stderr
@@ -35,9 +35,9 @@ while t:
  t,s=data[a:a+2]
 for f,name in files:assert extracted[name]==f.read_bytes(),name
 out.write_bytes(data)
-bank=P/'resources/V027-AUDIO.REU'
-shutil.copy2(bank,P/'V027-AUDIO.REU')
-manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest()for p in [out,P/'V027-AUDIO.REU']}
+bank=P/'resources/V029-AUDIO.REU'
+shutil.copy2(bank,P/'V029-AUDIO.REU')
+manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest()for p in [out,P/'V029-AUDIO.REU']}
 (P/'checksums.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('PASS Pocket D64: all four PRGs extracted byte-identically; original Ultimate release untouched.')
 print(json.dumps(manifest,indent=2))

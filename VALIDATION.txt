@@ -1,11 +1,8 @@
-0.5.3-alpha release validation
-PASS all 115 exact hardware-source hashes.
-PASS FPGA build; 16,318/18,480 ALMs; 64 timing checks, minimum slack +0.026 ns.
-PASS detailed video setup/hold and remaining-hold reports (zero violations).
-PASS actual-6510 top-level boot guard regression and autostart unit suite.
-PASS virtual/Dock keyboard, Shift labels, menu, D64/G64, SID-I2S and video regressions.
-Video test includes a deliberate failing 382-pixel negative control.
-PASS public FPGA bitstream identical to hardware-tested 0.5.3-test.
-Bitstream SHA256: ccc400402f09becdd2d62235fd7edb7fb1858e2e6c88460b72dcd158628eb311
-Hardware feedback: D64/G64 autostart, manual LOAD*, in-game disk swaps passed.
-No live pupdate/Pocket Sync installation test. Not an exhaustive game test.
+{
+  "version": "0.5.4-beta",
+  "bitstream_sha256": "2e17ee990a18d798360cc86899df27b948669a4c6699f9173d9e466f02cd94cd",
+  "minimum_timing_slack_ns": 0.026,
+  "logic_ALMs": 16277,
+  "hardware_tested": true,
+  "hardware_evidence": "User confirmed tested trainer cartridges including Sherwood and Toby Pink V029 with digital samples on real Pocket, 2026-11-04."
+}
