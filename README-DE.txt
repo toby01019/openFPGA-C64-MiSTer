@@ -1,6 +1,6 @@
-C64 Pocket 0.5.4-beta - 5. November 2026
+C64 Pocket 0.5.4 - 6. November 2026
 
-Spaete Beta, auf einem echten Analogue Pocket getestet. Keine Garantie
+Stabile Version, auf einem echten Analogue Pocket getestet. Keine Garantie
 fuer alle Spiele. Der FPGA-Bitstream ist identisch mit 0.5.4-test1.
 Neu: Magic-Desk-Cartridges bis 512 KiB. Toby hat die getesteten Trainer
 von Van Helsing und Impossible Mission 3 sowie Sherwood bestaetigt.

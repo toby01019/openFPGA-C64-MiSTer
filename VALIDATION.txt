@@ -1,5 +1,5 @@
 {
-  "version": "0.5.4-beta",
+  "version": "0.5.4",
   "bitstream_sha256": "2e17ee990a18d798360cc86899df27b948669a4c6699f9173d9e466f02cd94cd",
   "minimum_timing_slack_ns": 0.026,
   "logic_ALMs": 16277,

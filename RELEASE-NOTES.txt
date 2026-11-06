@@ -1,6 +1,6 @@
-C64 Pocket 0.5.4-beta - 5 November 2026
+C64 Pocket 0.5.4 - 6 November 2026
 
-Late beta: tested on a real Analogue Pocket. This is not a guarantee of
+Stable release: tested on a real Analogue Pocket. This is not a guarantee of
 compatibility with every game. The FPGA bitstream is identical to the
 successfully tested 0.5.4-test1.
 

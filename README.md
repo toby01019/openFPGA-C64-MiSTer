@@ -5,7 +5,7 @@ AI-assisted development. Not an official MiSTer or Analogue release.
 
 ## Download and install
 
-Download **C64-Pocket-0.5.4-beta-Test-SD-EN.zip** from [Releases](../../releases/latest).
+Download **C64-Pocket-0.5.4-Test-SD-EN.zip** from [Releases](../../releases/latest).
 Back up your SD, power off Pocket, extract to its root and merge folders.
 **From 0.5.2: no renaming/migration.** From 0.5.1 or older, read
 [migration instructions](MIGRATION-EN.txt). Core ID `toby01019.C64`, platform `c64`.
@@ -19,17 +19,17 @@ TobyPink digital samples, reset, virtual keyboard with shifted labels,
 transparency and LOAD*/RUN, Dock USB keyboard, guarded disk autostart and
 an activity icon. Helpers can be switched off under Disk assist.
 
-**0.5.4-beta adds Magic Desk cartridges up to 512 KiB and Toby Pink V029.**
+**0.5.4 adds Magic Desk cartridges up to 512 KiB and Toby Pink V029.**
 Real-Pocket tests confirmed the tested Van Helsing and Impossible Mission 3
 trainer cartridges, Sherwood, and Toby Pink V029 including digital samples.
-The bitstream is identical to the hardware-tested 0.5.4-test1. Late beta:
+The bitstream is identical to the hardware-tested 0.5.4-test1. Stable release:
 these tests do not cover every game or feature. Earlier reports cover
 D64/G64 autostart, disk swaps, EasyFlash and Dock USB keyboard operation.
 FPGA build, timing and simulations passed; see [validation](VALIDATION.txt).
 
 ## Updaters
 
-The core is registered with openFPGA Library. 0.5.4-beta requires the next catalog
+The core is registered with openFPGA Library. 0.5.4 requires the next catalog
 update before pupdate/Pocket Sync offer it. Manual installation works now.
 See [updater status](UPDATERS.md). Older releases remain as a rollback archive.
 
